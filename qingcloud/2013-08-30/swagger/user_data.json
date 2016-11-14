@@ -1,0 +1,57 @@
+{
+  "UploadUserDataAttachment": {
+    "post": {
+      "tags": [
+        "User Data"
+      ],
+      "operationId": "UploadUserDataAttachment",
+      "summary": "UploadUserDataAttachment",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/userdata/upload_userdata_attachment.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "attachment_content": {
+                "type": "string"
+              },
+              "attachment_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "attachment_content"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "attachment_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

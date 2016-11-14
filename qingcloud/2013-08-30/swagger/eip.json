@@ -1,0 +1,612 @@
+{
+  "DescribeEips": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "DescribeEips",
+      "summary": "DescribeEips",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/describe_eips.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_id": {
+                "type": "string"
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "available",
+                    "associated",
+                    "suspended",
+                    "released",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "eip_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/eip"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AllocateEips": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "AllocateEips",
+      "summary": "AllocateEips",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/allocate_eips.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "bandwidth": {
+                "type": "integer"
+              },
+              "billing_mode": {
+                "type": "string",
+                "default": "bandwidth",
+                "enum": [
+                  "bandwidth",
+                  "traffic"
+                ]
+              },
+              "eip_name": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              },
+              "need_icp": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "bandwidth",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ReleaseEips": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "ReleaseEips",
+      "summary": "ReleaseEips",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/release_eips.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eips",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AssociateEip": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "AssociateEip",
+      "summary": "AssociateEip",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/associate_eip.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eip": {
+                "type": "string"
+              },
+              "instance": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eip",
+              "instance",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DissociateEips": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "DissociateEips",
+      "summary": "DissociateEips",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/dissociate_eips.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eips",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeEipsBandwidth": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "ChangeEipsBandwidth",
+      "summary": "ChangeEipsBandwidth",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/dissociate_eips.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bandwidth": {
+                "type": "integer"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eips",
+              "bandwidth",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeEipsBillingMode": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "ChangeEipsBillingMode",
+      "summary": "ChangeEipsBillingMode",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/change_eips_billing_mode.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "billing_mode": {
+                "type": "string",
+                "default": "bandwidth",
+                "enum": [
+                  "bandwidth",
+                  "traffic"
+                ]
+              },
+              "zone": {
+                "type": "string"
+              },
+              "eip_group": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eips",
+              "billing_mode",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyEipAttributes": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "ModifyEipAttributes",
+      "summary": "ModifyEipAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/eip/modify_eip_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eip": {
+                "type": "string"
+              },
+              "eip_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "eip",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "eip_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetEIPMonitor": {
+    "get": {
+      "tags": [
+        "EIP"
+      ],
+      "operationId": "GetEIPMonitor",
+      "summary": "GetMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

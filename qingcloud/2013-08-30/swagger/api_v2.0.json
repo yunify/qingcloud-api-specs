@@ -1,0 +1,832 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "2013-08-30",
+    "title": "QingCloud",
+    "description": "QingCloud provides a platform which can make the delivery of computing resources more simple, efficient and reliable, even more environmental.",
+    "termsOfService": "https://www.qingcloud.com/about/tos",
+    "license": {
+      "name": "The Apache License (Version 2)",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "contact": {
+      "name": "Yunify",
+      "email": "contactus@yunify.com"
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "host": "api.qingcloud.com",
+  "basePath": "/iaas",
+  "paths": {
+    "/DescribeInstances": {
+      "$ref": "./instance.json#/DescribeInstances"
+    },
+    "/RunInstances": {
+      "$ref": "./instance.json#/RunInstances"
+    },
+    "/TerminateInstances": {
+      "$ref": "./instance.json#/TerminateInstances"
+    },
+    "/StartInstances": {
+      "$ref": "./instance.json#/StartInstances"
+    },
+    "/StopInstances": {
+      "$ref": "./instance.json#/StopInstances"
+    },
+    "/RestartInstances": {
+      "$ref": "./instance.json#/RestartInstances"
+    },
+    "/ResetInstances": {
+      "$ref": "./instance.json#/ResetInstances"
+    },
+    "/ResizeInstances": {
+      "$ref": "./instance.json#/ResizeInstances"
+    },
+    "/ModifyInstanceAttributes": {
+      "$ref": "./instance.json#/ModifyInstanceAttributes"
+    },
+    "/DescribeInstanceTypes": {
+      "$ref": "./instance.json#/DescribeInstanceTypes"
+    },
+    "/GetInstanceMonitor": {
+      "$ref": "./instance.json#/GetInstanceMonitor"
+    },
+    "/DescribeImages": {
+      "$ref": "./image.json#/DescribeImages"
+    },
+    "/CaptureInstance": {
+      "$ref": "./image.json#/CaptureInstance"
+    },
+    "/DeleteImages": {
+      "$ref": "./image.json#/DeleteImages"
+    },
+    "/ModifyImageAttributes": {
+      "$ref": "./image.json#/ModifyImageAttributes"
+    },
+    "/GrantImageToUsers": {
+      "$ref": "./image.json#/GrantImageToUsers"
+    },
+    "/RevokeImageFromUsers": {
+      "$ref": "./image.json#/RevokeImageFromUsers"
+    },
+    "/DescribeImageUsers": {
+      "$ref": "./image.json#/DescribeImageUsers"
+    },
+    "/DescribeVxnets": {
+      "$ref": "./vxnet.json#/DescribeVxnets"
+    },
+    "/CreateVxnets": {
+      "$ref": "./vxnet.json#/CreateVxnets"
+    },
+    "/DeleteVxnets": {
+      "$ref": "./vxnet.json#/DeleteVxnets"
+    },
+    "/JoinVxnet": {
+      "$ref": "./vxnet.json#/JoinVxnet"
+    },
+    "/LeaveVxnet": {
+      "$ref": "./vxnet.json#/LeaveVxnet"
+    },
+    "/ModifyVxnetAttributes": {
+      "$ref": "./vxnet.json#/ModifyVxnetAttributes"
+    },
+    "/DescribeVxnetInstances": {
+      "$ref": "./vxnet.json#/DescribeVxnetInstances"
+    },
+    "/DescribeRouters": {
+      "$ref": "./router.json#/DescribeRouters"
+    },
+    "/CreateRouters": {
+      "$ref": "./router.json#/CreateRouters"
+    },
+    "/DeleteRouters": {
+      "$ref": "./router.json#/DeleteRouters"
+    },
+    "/UpdateRouters": {
+      "$ref": "./router.json#/UpdateRouters"
+    },
+    "/PowerOffRouters": {
+      "$ref": "./router.json#/PowerOffRouters"
+    },
+    "/PowerOnRouters": {
+      "$ref": "./router.json#/PowerOnRouters"
+    },
+    "/JoinRouter": {
+      "$ref": "./router.json#/JoinRouter"
+    },
+    "/LeaveRouter": {
+      "$ref": "./router.json#/LeaveRouter"
+    },
+    "/ModifyRouterAttributes": {
+      "$ref": "./router.json#/ModifyRouterAttributes"
+    },
+    "/DescribeRouterStatics": {
+      "$ref": "./router.json#/DescribeRouterStatics"
+    },
+    "/AddRouterStatics": {
+      "$ref": "./router.json#/AddRouterStatics"
+    },
+    "/ModifyRouterStaticAttributes": {
+      "$ref": "./router.json#/ModifyRouterStaticAttributes"
+    },
+    "/DeleteRouterStatics": {
+      "$ref": "./router.json#/DeleteRouterStatics"
+    },
+    "/DescribeRouterVxnets": {
+      "$ref": "./router.json#/DescribeRouterVxnets"
+    },
+    "/AddRouterStaticEntries": {
+      "$ref": "./router.json#/AddRouterStaticEntries"
+    },
+    "/DeleteRouterStaticEntries": {
+      "$ref": "./router.json#/DeleteRouterStaticEntries"
+    },
+    "/ModifyRouterStaticEntryAttributes": {
+      "$ref": "./router.json#/ModifyRouterStaticEntryAttributes"
+    },
+    "/DescribeRouterStaticEntries": {
+      "$ref": "./router.json#/DescribeRouterStaticEntries"
+    },
+    "/GetRouterMonitor": {
+      "$ref": "./router.json#/GetRouterMonitor"
+    },
+    "/CreateLoadBalancer": {
+      "$ref": "./load_balancer.json#/CreateLoadBalancer"
+    },
+    "/DescribeLoadBalancers": {
+      "$ref": "./load_balancer.json#/DescribeLoadBalancers"
+    },
+    "/DeleteLoadBalancers": {
+      "$ref": "./load_balancer.json#/DeleteLoadBalancers"
+    },
+    "/ModifyLoadBalancerAttributes": {
+      "$ref": "./load_balancer.json#/ModifyLoadBalancerAttributes"
+    },
+    "/StartLoadBalancers": {
+      "$ref": "./load_balancer.json#/StartLoadBalancers"
+    },
+    "/StopLoadBalancers": {
+      "$ref": "./load_balancer.json#/StopLoadBalancers"
+    },
+    "/UpdateLoadBalancers": {
+      "$ref": "./load_balancer.json#/UpdateLoadBalancers"
+    },
+    "/ResizeLoadBalancers": {
+      "$ref": "./load_balancer.json#/ResizeLoadBalancers"
+    },
+    "/AssociateEipsToLoadBalancer": {
+      "$ref": "./load_balancer.json#/AssociateEipsToLoadBalancer"
+    },
+    "/DissociateEipsFromLoadBalancer": {
+      "$ref": "./load_balancer.json#/DissociateEipsFromLoadBalancer"
+    },
+    "/AddLoadBalancerListeners": {
+      "$ref": "./load_balancer.json#/AddLoadBalancerListeners"
+    },
+    "/DescribeLoadBalancerListeners": {
+      "$ref": "./load_balancer.json#/DescribeLoadBalancerListeners"
+    },
+    "/DeleteLoadBalancerListeners": {
+      "$ref": "./load_balancer.json#/DeleteLoadBalancerListeners"
+    },
+    "/ModifyLoadBalancerListenerAttributes": {
+      "$ref": "./load_balancer.json#/ModifyLoadBalancerListenerAttributes"
+    },
+    "/AddLoadBalancerBackends": {
+      "$ref": "./load_balancer.json#/AddLoadBalancerBackends"
+    },
+    "/DescribeLoadBalancerBackends": {
+      "$ref": "./load_balancer.json#/DescribeLoadBalancerBackends"
+    },
+    "/DeleteLoadBalancerBackends": {
+      "$ref": "./load_balancer.json#/DeleteLoadBalancerBackends"
+    },
+    "/ModifyLoadBalancerBackendAttributes": {
+      "$ref": "./load_balancer.json#/ModifyLoadBalancerBackendAttributes"
+    },
+    "/CreateLoadBalancerPolicy": {
+      "$ref": "./load_balancer.json#/CreateLoadBalancerPolicy"
+    },
+    "/DescribeLoadBalancerPolicies": {
+      "$ref": "./load_balancer.json#/DescribeLoadBalancerPolicies"
+    },
+    "/ModifyLoadBalancerPolicyAttributes": {
+      "$ref": "./load_balancer.json#/ModifyLoadBalancerPolicyAttributes"
+    },
+    "/ApplyLoadBalancerPolicy": {
+      "$ref": "./load_balancer.json#/ApplyLoadBalancerPolicy"
+    },
+    "/DeleteLoadBalancerPolicies": {
+      "$ref": "./load_balancer.json#/DeleteLoadBalancerPolicies"
+    },
+    "/AddLoadBalancerPolicyRules": {
+      "$ref": "./load_balancer.json#/AddLoadBalancerPolicyRules"
+    },
+    "/DescribeLoadBalancerPolicyRules": {
+      "$ref": "./load_balancer.json#/DescribeLoadBalancerPolicyRules"
+    },
+    "/ModifyLoadBalancerPolicyRuleAttributes": {
+      "$ref": "./load_balancer.json#/ModifyLoadBalancerPolicyRuleAttributes"
+    },
+    "/DeleteLoadBalancerPolicyRules": {
+      "$ref": "./load_balancer.json#/DeleteLoadBalancerPolicyRules"
+    },
+    "/CreateServerCertificate": {
+      "$ref": "./load_balancer.json#/CreateServerCertificate"
+    },
+    "/DescribeServerCertificates": {
+      "$ref": "./load_balancer.json#/DescribeServerCertificates"
+    },
+    "/ModifyServerCertificateAttributes": {
+      "$ref": "./load_balancer.json#/ModifyServerCertificateAttributes"
+    },
+    "/DeleteServerCertificates": {
+      "$ref": "./load_balancer.json#/DeleteServerCertificates"
+
+    },
+    "/GetLoadBalancerMonitor": {
+      "$ref": "./load_balancer.json#/GetLoadBalancerMonitor"
+    },
+    "/DescribeEips": {
+      "$ref": "./eip.json#/DescribeEips"
+    },
+    "/AllocateEips": {
+      "$ref": "./eip.json#/AllocateEips"
+    },
+    "/ReleaseEips": {
+      "$ref": "./eip.json#/ReleaseEips"
+    },
+    "/AssociateEip": {
+      "$ref": "./eip.json#/AssociateEip"
+    },
+    "/DissociateEips": {
+      "$ref": "./eip.json#/DissociateEips"
+    },
+    "/ChangeEipsBandwidth": {
+      "$ref": "./eip.json#/ChangeEipsBandwidth"
+    },
+    "/ChangeEipsBillingMode": {
+      "$ref": "./eip.json#/ChangeEipsBillingMode"
+    },
+    "/ModifyEipAttributes": {
+      "$ref": "./eip.json#/ModifyEipAttributes"
+    },
+    "/GetEIPMonitor": {
+      "$ref": "./eip.json#/GetEIPMonitor"
+    },
+    "/DescribeDNSAliases": {
+      "$ref": "./dns_alias.json#/DescribeDNSAliases"
+    },
+    "/AssociateDNSAlias": {
+      "$ref": "./dns_alias.json#/AssociateDNSAlias"
+    },
+    "/DissociateDNSAliases": {
+      "$ref": "./dns_alias.json#/DissociateDNSAliases"
+    },
+    "/GetDNSLabel": {
+      "$ref": "./dns_alias.json#/GetDNSLabel"
+    },
+    "/DescribeVolumes": {
+      "$ref": "./volume.json#/DescribeVolumes"
+    },
+    "/CreateVolumes": {
+      "$ref": "./volume.json#/CreateVolumes"
+    },
+    "/DeleteVolumes": {
+      "$ref": "./volume.json#/DeleteVolumes"
+    },
+    "/AttachVolumes": {
+      "$ref": "./volume.json#/AttachVolumes"
+    },
+    "/DetachVolumes": {
+      "$ref": "./volume.json#/DetachVolumes"
+    },
+    "/ResizeVolumes": {
+      "$ref": "./volume.json#/ResizeVolumes"
+    },
+    "/ModifyVolumeAttributes": {
+      "$ref": "./volume.json#/ModifyVolumeAttributes"
+    },
+    "/CreateS2Server": {
+      "$ref": "./shared_storage.json#/CreateS2Server"
+    },
+    "/DescribeS2Servers": {
+      "$ref": "./shared_storage.json#/DescribeS2Servers"
+    },
+    "/ModifyS2Server": {
+      "$ref": "./shared_storage.json#/ModifyS2Server"
+    },
+    "/ResizeS2Servers": {
+      "$ref": "./shared_storage.json#/ResizeS2Servers"
+    },
+    "/DeleteS2Servers": {
+      "$ref": "./shared_storage.json#/DeleteS2Servers"
+    },
+    "/PowerOnS2Servers": {
+      "$ref": "./shared_storage.json#/PowerOnS2Servers"
+    },
+    "/PowerOffS2Servers": {
+      "$ref": "./shared_storage.json#/PowerOffS2Servers"
+    },
+    "/UpdateS2Servers": {
+      "$ref": "./shared_storage.json#/UpdateS2Servers"
+    },
+    "/ChangeS2ServerVxnet": {
+      "$ref": "./shared_storage.json#/ChangeS2ServerVxnet"
+    },
+    "/CreateS2SharedTarget": {
+      "$ref": "./shared_storage.json#/CreateS2SharedTarget"
+    },
+    "/DescribeS2SharedTargets": {
+      "$ref": "./shared_storage.json#/DescribeS2SharedTargets"
+    },
+    "/DeleteS2SharedTargets": {
+      "$ref": "./shared_storage.json#/DeleteS2SharedTargets"
+    },
+    "/EnableS2SharedTargets": {
+      "$ref": "./shared_storage.json#/EnableS2SharedTargets"
+    },
+    "/DisableS2SharedTargets": {
+      "$ref": "./shared_storage.json#/DisableS2SharedTargets"
+    },
+    "/ModifyS2SharedTargets": {
+      "$ref": "./shared_storage.json#/ModifyS2SharedTargets"
+    },
+    "/AttachToS2SharedTarget": {
+      "$ref": "./shared_storage.json#/AttachToS2SharedTarget"
+    },
+    "/DetachFromS2SharedTarget": {
+      "$ref": "./shared_storage.json#/DetachFromS2SharedTarget"
+    },
+    "/DescribeS2DefaultParameters": {
+      "$ref": "./shared_storage.json#/DescribeS2DefaultParameters"
+    },
+    "/DescribeSnapshots": {
+      "$ref": "./snapshot.json#/DescribeSnapshots"
+    },
+    "/CreateSnapshots": {
+      "$ref": "./snapshot.json#/CreateSnapshots"
+    },
+    "/DeleteSnapshots": {
+      "$ref": "./snapshot.json#/DeleteSnapshots"
+    },
+    "/ApplySnapshots": {
+      "$ref": "./snapshot.json#/ApplySnapshots"
+    },
+    "/ModifySnapshotAttributes": {
+      "$ref": "./snapshot.json#/ModifySnapshotAttributes"
+    },
+    "/CaptureInstanceFromSnapshot": {
+      "$ref": "./snapshot.json#/CaptureInstanceFromSnapshot"
+    },
+    "/CreateVolumeFromSnapshot": {
+      "$ref": "./snapshot.json#/CreateVolumeFromSnapshot"
+    },
+    "/DescribeSecurityGroups": {
+      "$ref": "./security_group.json#/DescribeSecurityGroups"
+    },
+    "/CreateSecurityGroup": {
+      "$ref": "./security_group.json#/CreateSecurityGroup"
+    },
+    "/DeleteSecurityGroups": {
+      "$ref": "./security_group.json#/DeleteSecurityGroups"
+    },
+    "/ApplySecurityGroup": {
+      "$ref": "./security_group.json#/ApplySecurityGroup"
+    },
+    "/ModifySecurityGroupAttributes": {
+      "$ref": "./security_group.json#/ModifySecurityGroupAttributes"
+    },
+    "/DescribeSecurityGroupRules": {
+      "$ref": "./security_group.json#/DescribeSecurityGroupRules"
+    },
+    "/AddSecurityGroupRules": {
+      "$ref": "./security_group.json#/AddSecurityGroupRules"
+    },
+    "/DeleteSecurityGroupRules": {
+      "$ref": "./security_group.json#/DeleteSecurityGroupRules"
+    },
+    "/ModifySecurityGroupRuleAttributes": {
+      "$ref": "./security_group.json#/ModifySecurityGroupRuleAttributes"
+    },
+    "/CreateSecurityGroupSnapshot": {
+      "$ref": "./security_group.json#/CreateSecurityGroupSnapshot"
+    },
+    "/DescribeSecurityGroupSnapshots": {
+      "$ref": "./security_group.json#/DescribeSecurityGroupSnapshots"
+    },
+    "/DeleteSecurityGroupSnapshots": {
+      "$ref": "./security_group.json#/DeleteSecurityGroupSnapshots"
+    },
+    "/RollbackSecurityGroup": {
+      "$ref": "./security_group.json#/RollbackSecurityGroup"
+    },
+    "/DescribeSecurityGroupIPSets": {
+      "$ref": "./security_group.json#/DescribeSecurityGroupIPSets"
+    },
+    "/CreateSecurityGroupIPSet": {
+      "$ref": "./security_group.json#/CreateSecurityGroupIPSet"
+    },
+    "/DeleteSecurityGroupIPSets": {
+      "$ref": "./security_group.json#/DeleteSecurityGroupIPSets"
+    },
+    "/ModifySecurityGroupIPSetAttributes": {
+      "$ref": "./security_group.json#/ModifySecurityGroupIPSetAttributes"
+    },
+    "/DescribeKeyPairs": {
+      "$ref": "./key_pair.json#/DescribeKeyPairs"
+    },
+    "/CreateKeyPair": {
+      "$ref": "./key_pair.json#/CreateKeyPair"
+    },
+    "/DeleteKeyPairs": {
+      "$ref": "./key_pair.json#/DeleteKeyPairs"
+    },
+    "/AttachKeyPairs": {
+      "$ref": "./key_pair.json#/AttachKeyPairs"
+    },
+    "/DetachKeyPairs": {
+      "$ref": "./key_pair.json#/DetachKeyPairs"
+    },
+    "/ModifyKeyPairAttributes": {
+      "$ref": "./key_pair.json#/ModifyKeyPairAttributes"
+    },
+    "/CreateRDB": {
+      "$ref": "./rdb.json#/CreateRDB"
+    },
+    "/DescribeRDBs": {
+      "$ref": "./rdb.json#/DescribeRDBs"
+    },
+    "/DeleteRDBs": {
+      "$ref": "./rdb.json#/DeleteRDBs"
+    },
+    "/StartRDBs": {
+      "$ref": "./rdb.json#/StartRDBs"
+    },
+    "/StopRDBs": {
+      "$ref": "./rdb.json#/StopRDBs"
+    },
+    "/ResizeRDBs": {
+      "$ref": "./rdb.json#/ResizeRDBs"
+    },
+    "/RDBsLeaveVxnet": {
+      "$ref": "./rdb.json#/RDBsLeaveVxnet"
+    },
+    "/RDBsJoinVxnet": {
+      "$ref": "./rdb.json#/RDBsJoinVxnet"
+    },
+    "/CreateRDBFromSnapshot": {
+      "$ref": "./rdb.json#/CreateRDBFromSnapshot"
+    },
+    "/CreateTempRDBInstanceFromSnapshot": {
+      "$ref": "./rdb.json#/CreateTempRDBInstanceFromSnapshot"
+    },
+    "/GetRDBInstanceFiles": {
+      "$ref": "./rdb.json#/GetRDBInstanceFiles"
+    },
+    "/CopyRDBInstanceFilesToFTP": {
+      "$ref": "./rdb.json#/CopyRDBInstanceFilesToFTP"
+    },
+    "/CeaseRDBInstance": {
+      "$ref": "./rdb.json#/CeaseRDBInstance"
+    },
+    "/GetRDBMonitor": {
+      "$ref": "./rdb.json#/GetRDBMonitor"
+    },
+    "/ModifyRDBParameters": {
+      "$ref": "./rdb.json#/ModifyRDBParameters"
+    },
+    "/ApplyRDBParameterGroup": {
+      "$ref": "./rdb.json#/ApplyRDBParameterGroup"
+    },
+    "/DescribeRDBParameters": {
+      "$ref": "./rdb.json#/DescribeRDBParameters"
+    },
+    "/DescribeCaches": {
+      "$ref": "./cache.json#/DescribeCaches"
+    },
+    "/CreateCache": {
+      "$ref": "./cache.json#/CreateCache"
+    },
+    "/StopCaches": {
+      "$ref": "./cache.json#/StopCaches"
+    },
+    "/StartCaches": {
+      "$ref": "./cache.json#/StartCaches"
+    },
+    "/RestartCaches": {
+      "$ref": "./cache.json#/RestartCaches"
+    },
+    "/DeleteCaches": {
+      "$ref": "./cache.json#/DeleteCaches"
+    },
+    "/ResizeCaches": {
+      "$ref": "./cache.json#/ResizeCaches"
+    },
+    "/UpdateCache": {
+      "$ref": "./cache.json#/UpdateCache"
+    },
+    "/ChangeCacheVxnet": {
+      "$ref": "./cache.json#/ChangeCacheVxnet"
+    },
+    "/ModifyCacheAttributes": {
+      "$ref": "./cache.json#/ModifyCacheAttributes"
+    },
+    "/DescribeCacheNodes": {
+      "$ref": "./cache.json#/DescribeCacheNodes"
+    },
+    "/AddCacheNodes": {
+      "$ref": "./cache.json#/AddCacheNodes"
+    },
+    "/DeleteCacheNodes": {
+      "$ref": "./cache.json#/DeleteCacheNodes"
+    },
+    "/RestartCacheNodes": {
+      "$ref": "./cache.json#/RestartCacheNodes"
+    },
+    "/ModifyCacheNodeAttributes": {
+      "$ref": "./cache.json#/ModifyCacheNodeAttributes"
+    },
+    "/CreateCacheFromSnapshot": {
+      "$ref": "./cache.json#/CreateCacheFromSnapshot"
+    },
+    "/DescribeCacheParameterGroups": {
+      "$ref": "./cache.json#/DescribeCacheParameterGroups"
+    },
+    "/CreateCacheParameterGroup": {
+      "$ref": "./cache.json#/CreateCacheParameterGroup"
+    },
+    "/ApplyCacheParameterGroup": {
+      "$ref": "./cache.json#/ApplyCacheParameterGroup"
+    },
+    "/DeleteCacheParameterGroups": {
+      "$ref": "./cache.json#/DeleteCacheParameterGroups"
+    },
+    "/ModifyCacheParameterGroupAttributes": {
+      "$ref": "./cache.json#/ModifyCacheParameterGroupAttributes"
+    },
+    "/DescribeCacheParameters": {
+      "$ref": "./cache.json#/DescribeCacheParameters"
+    },
+    "/UpdateCacheParameters": {
+      "$ref": "./cache.json#/UpdateCacheParameters"
+    },
+    "/ResetCacheParameters": {
+      "$ref": "./cache.json#/ResetCacheParameters"
+    },
+    "/GetCacheMonitor": {
+      "$ref": "./cache.json#/GetCacheMonitor"
+    },
+    "/DescribeMongoNodes": {
+      "$ref": "./mongo.json#/DescribeMongoNodes"
+    },
+    "/DescribeMongoParameters": {
+      "$ref": "./mongo.json#/DescribeMongoParameters"
+    },
+    "/ResizeMongos": {
+      "$ref": "./mongo.json#/ResizeMongos"
+    },
+    "/CreateMongo": {
+      "$ref": "./mongo.json#/CreateMongo"
+    },
+    "/StopMongos": {
+      "$ref": "./mongo.json#/StopMongos"
+    },
+    "/StartMongos": {
+      "$ref": "./mongo.json#/StartMongos"
+    },
+    "/DescribeMongos": {
+      "$ref": "./mongo.json#/DescribeMongos"
+    },
+    "/DeleteMongos": {
+      "$ref": "./mongo.json#/DeleteMongos"
+    },
+    "/CreateMongoFromSnapshot": {
+      "$ref": "./mongo.json#/CreateMongoFromSnapshot"
+    },
+    "/ChangeMongoVxnet": {
+      "$ref": "./mongo.json#/ChangeMongoVxnet"
+    },
+    "/AddMongoInstances": {
+      "$ref": "./mongo.json#/AddMongoInstances"
+    },
+    "/RemoveMongoInstances": {
+      "$ref": "./mongo.json#/RemoveMongoInstances"
+    },
+    "/ModifyMongoAttributes": {
+      "$ref": "./mongo.json#/ModifyMongoAttributes"
+    },
+    "/ModifyMongoInstances": {
+      "$ref": "./mongo.json#/ModifyMongoInstances"
+    },
+    "/GetMongoMonitor": {
+      "$ref": "./mongo.json#/GetMongoMonitor"
+    },
+    "/UploadUserDataAttachment": {
+      "$ref": "./user_data.json#/UploadUserDataAttachment"
+    },
+    "/DescribeJobs": {
+      "$ref": "./job.json#/DescribeJobs"
+    },
+    "/DescribeTags": {
+      "$ref": "./tag.json#/DescribeTags"
+    },
+    "/CreateTag": {
+      "$ref": "./tag.json#/CreateTag"
+    },
+    "/DeleteTags": {
+      "$ref": "./tag.json#/DeleteTags"
+    },
+    "/ModifyTagAttributes": {
+      "$ref": "./tag.json#/ModifyTagAttributes"
+    },
+    "/AttachTags": {
+      "$ref": "./tag.json#/AttachTags"
+    },
+    "/DetachTags": {
+      "$ref": "./tag.json#/DetachTags"
+    },
+    "/DescribeZones": {
+      "$ref": "./zone.json#/DescribeZones"
+    }
+  },
+  "definitions": {
+    "instance": {
+      "$ref": "./definitions.json#/instance"
+    },
+    "instance_type": {
+      "$ref": "./definitions.json#/instance_type"
+    },
+    "extra": {
+      "$ref": "./definitions.json#/extra"
+    },
+    "eip": {
+      "$ref": "./definitions.json#/eip"
+    },
+    "eip_resource": {
+      "$ref": "./definitions.json#/eip_resource"
+    },
+    "eip_group": {
+      "$ref": "./definitions.json#/eip_group"
+    },
+    "security_group": {
+      "$ref": "./definitions.json#/security_group"
+    },
+    "security_group_rule": {
+      "$ref": "./definitions.json#/security_group_rule"
+    },
+    "security_group_snapshot": {
+      "$ref": "./definitions.json#/security_group_snapshot"
+    },
+    "security_group_ipset": {
+      "$ref": "./definitions.json#/security_group_ipset"
+    },
+    "volume": {
+      "$ref": "./definitions.json#/volume"
+    },
+    "image": {
+      "$ref": "./definitions.json#/image"
+    },
+    "image_user": {
+      "$ref": "./definitions.json#/image_user"
+    },
+    "user": {
+      "$ref": "./definitions.json#/user"
+    },
+    "vxnet": {
+      "$ref": "./definitions.json#/vxnet"
+    },
+    "dhcp_option": {
+      "$ref": "./definitions.json#/dhcp_option"
+    },
+    "router": {
+      "$ref": "./definitions.json#/router"
+    },
+    "router_static": {
+      "$ref": "./definitions.json#/router_static"
+    },
+    "router_vxnet": {
+      "$ref": "./definitions.json#/router_vxnet"
+    },
+    "router_static_entry": {
+      "$ref": "./definitions.json#/router_static_entry"
+    },
+    "loadbalancer": {
+      "$ref": "./definitions.json#/loadbalancer"
+    },
+    "loadbalancer_listener": {
+      "$ref": "./definitions.json#/loadbalancer_listener"
+    },
+    "loadbalancer_listener_listener": {
+      "$ref": "./definitions.json#/loadbalancer_listener_listener"
+    },
+    "loadbalancer_backend": {
+      "$ref": "./definitions.json#/loadbalancer_backend"
+    },
+    "add_loadbalancer_backends_backend": {
+      "$ref": "./definitions.json#/add_loadbalancer_backends_backend"
+    },
+    "loadbalancer_policy": {
+      "$ref": "./definitions.json#/loadbalancer_policy"
+    },
+    "loadbalancer_policy_rule": {
+      "$ref": "./definitions.json#/loadbalancer_policy_rule"
+    },
+    "server_certificate": {
+      "$ref": "./definitions.json#/server_certificate"
+    },
+    "dns_alias": {
+      "$ref": "./definitions.json#/dns_alias"
+    },
+    "s2_server": {
+      "$ref": "./definitions.json#/s2_server"
+    },
+    "s2_shared_target": {
+      "$ref": "./definitions.json#/s2_shared_target"
+    },
+    "s2_default_parameters": {
+      "$ref": "./definitions.json#/s2_default_parameters"
+    },
+    "snapshot": {
+      "$ref": "./definitions.json#/snapshot"
+    },
+    "resource": {
+      "$ref": "./definitions.json#/resource"
+    },
+    "snapshot_resource": {
+      "$ref": "./definitions.json#/snapshot_resource"
+    },
+    "keypair": {
+      "$ref": "./definitions.json#/keypair"
+    },
+    "rdb": {
+      "$ref": "./definitions.json#/rdb"
+    },
+    "rdb_parameter": {
+      "$ref": "./definitions.json#/rdb_parameter"
+    },
+    "rdb_private_ip": {
+      "$ref": "./definitions.json#/rdb_private_ip"
+    },
+    "rdb_parameters": {
+      "$ref": "./definitions.json#/rdb_parameters"
+    },
+    "rdb_file": {
+      "$ref": "./definitions.json#/rdb_file"
+    },
+    "file": {
+      "$ref": "./definitions.json#/file"
+    },
+    "cache": {
+      "$ref": "./definitions.json#/cache"
+    },
+    "cache_node": {
+      "$ref": "./definitions.json#/cache_node"
+    },
+    "cache_parameter_group": {
+      "$ref": "./definitions.json#/cache_parameter_group"
+    },
+    "cache_parameter": {
+      "$ref": "./definitions.json#/cache_parameter"
+    },
+    "cache_private_ip": {
+      "$ref": "./definitions.json#/cache_private_ip"
+    },
+    "mongo": {
+      "$ref": "./definitions.json#/mongo"
+    },
+    "mongo_node": {
+      "$ref": "./definitions.json#/mongo_node"
+    },
+    "mongo_parameter": {
+      "$ref": "./definitions.json#/mongo_parameter"
+    },
+    "mongo_private_ip": {
+      "$ref": "./definitions.json#/mongo_private_ip"
+    },
+    "meter": {
+      "$ref": "./definitions.json#/meter"
+    },
+    "data": {
+      "$ref": "./definitions.json#/data"
+    },
+    "job": {
+      "$ref": "./definitions.json#/job"
+    },
+    "tag": {
+      "$ref": "./definitions.json#/tag"
+    },
+    "resource_tag_pair": {
+      "$ref": "./definitions.json#/resource_tag_pair"
+    },
+    "resource_type_count": {
+      "$ref": "./definitions.json#/resource_type_count"
+    },
+    "zone": {
+      "$ref": "./definitions.json#/zone"
+    }
+  }
+}

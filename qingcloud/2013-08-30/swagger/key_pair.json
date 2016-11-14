@@ -1,0 +1,403 @@
+{
+  "DescribeKeyPairs": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "DescribeKeyPairs",
+      "summary": "DescribeKeyPairs",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/describe_key_pairs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "keypairs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_id": {
+                "type": "string"
+              },
+              "encrypt_method": {
+                "type": "string",
+                "enum": [
+                  "ssh-rsa",
+                  "ssh-dss"
+                ]
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "keypair_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/keypair"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateKeyPair": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "CreateKeyPair",
+      "summary": "CreateKeyPair",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/create_key_pairs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "keypair_name": {
+                "type": "string"
+              },
+              "mode": {
+                "type": "string",
+                "default": "system",
+                "enum": [
+                  "system",
+                  "user"
+                ]
+              },
+              "encrypt_method": {
+                "type": "string",
+                "default": "ssh-rsa",
+                "enum": [
+                  "ssh-rsa",
+                  "ssh-dss"
+                ]
+              },
+              "public_key": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "private_key": {
+                "type": "string"
+              },
+              "keypair_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteKeyPairs": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "DeleteKeyPairs",
+      "summary": "DeleteKeyPairs",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/delete_key_pairs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "keypairs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "keypairs"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "keypairs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AttachKeyPairs": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "AttachKeyPairs",
+      "summary": "AttachKeyPairs",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/attach_key_pairs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "keypairs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "keypairs",
+              "instances"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DetachKeyPairs": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "DetachKeyPairs",
+      "summary": "DetachKeyPairs",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/detach_key_pairs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "keypairs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "keypairs",
+              "instances"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyKeyPairAttributes": {
+    "get": {
+      "tags": [
+        "Keypair"
+      ],
+      "operationId": "ModifyKeyPairAttributes",
+      "summary": "ModifyKeyPairAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/keypair/modify_key_pair_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "keypair": {
+                "type": "string"
+              },
+              "keypair_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "keypair"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

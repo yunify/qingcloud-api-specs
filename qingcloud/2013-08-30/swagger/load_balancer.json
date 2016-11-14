@@ -1,0 +1,2038 @@
+{
+  "CreateLoadBalancer": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "CreateLoadBalancer",
+      "summary": "CreateLoadBalancer",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/create_loadbalancer.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ip": {
+                "type": "string"
+              },
+              "loadbalancer_type": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "loadbalancer_name": {
+                "type": "string"
+              },
+              "security_group": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "loadbalancer_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeLoadBalancers",
+      "summary": "DescribeLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "stopped",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteLoadBalancers",
+      "summary": "DeleteLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyLoadBalancerAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyLoadBalancerAttributes",
+      "summary": "ModifyLoadBalancerAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_loadbalancer_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer": {
+                "type": "string"
+              },
+              "loadbalancer_name": {
+                "type": "string"
+              },
+              "security_group": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "private_ip": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StartLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "StartLoadBalancers",
+      "summary": "StartLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/start_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StopLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "StopLoadBalancers",
+      "summary": "StopLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/stop_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "UpdateLoadBalancers",
+      "summary": "UpdateLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/update_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeLoadBalancers": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ResizeLoadBalancers",
+      "summary": "ResizeLoadBalancers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/resize_loadbalancers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "loadbalancer_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AssociateEipsToLoadBalancer": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "AssociateEipsToLoadBalancer",
+      "summary": "AssociateEipsToLoadBalancer",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/associate_eips_to_loadbalancer.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "loadbalancer": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "eips",
+              "loadbalancer"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DissociateEipsFromLoadBalancer": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DissociateEipsFromLoadBalancer",
+      "summary": "DissociateEipsFromLoadBalancer",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/dissociate_eips_from_loadbalancer.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "loadbalancer": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "eips",
+              "loadbalancer"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddLoadBalancerListeners": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "AddLoadBalancerListeners",
+      "summary": "AddLoadBalancerListeners",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/add_loadbalancer_listeners.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer": {
+                "type": "string"
+              },
+              "listeners": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_listener"
+                }
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_listeners": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeLoadBalancerListeners": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeLoadBalancerListeners",
+      "summary": "DescribeLoadBalancerListeners",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_loadbalancer_listeners.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_listeners": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "loadbalancer": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "loadbalancer_listener_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_listener"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteLoadBalancerListeners": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteLoadBalancerListeners",
+      "summary": "DeleteLoadBalancerListeners",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_loadbalancer_listeners.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_listeners": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_listeners"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_listeners": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyLoadBalancerListenerAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyLoadBalancerListenerAttributes",
+      "summary": "ModifyLoadBalancerListenerAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_loadbalancer_listener_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_listener": {
+                "type": "string"
+              },
+              "loadbalancer_listener_name": {
+                "type": "string"
+              },
+              "server_certificate_id": {
+                "type": "string"
+              },
+              "balance_mode": {
+                "type": "string"
+              },
+              "session_sticky": {
+                "type": "string"
+              },
+              "forwardfor": {
+                "type": "integer"
+              },
+              "healthy_check_method": {
+                "type": "string"
+              },
+              "healthy_check_option": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_listener"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddLoadBalancerBackends": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "AddLoadBalancerBackends",
+      "summary": "AddLoadBalancerBackends",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/add_loadbalancer_backends.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_listener": {
+                "type": "string"
+              },
+              "backends": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/add_loadbalancer_backends_backend"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_listener",
+              "backends"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_backends": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeLoadBalancerBackends": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeLoadBalancerBackends",
+      "summary": "DescribeLoadBalancerBackends",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_loadbalancer_backends.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_backends": {
+                "type": "string"
+              },
+              "loadbalancer_listener": {
+                "type": "string"
+              },
+              "loadbalancer": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_backend_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_backend"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteLoadBalancerBackends": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteLoadBalancerBackends",
+      "summary": "DeleteLoadBalancerBackends",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_loadbalancer_backends.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_backends": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_backends"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_backends": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyLoadBalancerBackendAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyLoadBalancerBackendAttributes",
+      "summary": "ModifyLoadBalancerBackendAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_loadbalancer_backend_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_backend": {
+                "type": "string"
+              },
+              "loadbalancer_backend_name": {
+                "type": "string"
+              },
+              "port": {
+                "type": "string"
+              },
+              "weight": {
+                "type": "string"
+              },
+              "disabled": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "loadbalancer_policy_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateLoadBalancerPolicy": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "CreateLoadBalancerPolicy",
+      "summary": "CreateLoadBalancerPolicy",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/create_loadbalancer_policy.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy_name": {
+                "type": "string"
+              },
+              "operator": {
+                "type": "string",
+                "default": "or",
+                "enum": [
+                  "or",
+                  "and"
+                ]
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policy_name"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeLoadBalancerPolicies": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeLoadBalancerPolicies",
+      "summary": "DescribeLoadBalancerPolicies",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_loadbalancer_policies.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_policy"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyLoadBalancerPolicyAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyLoadBalancerPolicyAttributes",
+      "summary": "ModifyLoadBalancerPolicyAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy": {
+                "type": "string"
+              },
+              "loadbalancer_policy_name": {
+                "type": "string"
+              },
+              "operator": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policy"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ApplyLoadBalancerPolicy": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ApplyLoadBalancerPolicy",
+      "summary": "ApplyLoadBalancerPolicy",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/apply_loadbalancer_policy.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policy"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteLoadBalancerPolicies": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteLoadBalancerPolicies",
+      "summary": "DeleteLoadBalancerPolicies",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_loadbalancer_policies.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policies"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_policies": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddLoadBalancerPolicyRules": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "AddLoadBalancerPolicyRules",
+      "summary": "AddLoadBalancerPolicyRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/add_loadbalancer_policy_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy": {
+                "type": "string"
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_policy_rule"
+                }
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeLoadBalancerPolicyRules": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeLoadBalancerPolicyRules",
+      "summary": "DescribeLoadBalancerPolicyRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_loadbalancer_policy_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "loadbalancer_policy": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_rule_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/loadbalancer_policy_rule"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyLoadBalancerPolicyRuleAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyLoadBalancerPolicyRuleAttributes",
+      "summary": "ModifyLoadBalancerPolicyRuleAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_loadbalancer_policy_rule_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy_rule": {
+                "type": "string"
+              },
+              "loadbalancer_policy_rule_name": {
+                "type": "string"
+              },
+              "val": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policy_rule"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "loadbalancer_policy_rule_id": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteLoadBalancerPolicyRules": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteLoadBalancerPolicyRules",
+      "summary": "DeleteLoadBalancerPolicyRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_loadbalancer_policy_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "loadbalancer_policy_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "loadbalancer_policy_rules"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "loadbalancer_policy_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateServerCertificate": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "CreateServerCertificate",
+      "summary": "CreateServerCertificate",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/create_server_certificate.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "server_certificate_name": {
+                "type": "string"
+              },
+              "certificate_content": {
+                "type": "string"
+              },
+              "private_key": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "certificate_content",
+              "private_key"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "server_certificate_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeServerCertificates": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DescribeServerCertificates",
+      "summary": "DescribeServerCertificates",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/describe_server_certificates.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "server_certificates": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "server_certificate_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/server_certificate"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyServerCertificateAttributes": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "ModifyServerCertificateAttributes",
+      "summary": "ModifyServerCertificateAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/modify_server_certificate_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "server_certificate": {
+                "type": "string"
+              },
+              "server_certificate_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "server_certificate"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteServerCertificates": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "DeleteServerCertificates",
+      "summary": "DeleteServerCertificates",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/lb/delete_server_certificates.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "server_certificates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "server_certificates"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "server_certificates": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetLoadBalancerMonitor": {
+    "get": {
+      "tags": [
+        "Load Balancer"
+      ],
+      "operationId": "GetLoadBalancerMonitor",
+      "summary": "GetLoadBalancerMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_loadbalancer_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string",
+                "default": "loadbalancer"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "traffic"
+                  ]
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

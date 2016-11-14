@@ -1,0 +1,880 @@
+{
+  "DescribeInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "DescribeInstances",
+      "summary": "DescribeInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/describe_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "image_id": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_type": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_class": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "running",
+                    "stopped",
+                    "suspended",
+                    "terminated",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "instance_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/instance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RunInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "RunInstances",
+      "summary": "RunInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/run_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "image_id": {
+                "type": "string"
+              },
+              "instance_type": {
+                "type": "string"
+              },
+              "cpu": {
+                "type": "integer",
+                "default": 1,
+                "enum": [
+                  1,
+                  2,
+                  4,
+                  8,
+                  16
+                ]
+              },
+              "memory": {
+                "type": "integer",
+                "default": 1024,
+                "enum": [
+                  1024,
+                  2048,
+                  4096,
+                  6144,
+                  8192,
+                  12288,
+                  16384,
+                  24576,
+                  32768
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              },
+              "instance_name": {
+                "type": "string"
+              },
+              "login_mode": {
+                "type": "string",
+                "enum": [
+                  "keypair",
+                  "passwd"
+                ]
+              },
+              "login_keypair": {
+                "type": "string"
+              },
+              "login_passwd": {
+                "type": "string"
+              },
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "security_group": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "hostname": {
+                "type": "string"
+              },
+              "need_newsid": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "need_userdata": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "userdata_type": {
+                "type": "string",
+                "enum": [
+                  "plain",
+                  "exec",
+                  "tar"
+                ]
+              },
+              "userdata_value": {
+                "type": "string"
+              },
+              "instance_class": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "userdata_path": {
+                "type": "string",
+                "default": "etc/qingcloud/userdata"
+              },
+              "userdata_file": {
+                "type": "string",
+                "default": "etc/rc.local"
+              },
+              "ui_type": {
+                "type": "string"
+              },
+              "billing_id": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "image_id",
+              "login_mode",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "TerminateInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "TerminateInstances",
+      "summary": "TerminateInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/terminate_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StartInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "StartInstances",
+      "summary": "StartInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/start_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StopInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "StopInstances",
+      "summary": "StopInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/stop_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "force": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RestartInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "RestartInstances",
+      "summary": "RestartInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/restart_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResetInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "ResetInstances",
+      "summary": "ResetInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/reset_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "login_mode": {
+                "type": "string",
+                "enum": [
+                  "keypair",
+                  "passwd"
+                ]
+              },
+              "login_keypair": {
+                "type": "string"
+              },
+              "login_passwd": {
+                "type": "string"
+              },
+              "need_newsid": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "login_mode",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeInstances": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "ResizeInstances",
+      "summary": "ResizeInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/resize_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_type": {
+                "type": "string"
+              },
+              "cpu": {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2,
+                  4,
+                  8,
+                  16
+                ]
+              },
+              "memory": {
+                "type": "integer",
+                "enum": [
+                  1024,
+                  2048,
+                  4096,
+                  6144,
+                  8192,
+                  12288,
+                  16384,
+                  24576,
+                  32768
+                ]
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyInstanceAttributes": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "ModifyInstanceAttributes",
+      "summary": "ModifyInstanceAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/modify_instance_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instance": {
+                "type": "string"
+              },
+              "instance_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instance",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeInstanceTypes": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "DescribeInstanceTypes",
+      "summary": "DescribeInstanceTypes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/describe_instance_types.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "instance_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "instance_type_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/instance_type"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetInstanceMonitor": {
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "GetInstanceMonitor",
+      "summary": "GetMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "DescribeVxnets": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "DescribeVxnets",
+      "summary": "DescribeVxnets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/describe_vxnets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnet_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "vxnet_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/vxnet"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateVxnets": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "CreateVxnets",
+      "summary": "CreateVxnets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/create_vxnets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet_name": {
+                "type": "string"
+              },
+              "vxnet_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet_type",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteVxnets": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "DeleteVxnets",
+      "summary": "DeleteVxnets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/delete_vxnets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnets",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "JoinVxnet": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "JoinVxnet",
+      "summary": "JoinVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/join_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet",
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "LeaveVxnet": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "LeaveVxnet",
+      "summary": "LeaveVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/leave_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet",
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyVxnetAttributes": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "ModifyVxnetAttributes",
+      "summary": "ModifyVxnetAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/modify_vxnet_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "vxnet_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeVxnetInstances": {
+    "get": {
+      "tags": [
+        "VxNet"
+      ],
+      "operationId": "DescribeVxnetInstances",
+      "summary": "DescribeVxnetInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vxnet/describe_vxnet_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance_type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "instance_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/instance"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

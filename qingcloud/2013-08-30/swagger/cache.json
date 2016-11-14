@@ -1,0 +1,1695 @@
+{
+  "DescribeCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DescribeCaches",
+      "summary": "DescribeCaches",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/describe_caches.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "deleted",
+                    "suspended",
+                    "ceased"
+                  ]
+                }
+              },
+              "cache_type": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "redis2.8.17",
+                    "redis3.0.5",
+                    "memcached1.4.13"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "cache_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateCache": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "CreateCache",
+      "summary": "CreateCache",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/create_cache.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "cache_size": {
+                "type": "integer"
+              },
+              "cache_type": {
+                "type": "string"
+              },
+              "node_count": {
+                "type": "integer",
+                "default": 1
+              },
+              "cache_name": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_private_ip"
+                }
+              },
+              "auto_backup_time": {
+                "type": "integer",
+                "default": -1
+              },
+              "cache_class": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "master_count": {
+                "type": "integer"
+              },
+              "replicate_count": {
+                "type": "integer"
+              },
+              "network_type": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "vxnet",
+              "cache_size",
+              "cache_type"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cache_id": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StopCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "StopCaches",
+      "summary": "StopCaches",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/stop_caches.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "caches"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StartCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "StartCaches",
+      "summary": "StartCaches",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/start_caches.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "caches"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RestartCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "RestartCaches",
+      "summary": "RestartCaches",
+      "description": "Only available for memcached.",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/restart_caches.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "caches"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DeleteCaches",
+      "summary": "DeleteCaches",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/delete_caches.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "caches"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeCaches": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ResizeCaches",
+      "summary": "ResizeCaches",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/resize_cache.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cache_size": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "caches",
+              "cache_size"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateCache": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "UpdateCache",
+      "summary": "UpdateCache",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/update_cache.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeCacheVxnet": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ChangeCacheVxnet",
+      "summary": "ChangeCacheVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/change_cache_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache",
+              "vxnet"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_id": {
+                "type": "string"
+              },
+              "vxnet_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyCacheAttributes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ModifyCacheAttributes",
+      "summary": "ModifyCacheAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/modify_cache_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "cache_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer",
+                "default": 99
+              }
+            },
+            "required": [
+              "zone",
+              "cache"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeCacheNodes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DescribeCacheNodes",
+      "summary": "DescribeCacheNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/describe_cache_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "deleted",
+                    "suspended",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "cache_node_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_node"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddCacheNodes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "AddCacheNodes",
+      "summary": "AddCacheNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/add_cache_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "node_count": {
+                "type": "integer"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache",
+              "node_count"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteCacheNodes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DeleteCacheNodes",
+      "summary": "DeleteCacheNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/delete_cache_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache",
+              "cache_nodes"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RestartCacheNodes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "RestartCacheNodes",
+      "summary": "RestartCacheNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/restart_cache_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache",
+              "cache_nodes"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyCacheNodeAttributes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ModifyCacheNodeAttributes",
+      "summary": "ModifyCacheNodeAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/modify_cache_node_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_node": {
+                "type": "string"
+              },
+              "cache_node_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "cache_node"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateCacheFromSnapshot": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "CreateCacheFromSnapshot",
+      "summary": "CreateCacheFromSnapshot",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/create_cache_from_snapshot.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "snapshot": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "node_count": {
+                "type": "integer"
+              },
+              "cache_type": {
+                "type": "string"
+              },
+              "cache_size": {
+                "type": "integer"
+              },
+              "cache_name": {
+                "type": "string"
+              },
+              "network_type": {
+                "type": "integer"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_private_ip"
+                }
+              },
+              "cache_class": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              }
+            },
+            "required": [
+              "zone",
+              "snapshot",
+              "vxnet"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cache_id": {
+                "type": "string"
+              },
+              "cache_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeCacheParameterGroups": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DescribeCacheParameterGroups",
+      "summary": "DescribeCacheParameterGroups",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/describe_cache_parameter_groups.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cache_type": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "cache_parameter_group_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_parameter_group"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateCacheParameterGroup": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "CreateCacheParameterGroup",
+      "summary": "CreateCacheParameterGroup",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/create_cache_parameter_group.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_type": {
+                "type": "string",
+                "enum": [
+                  "redis2.8.17",
+                  "memcached1.4.13"
+                ]
+              },
+              "cache_parameter_group_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "cache_type"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cache_parameter_group_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ApplyCacheParameterGroup": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ApplyCacheParameterGroup",
+      "summary": "ApplyCacheParameterGroup",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/apply_cache_parameter_group.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "caches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_group"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteCacheParameterGroups": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DeleteCacheParameterGroups",
+      "summary": "DeleteCacheParameterGroups",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/delete_cache_parameter_groups.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_groups"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "parameter_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyCacheParameterGroupAttributes": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ModifyCacheParameterGroupAttributes",
+      "summary": "ModifyCacheParameterGroupAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/modify_cache_parameter_group_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "cache_parameter_group_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_group"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cache_parameter_group_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeCacheParameters": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "DescribeCacheParameters",
+      "summary": "DescribeCacheParameters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/describe_cache_parameters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_group"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "cache_parameter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cache_parameter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateCacheParameters": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "UpdateCacheParameters",
+      "summary": "UpdateCacheParameters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/update_cache_parameters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "parameters": {
+                "$ref": "#/definitions/cache_parameter"
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_group",
+              "parameters"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResetCacheParameters": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "ResetCacheParameters",
+      "summary": "ResetCacheParameters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cache/reset_cache_parameters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "cache_parameter_group": {
+                "type": "string"
+              },
+              "cache_parameter_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "cache_parameter_group"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetCacheMonitor": {
+    "get": {
+      "tags": [
+        "Cache"
+      ],
+      "operationId": "GetCacheMonitor",
+      "summary": "GetCacheMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_cache_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "traffic",
+                    "stats"
+                  ]
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

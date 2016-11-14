@@ -1,0 +1,479 @@
+{
+  "DescribeVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "DescribeVolumes",
+      "summary": "DescribeVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/describe_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "volume_type": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "available",
+                    "in-use",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "volume_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/volume"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "CreateVolumes",
+      "summary": "CreateVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/create_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "size": {
+                "type": "integer",
+                "minimum": 10,
+                "maximum": 5000,
+                "multipleOf": 10
+              },
+              "volume_name": {
+                "type": "string"
+              },
+              "volume_type": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "size",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "DeleteVolumes",
+      "summary": "DeleteVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/delete_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "volumes",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AttachVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "AttachVolumes",
+      "summary": "AttachVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/attach_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "volumes",
+              "instance",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DetachVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "DetachVolumes",
+      "summary": "DetachVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/detach_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "instance": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "volumes",
+              "instance",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeVolumes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "ResizeVolumes",
+      "summary": "ResizeVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/resize_volumes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "size": {
+                "type": "integer",
+                "minimum": 10,
+                "maximum": 5000,
+                "multipleOf": 10
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "volumes",
+              "size",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyVolumeAttributes": {
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "ModifyVolumeAttributes",
+      "summary": "ModifyVolumeAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/volume/modify_volume_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volume": {
+                "type": "string"
+              },
+              "volume_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "volume",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

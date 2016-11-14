@@ -1,0 +1,1159 @@
+{
+  "CreateS2Server": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "CreateS2Server",
+      "summary": "CreateS2Server",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/create_s2_server.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "service_type": {
+                "type": "string"
+              },
+              "s2_server_name": {
+                "type": "string"
+              },
+              "s2_class": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "private_ip": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "s2_server": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DescribeS2Servers",
+      "summary": "DescribeS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/describe_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "poweroffed",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "s2_server_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/s2_server"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyS2Server": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "ModifyS2Server",
+      "summary": "ModifyS2Server",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/modify_s2_server.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_server": {
+                "type": "string"
+              },
+              "s2_server_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "s2_server"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "ResizeS2Servers",
+      "summary": "ResizeS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/resize_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_server": {
+                "type": "string"
+              },
+              "s2_server_type": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "s2_server",
+              "s2_server_type"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DeleteS2Servers",
+      "summary": "DeleteS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/delete_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "s2_servers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "PowerOnS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "PowerOnS2Servers",
+      "summary": "PowerOnS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/poweron_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "s2_servers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "PowerOffS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "PowerOffS2Servers",
+      "summary": "PowerOffS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/poweroff_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "s2_servers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateS2Servers": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "UpdateS2Servers",
+      "summary": "UpdateS2Servers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/update_s2_servers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "s2_servers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeS2ServerVxnet": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "ChangeS2ServerVxnet",
+      "summary": "ChangeS2ServerVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/change_s2_server_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_server": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ip": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "s2_server",
+              "vxnet"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateS2SharedTarget": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "CreateS2SharedTarget",
+      "summary": "CreateS2SharedTarget",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/create_s2_shared_target.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "s2_server_id": {
+                "type": "string"
+              },
+              "export_name": {
+                "type": "string"
+              },
+              "export_name_nfs": {
+                "type": "string"
+              },
+              "target_type": {
+                "type": "string",
+                "enum": [
+                  "ISCSI",
+                  "NFS"
+                ]
+              },
+              "s2_group": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "initiator_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "s2_server_id",
+              "export_name",
+              "target_type"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "s2_shared_target": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeS2SharedTargets": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DescribeS2SharedTargets",
+      "summary": "DescribeS2SharedTargets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/describe_s2_shared_targets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "s2_server_id": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "shared_target_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/s2_shared_target"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteS2SharedTargets": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DeleteS2SharedTargets",
+      "summary": "DeleteS2SharedTargets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/delete_s2_shared_targets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_targets"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "EnableS2SharedTargets": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "EnableS2SharedTargets",
+      "summary": "EnableS2SharedTargets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/enable_s2_shared_targets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_targets"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DisableS2SharedTargets": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DisableS2SharedTargets",
+      "summary": "DisableS2SharedTargets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/disable_s2_shared_targets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_targets"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyS2SharedTargets": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "ModifyS2SharedTargets",
+      "summary": "ModifyS2SharedTargets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/modify_s2_shared_target.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_targets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "operation": {
+                "type": "string"
+              },
+              "initiator_names": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parameters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_targets",
+              "operation",
+              "parameters"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AttachToS2SharedTarget": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "AttachToS2SharedTarget",
+      "summary": "AttachToS2SharedTarget",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/attach_to_s2_shared_target.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_target": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_target",
+              "volumes"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "shared_target": {
+                "$ref": "#/definitions/s2_shared_target"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DetachFromS2SharedTarget": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DetachFromS2SharedTarget",
+      "summary": "DetachFromS2SharedTarget",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/detach_from_s2_shared_target.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "shared_target": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "shared_target",
+              "volumes"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "shared_target": {
+                "$ref": "#/definitions/s2_shared_target"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeS2DefaultParameters": {
+    "get": {
+      "tags": [
+        "Shared Storage"
+      ],
+      "operationId": "DescribeS2DefaultParameters",
+      "summary": "DescribeS2DefaultParameters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/vsan/describle_s2_default_parameters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "service_type": {
+                "type": "string",
+                "enum": [
+                  "vsan"
+                ]
+              },
+              "target_type": {
+                "type": "string",
+                "enum": [
+                  "ISCSI"
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "s2_default_parameters_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/s2_default_parameters"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

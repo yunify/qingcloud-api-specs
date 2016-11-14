@@ -1,0 +1,1110 @@
+{
+  "DescribeSecurityGroups": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DescribeSecurityGroups",
+      "summary": "DescribeSecurityGroups",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/describe_security_groups.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "security_group_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/security_group"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateSecurityGroup": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "CreateSecurityGroup",
+      "summary": "CreateSecurityGroup",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/create_security_group.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_name": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteSecurityGroups": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DeleteSecurityGroups",
+      "summary": "DeleteSecurityGroups",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/delete_security_groups.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_groups",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_groups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ApplySecurityGroup": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "ApplySecurityGroup",
+      "summary": "ApplySecurityGroup",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/apply_security_group.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifySecurityGroupAttributes": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "ModifySecurityGroupAttributes",
+      "summary": "ModifySecurityGroupAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/modify_security_group_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "security_group_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeSecurityGroupRules": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DescribeSecurityGroupRules",
+      "summary": "DescribeSecurityGroupRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/describe_security_group_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "security_group_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "direction": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "security_group"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "security_group_rule_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/security_group_rule"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddSecurityGroupRules": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "AddSecurityGroupRules",
+      "summary": "AddSecurityGroupRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/add_security_group_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/security_group_rule"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "rules",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteSecurityGroupRules": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DeleteSecurityGroupRules",
+      "summary": "DeleteSecurityGroupRules",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/delete_security_group_rules.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group_rules",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifySecurityGroupRuleAttributes": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "ModifySecurityGroupRuleAttributes",
+      "summary": "ModifySecurityGroupRuleAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/modify_security_group_rule_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "security_group_rule": {
+                "type": "string"
+              },
+              "security_group_rule_name": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "integer"
+              },
+              "rule_action": {
+                "type": "string",
+                "enum": [
+                  "accept",
+                  "drop"
+                ]
+              },
+              "direction": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "protocol": {
+                "type": "string"
+              },
+              "val1": {
+                "type": "integer"
+              },
+              "val2": {
+                "type": "integer"
+              },
+              "val3": {
+                "type": "integer"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group_rule",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_rule_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateSecurityGroupSnapshot": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "CreateSecurityGroupSnapshot",
+      "summary": "CreateSecurityGroupSnapshot",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/create_security_group_snapshot.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_snapshot_id": {
+                "type": "string"
+              },
+              "security_group_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeSecurityGroupSnapshots": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DescribeSecurityGroupSnapshots",
+      "summary": "DescribeSecurityGroupSnapshots",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/describe_security_group_snapshots.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "security_group_snapshots": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reverse": {
+                "type": "integer",
+                "default": 1
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "security_group_snapshot_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/security_group_snapshot"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteSecurityGroupSnapshots": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DeleteSecurityGroupSnapshots",
+      "summary": "DeleteSecurityGroupSnapshots",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/delete_security_group_snapshots.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_snapshots": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group_snapshots",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_snapshots": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RollbackSecurityGroup": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "RollbackSecurityGroup",
+      "summary": "RollbackSecurityGroup",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/rollback_security_group.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group": {
+                "type": "string"
+              },
+              "security_group_snapshot": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group",
+              "security_group_snapshot",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_id": {
+                "type": "string"
+              },
+              "security_group_snapshot_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeSecurityGroupIPSets": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DescribeSecurityGroupIPSets",
+      "summary": "DescribeSecurityGroupIPSets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/describe_security_group_ipsets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_ipsets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "ipset_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "security_group_ipset_name": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "security_group_ipset_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/security_group_ipset"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateSecurityGroupIPSet": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "CreateSecurityGroupIPSet",
+      "summary": "CreateSecurityGroupIPSet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/create_security_group_ipset.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_ipset_name": {
+                "type": "string"
+              },
+              "ipset_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "val": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ipset_type",
+              "val",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_ipset_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteSecurityGroupIPSets": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "DeleteSecurityGroupIPSets",
+      "summary": "DeleteSecurityGroupIPSets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/delete_security_group_ipsets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_ipsets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group_ipsets",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_ipsets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifySecurityGroupIPSetAttributes": {
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "ModifySecurityGroupIPSetAttributes",
+      "summary": "ModifySecurityGroupIPSetAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/modify_security_group_ipset_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_ipset": {
+                "type": "string"
+              },
+              "security_group_ipset_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "val": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "security_group_ipset",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "security_group_ipset_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

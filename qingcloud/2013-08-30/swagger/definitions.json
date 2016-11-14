@@ -1,0 +1,2432 @@
+{
+  "instance": {
+    "type": "object",
+    "properties": {
+      "instance_id": {
+        "type": "string"
+      },
+      "instance_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "instance_type": {
+        "type": "string"
+      },
+      "vcpus_current": {
+        "type": "integer"
+      },
+      "memory_current": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "running",
+          "stopped",
+          "suspended",
+          "terminated",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "starting",
+          "stopping",
+          "restarting",
+          "suspending",
+          "resuming",
+          "terminating",
+          "recovering",
+          "resetting"
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "image_id": {
+        "type": "string"
+      },
+      "image": {
+        "$ref": "#/definitions/image"
+      },
+      "vxnets": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/vxnet"
+        }
+      },
+      "eip": {
+        "$ref": "#/definitions/eip"
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "dhcp_options": {
+        "$ref": "#/definitions/dhcp_option"
+      },
+      "security_group": {
+        "$ref": "#/definitions/security_group"
+      },
+      "volume_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "keypair_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "alarm_status": {
+        "type": "string"
+      },
+      "cpu_topology": {
+        "type": "string"
+      },
+      "dns_aliases": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/dns_alias"
+        }
+      },
+      "extra": {
+        "$ref": "#/definitions/extra"
+      },
+      "graphics_passwd": {
+        "type": "string"
+      },
+      "graphics_protocol": {
+        "type": "string"
+      },
+      "instance_class": {
+        "type": "integer"
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "volumes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/volume"
+        }
+      },
+      "device": {
+        "type": "string"
+      }
+    }
+  },
+  "instance_type": {
+    "type": "object",
+    "properties": {
+      "instance_type_id": {
+        "type": "string"
+      },
+      "instance_type_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "vcpus_current": {
+        "type": "integer"
+      },
+      "memory_current": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "available",
+          "deprecated"
+        ]
+      },
+      "zone_id": {
+        "type": "string"
+      }
+    }
+  },
+  "extra": {
+    "type": "object",
+    "properties": {
+      "block_bus": {
+        "type": "string"
+      },
+      "boot_dev": {
+        "type": "string"
+      },
+      "cpu_max": {
+        "type": "integer"
+      },
+      "cpu_model": {
+        "type": "string"
+      },
+      "features": {
+        "type": "integer"
+      },
+      "hypervisor": {
+        "type": "string"
+      },
+      "mem_max": {
+        "type": "integer"
+      },
+      "nic_mqueue": {
+        "type": "integer"
+      },
+      "no_limit": {
+        "type": "integer"
+      },
+      "no_restrict": {
+        "type": "integer"
+      },
+      "os_disk_size": {
+        "type": "integer"
+      },
+      "usb": {
+        "type": "integer"
+      },
+      "slots": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "eip": {
+    "type": "object",
+    "properties": {
+      "eip_id": {
+        "type": "string"
+      },
+      "eip_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "bandwidth": {
+        "type": "integer"
+      },
+      "billing_mode": {
+        "type": "string",
+        "enum": [
+          "bandwidth",
+          "traffic"
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "available",
+          "associated",
+          "suspended",
+          "released",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "associating",
+          "dissociating",
+          "suspending",
+          "resuming",
+          "releasing"
+        ]
+      },
+      "icp_codes": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "resource": {
+        "$ref": "#/definitions/eip_resource"
+      },
+      "eip_group": {
+        "$ref": "#/definitions/eip_group"
+      },
+      "eip_addr": {
+        "type": "string"
+      },
+      "alarm_status": {
+        "type": "string"
+      },
+      "associate_mode": {
+        "type": "integer"
+      },
+      "need_icp": {
+        "type": "integer"
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      }
+    }
+  },
+  "eip_resource": {
+    "type": "object",
+    "properties": {
+      "resource_name": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      },
+      "resource_id": {
+        "type": "string"
+      }
+    }
+  },
+  "eip_group": {
+    "type": "object",
+    "properties": {
+      "eip_group_id": {
+        "type": "string"
+      },
+      "eip_group_name": {
+        "type": "string"
+      }
+    }
+  },
+  "security_group": {
+    "type": "object",
+    "properties": {
+      "security_group_id": {
+        "type": "string"
+      },
+      "security_group_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "is_applied": {
+        "type": "integer"
+      },
+      "is_default": {
+        "type": "integer"
+      },
+      "resources": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/resource"
+        }
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "security_group_rule": {
+    "type": "object",
+    "properties": {
+      "security_group_id": {
+        "type": "string"
+      },
+      "security_group_rule_id": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "integer"
+      },
+      "protocol": {
+        "type": "string"
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "accept",
+          "drop"
+        ]
+      },
+      "val1": {
+        "type": "string"
+      },
+      "val2": {
+        "type": "string"
+      },
+      "val3": {
+        "type": "string"
+      }
+    }
+  },
+  "security_group_snapshot": {
+    "type": "object",
+    "properties": {
+      "group_id": {
+        "type": "string"
+      },
+      "security_group_snapshot_id": {
+        "type": "string"
+      },
+      "rules": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/security_group_rule"
+        }
+      }
+    }
+  },
+  "security_group_ipset": {
+    "type": "object",
+    "properties": {
+      "security_group_ipset_id": {
+        "type": "string"
+      },
+      "security_group_ipset_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "val": {
+        "type": "string"
+      },
+      "ipset_type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "volume": {
+    "type": "object",
+    "properties": {
+      "volume_id": {
+        "type": "string"
+      },
+      "volume_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "available",
+          "in-use",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "attaching",
+          "detaching",
+          "suspending",
+          "resuming",
+          "deleting",
+          "recovering"
+        ]
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "instance": {
+        "$ref": "#/definitions/instance"
+      },
+      "instances": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/instance"
+        }
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "lastest_snapshot_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "place_group_id": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "volume_type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "device": {
+        "type": "string"
+      }
+    }
+  },
+  "image": {
+    "type": "object",
+    "properties": {
+      "image_id": {
+        "type": "string"
+      },
+      "image_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "processor_type": {
+        "type": "string",
+        "enum": [
+          "64bit",
+          "32bit"
+        ]
+      },
+      "platform": {
+        "type": "string",
+        "enum": [
+          "linux",
+          "windows"
+        ]
+      },
+      "os_family": {
+        "type": "string"
+      },
+      "visibility": {
+        "type": "string",
+        "enum": [
+          "public",
+          "private"
+        ]
+      },
+      "provider": {
+        "type": "string",
+        "enum": [
+          "system",
+          "self"
+        ]
+      },
+      "owner": {
+        "type": "string"
+      },
+      "recommended_type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "available",
+          "deprecated",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "suspending",
+          "resuming",
+          "deleting",
+          "recovering"
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "feature": {
+        "type": "integer"
+      },
+      "default_passwd": {
+        "type": "string"
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "f_resetpwd": {
+        "type": "integer"
+      },
+      "ui_type": {
+        "type": "string"
+      },
+      "root_id": {
+        "type": "string"
+      },
+      "app_billing_id": {
+        "type": "string"
+      },
+      "default_user": {
+        "type": "string"
+      },
+      "hypervisor": {
+        "type": "string"
+      },
+      "billing_id": {
+        "type": "string"
+      },
+      "architecture": {
+        "type": "string"
+      },
+      "features": {
+        "type": "integer"
+      },
+      "instance_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "image_user": {
+    "type": "object",
+    "properties": {
+      "image_id": {
+        "type": "string"
+      },
+      "user": {
+        "$ref": "#/definitions/user"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "user": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      }
+    }
+  },
+  "vxnet": {
+    "type": "object",
+    "properties": {
+      "vxnet_id": {
+        "type": "string"
+      },
+      "vxnet_name": {
+        "type": "string"
+      },
+      "vxnet_type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "nic_id": {
+        "type": "string"
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": {
+        "type": "string"
+      },
+      "instance_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "router": {
+        "$ref": "#/definitions/router"
+      },
+      "available_ip_count": {
+        "type": "integer"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "vpc_router_id": {
+        "type": "string"
+      }
+    }
+  },
+  "dhcp_option": {
+    "type": "object",
+    "properties": {
+      "val2": {
+        "type": "string"
+      },
+      "router_static_id": {
+        "type": "string"
+      }
+    }
+  },
+  "router": {
+    "type": "object",
+    "properties": {
+      "router_id": {
+        "type": "string"
+      },
+      "router_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "router_type": {
+        "type": "integer",
+        "enum": [
+          1
+        ]
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "manager_ip": {
+        "type": "string"
+      },
+      "ip_network": {
+        "type": "string"
+      },
+      "dyn_ip_end": {
+        "type": "string"
+      },
+      "dyn_ip_start": {
+        "type": "string"
+      },
+      "mode": {
+        "type": "integer"
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "poweroffed",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "updating",
+          "suspending",
+          "resuming",
+          "poweroffing",
+          "poweroning",
+          "deleting"
+        ]
+      },
+      "security_group_id": {
+        "type": "string"
+      },
+      "eip": {
+        "$ref": "#/definitions/eip"
+      },
+      "vxnets": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/vxnet"
+        }
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "router_static": {
+    "type": "object",
+    "properties": {
+      "router_id": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "static_type": {
+        "type": "integer",
+        "enum": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "router_static_name": {
+        "type": "string"
+      },
+      "router_static_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "val3": {
+        "type": "string"
+      },
+      "val2": {
+        "type": "string"
+      },
+      "val1": {
+        "type": "string"
+      },
+      "val4": {
+        "type": "string"
+      }
+    }
+  },
+  "router_vxnet": {
+    "type": "object",
+    "properties": {
+      "router_id": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "manager_ip": {
+        "type": "string"
+      },
+      "ip_network": {
+        "type": "string"
+      },
+      "dyn_ip_start": {
+        "type": "string"
+      },
+      "dyn_ip_end": {
+        "type": "string"
+      },
+      "features": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "router_static_entry": {
+    "type": "object",
+    "properties": {
+      "router_id": {
+        "type": "string"
+      },
+      "router_static_entry_name": {
+        "type": "string"
+      },
+      "router_static_entry_id": {
+        "type": "string"
+      },
+      "val1": {
+        "type": "string"
+      },
+      "val2": {
+        "type": "string"
+      }
+    }
+  },
+  "loadbalancer": {
+    "type": "object",
+    "properties": {
+      "loadbalancer_id": {
+        "type": "string"
+      },
+      "loadbalancer_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "listeners": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/loadbalancer_listener"
+        }
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "stopped",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "starting",
+          "stopping",
+          "updating",
+          "suspending",
+          "resuming",
+          "deleting"
+        ]
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "eips": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/eip"
+        }
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "security_group_id": {
+        "type": "string"
+      }
+    }
+  },
+  "loadbalancer_listener": {
+    "type": "object",
+    "properties": {
+      "loadbalancer_listener_id": {
+        "type": "string"
+      },
+      "loadbalancer_listener_name": {
+        "type": "string"
+      },
+      "backends": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/loadbalancer_backend"
+        }
+      },
+      "balance_mode": {
+        "type": "string",
+        "enum": [
+          "roundrobin",
+          "leastconn",
+          "source"
+        ]
+      },
+      "session_sticky": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "forwardfor": {
+        "type": "integer"
+      },
+      "healthy_check_method": {
+        "type": "string"
+      },
+      "healthy_check_option": {
+        "type": "string",
+        "default": "10|5|2|5"
+      },
+      "listeners": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/loadbalancer_listener_listener"
+        }
+      }
+    }
+  },
+  "loadbalancer_listener_listener": {
+    "type": "object",
+    "properties": {
+      "listener_option": {
+        "type": "integer"
+      }
+    }
+  },
+  "loadbalancer_backend": {
+    "type": "object",
+    "properties": {
+      "loadbalancer_backend_id": {
+        "type": "string"
+      },
+      "loadbalancer_backend_name": {
+        "type": "string"
+      },
+      "loadbalancer_listener_id": {
+        "type": "string"
+      },
+      "loadbalancer_id": {
+        "type": "string"
+      },
+      "port": {
+        "type": "integer"
+      },
+      "weight": {
+        "type": "integer"
+      },
+      "resource_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "add_loadbalancer_backends_backend": {
+    "type": "object",
+    "properties": {
+      "resource_id": {
+        "type": "string"
+      },
+      "loadbalancer_backend_name": {
+        "type": "string"
+      },
+      "loadbalancer_policy_id": {
+        "type": "string"
+      },
+      "port": {
+        "type": "integer"
+      },
+      "weight": {
+        "type": "integer"
+      }
+    }
+  },
+  "loadbalancer_policy": {
+    "type": "object",
+    "properties": {
+      "loadbalancer_policy_id": {
+        "type": "string"
+      },
+      "loadbalancer_policy_name": {
+        "type": "string"
+      },
+      "loadbalancer_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "loadbalancer_policy_rule": {
+    "type": "object",
+    "properties": {
+      "loadbalancer_policy_rule_id": {
+        "type": "string"
+      },
+      "loadbalancer_policy_rule_name": {
+        "type": "string"
+      },
+      "rule_type": {
+        "type": "string"
+      },
+      "val": {
+        "type": "string"
+      }
+    }
+  },
+  "server_certificate": {
+    "type": "object",
+    "properties": {
+      "server_certificate_id": {
+        "type": "string"
+      },
+      "server_certificate_name": {
+        "type": "string"
+      },
+      "private_key": {
+        "type": "string"
+      },
+      "certificate_content": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "dns_alias": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "dns_alias_id": {
+        "type": "string"
+      },
+      "resource_id": {
+        "type": "string"
+      },
+      "dns_alias_name": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": {
+        "type": "string"
+      },
+      "domain_name": {
+        "type": "string"
+      }
+    }
+  },
+  "s2_server": {
+    "type": "object",
+    "properties": {
+      "s2_server_id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "service_type": {
+        "type": "string",
+        "enum": [
+          "vsan"
+        ]
+      },
+      "s2_server_type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "poweroffed",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "updating",
+          "suspending",
+          "resuming",
+          "poweroffing"
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
+      }
+    }
+  },
+  "s2_shared_target": {
+    "type": "object",
+    "properties": {
+      "s2_shared_target_id": {
+        "type": "string"
+      },
+      "s2_server_id": {
+        "type": "string"
+      },
+      "export_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "target_type": {
+        "type": "string",
+        "enum": [
+          "ISCSI",
+          "NFS"
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "s2_default_parameters": {
+    "type": "object",
+    "properties": {
+      "service_type": {
+        "type": "string"
+      },
+      "target_type": {
+        "type": "string"
+      },
+      "param_name": {
+        "type": "string"
+      },
+      "default_value": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      }
+    }
+  },
+  "snapshot": {
+    "type": "object",
+    "properties": {
+      "snapshot_id": {
+        "type": "string"
+      },
+      "snapshot_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "snapshot_type": {
+        "type": "string",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "available",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "suspending",
+          "resuming",
+          "deleting",
+          "recovering"
+        ]
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "snapshot_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_taken": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "is_head": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "root_id": {
+        "type": "string"
+      },
+      "parent_id": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "total_size": {
+        "type": "integer"
+      },
+      "total_count": {
+        "type": "integer"
+      },
+      "lastest_snapshot_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "head_chain": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "resource": {
+        "$ref": "#/definitions/resource"
+      },
+      "snapshot_resource": {
+        "$ref": "#/definitions/snapshot_resource"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "virtual_size": {
+        "type": "integer"
+      },
+      "visibility": {
+        "type": "string"
+      }
+    }
+  },
+  "resource": {
+    "type": "object",
+    "properties": {
+      "resource_id": {
+        "type": "string"
+      },
+      "resource_name": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    }
+  },
+  "snapshot_resource": {
+    "type": "object",
+    "properties": {
+      "os_family": {
+        "type": "string"
+      },
+      "platform": {
+        "type": "string"
+      }
+    }
+  },
+  "keypair": {
+    "type": "object",
+    "properties": {
+      "keypair_id": {
+        "type": "string"
+      },
+      "keypair_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "encrypt_method": {
+        "type": "string",
+        "enum": [
+          "ssh-rsa",
+          "ssh-dss"
+        ]
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
+      "pub_key": {
+        "type": "string"
+      },
+      "instance_ids": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "rdb": {
+    "type": "object",
+    "properties": {
+      "rdb_id": {
+        "type": "string"
+      },
+      "auto_backup_time": {
+        "type": "integer"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "alarm_status": {
+        "type": "string",
+        "enum": [
+          "ok",
+          "alarm",
+          "insufficient"
+        ]
+      },
+      "rdb_name": {
+        "type": "string"
+      },
+      "master_ip": {
+        "type": "string"
+      },
+      "status_time": {
+        "type": "string"
+      },
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "stopped",
+          "deleted",
+          "suspended",
+          "ceased"
+        ]
+      },
+      "description": {
+        "type": "string"
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "stopping",
+          "starting",
+          "deleting",
+          "backup-creating",
+          "temp-creating",
+          "configuring",
+          "switching",
+          "invalid-tackling",
+          "resizing",
+          "suspending",
+          "ceasing",
+          "instance-ceasing",
+          "vxnet-leaving",
+          "vxnet-joining"
+        ]
+      },
+      "storage_size": {
+        "type": "integer"
+      },
+      "rdb_type": {
+        "type": "integer"
+      },
+      "auto_minor_ver_upgrade": {
+        "type": "integer"
+      },
+      "lastest_snapshot_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "engine_version": {
+        "type": "string"
+      },
+      "rdb_engine": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      }
+    }
+  },
+  "rdb_parameter": {
+    "type": "object",
+    "properties": {
+      "is_static": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "min_value": {
+        "type": "integer"
+      },
+      "family": {
+        "type": "string"
+      },
+      "is_readonly": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "var_value": {
+        "type": "string"
+      },
+      "max_value": {
+        "type": "integer"
+      },
+      "opt_name": {
+        "type": "string"
+      },
+      "var_type": {
+        "type": "string"
+      },
+      "var_name": {
+        "type": "string"
+      },
+      "section_name": {
+        "type": "string"
+      }
+    }
+  },
+  "rdb_private_ip": {
+    "type": "object",
+    "properties": {
+      "master": {
+        "type": "string"
+      },
+      "topslave": {
+        "type": "string"
+      }
+    }
+  },
+  "rdb_parameters": {
+    "type": "object",
+    "properties": {
+      "bind_address": {
+        "type": "string"
+      },
+      "binlog_format": {
+        "type": "string"
+      },
+      "character_set_server": {
+        "type": "string"
+      },
+      "datadir": {
+        "type": "string"
+      },
+      "default_storage_engine": {
+        "type": "string"
+      },
+      "expire_logs_days": {
+        "type": "integer"
+      },
+      "innodb": {
+        "type": "string"
+      },
+      "innodb_buffer_pool_instances": {
+        "type": "integer"
+      },
+      "innodb_buffer_pool_size": {
+        "type": "string"
+      },
+      "innodb_file_per_table": {
+        "type": "integer"
+      },
+      "innodb_flush_log_at_trx_commit": {
+        "type": "integer"
+      },
+      "innodb_flush_method": {
+        "type": "string"
+      },
+      "innodb_io_capacity": {
+        "type": "integer"
+      },
+      "innodb_log_buffer_size": {
+        "type": "string"
+      },
+      "innodb_log_file_size": {
+        "type": "string"
+      },
+      "innodb_log_files_in_group": {
+        "type": "integer"
+      },
+      "innodb_max_dirty_pages_pct": {
+        "type": "integer"
+      },
+      "innodb_read_io_threads": {
+        "type": "integer"
+      },
+      "innodb_write_io_threads": {
+        "type": "integer"
+      },
+      "interactive_timeout": {
+        "type": "integer"
+      },
+      "key_buffer_size": {
+        "type": "string"
+      },
+      "log-bin-index": {
+        "type": "string"
+      },
+      "log_bin": {
+        "type": "string"
+      },
+      "log_error": {
+        "type": "string"
+      },
+      "log_queries_not_using_indexes": {
+        "type": "string"
+      },
+      "log_slave_updates": {
+        "type": "integer"
+      },
+      "long_query_time": {
+        "type": "integer"
+      },
+      "lower_case_table_names": {
+        "type": "integer"
+      },
+      "max_allowed_packet": {
+        "type": "string"
+      },
+      "max_connect_errors": {
+        "type": "integer"
+      },
+      "max_connections": {
+        "type": "integer"
+      },
+      "max_heap_table_size": {
+        "type": "string"
+      },
+      "open_files_limit": {
+        "type": "integer"
+      },
+      "port": {
+        "type": "integer"
+      },
+      "query_cache_size": {
+        "type": "integer"
+      },
+      "query_cache_type": {
+        "type": "integer"
+      },
+      "relay_log": {
+        "type": "string"
+      },
+      "relay_log_index": {
+        "type": "string"
+      },
+      "skip-slave-start": {
+        "type": "integer"
+      },
+      "skip_name_resolve": {
+        "type": "integer"
+      },
+      "slave_exec_mode": {
+        "type": "string"
+      },
+      "slave_net_timeout": {
+        "type": "integer"
+      },
+      "slow_query_log": {
+        "type": "integer"
+      },
+      "slow_query_log_file": {
+        "type": "string"
+      },
+      "sql_mode": {
+        "type": "string"
+      },
+      "sync_binlog": {
+        "type": "integer"
+      },
+      "sync_master_info": {
+        "type": "integer"
+      },
+      "sync_relay_log": {
+        "type": "integer"
+      },
+      "sync_relay_log_info": {
+        "type": "integer"
+      },
+      "table_open_cache": {
+        "type": "integer"
+      },
+      "thread_cache_size": {
+        "type": "integer"
+      },
+      "tmp_table_size": {
+        "type": "string"
+      },
+      "tmpdir": {
+        "type": "string"
+      },
+      "user": {
+        "type": "string"
+      },
+      "wait_timeout": {
+        "type": "integer"
+      }
+    }
+  },
+  "rdb_file": {
+    "type": "object",
+    "properties": {
+      "error_log": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/file"
+        }
+      },
+      "slow_log": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/file"
+        }
+      },
+      "binary_log": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/file"
+        }
+      }
+    }
+  },
+  "file": {
+    "type": "object",
+    "properties": {
+      "last_modify": {
+        "type": "string"
+      },
+      "file": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      }
+    }
+  },
+  "cache": {
+    "type": "object",
+    "properties": {
+      "cache_id": {
+        "type": "string"
+      },
+      "cache_name": {
+        "type": "string"
+      },
+      "cache_type": {
+        "type": "string",
+        "enum": [
+          "Redis2.8.17",
+          "Memcached1.4.13"
+        ]
+      },
+      "cache_port": {
+        "type": "integer"
+      },
+      "cache_size": {
+        "type": "integer"
+      },
+      "node_count": {
+        "type": "integer"
+      },
+      "description": {
+        "type": "string"
+      },
+      "nodes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/cache_node"
+        }
+      },
+      "auto_backup_time": {
+        "type": "integer"
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "stopped",
+          "suspended",
+          "deleted",
+          "ceased"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "starting",
+          "stopping",
+          "updating",
+          "suspending",
+          "resuming",
+          "deleting"
+        ]
+      },
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "security_group_id": {
+        "type": "string"
+      },
+      "cache_parameter_group_id": {
+        "type": "string"
+      },
+      "max_memory": {
+        "type": "integer"
+      },
+      "cache_class": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "cache_version": {
+        "type": "string"
+      },
+      "master_count": {
+        "type": "integer"
+      },
+      "replicate_count": {
+        "type": "integer"
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      }
+    }
+  },
+  "cache_node": {
+    "type": "object",
+    "properties": {
+      "cache_node_id": {
+        "type": "string"
+      },
+      "cache_id": {
+        "type": "string"
+      },
+      "cache_node_name": {
+        "type": "string"
+      },
+      "slaveof": {
+        "type": "string"
+      },
+      "cache_role": {
+        "type": "string",
+        "enum": [
+          "master",
+          "slave"
+        ]
+      },
+      "cache_type": {
+        "type": "string"
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "down",
+          "suspended"
+        ]
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "starting",
+          "stopping",
+          "updating",
+          "suspending",
+          "resuming",
+          "deleting"
+        ]
+      },
+      "alarm_status": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "cache_parameter_group": {
+    "type": "object",
+    "properties": {
+      "cache_parameter_group_id": {
+        "type": "string"
+      },
+      "cache_type": {
+        "type": "string"
+      },
+      "cache_parameter_group_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "is_applied": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "is_default": {
+        "type": "integer"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "resources": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/resource"
+        }
+      }
+    }
+  },
+  "cache_parameter": {
+    "type": "object",
+    "properties": {
+      "cache_parameter_type": {
+        "type": "string"
+      },
+      "cache_parameter_name": {
+        "type": "string"
+      },
+      "cache_parameter_value": {
+        "type": "string"
+      },
+      "value_range": {
+        "type": "string"
+      },
+      "is_readonly": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "cache_type": {
+        "type": "string"
+      },
+      "is_static": {
+        "type": "integer"
+      },
+      "opt_name": {
+        "type": "string"
+      },
+      "parameter_type": {
+        "type": "string"
+      },
+      "resource_version": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "cache_parameter_name",
+      "cache_parameter_value"
+    ]
+  },
+  "cache_private_ip": {
+    "type": "object",
+    "properties": {
+      "cache_role": {
+        "type": "string",
+        "enum": [
+          "master",
+          "slave"
+        ]
+      },
+      "private_ips": {
+        "type": "string"
+      },
+      "cache_node_id": {
+        "type": "string"
+      }
+    }
+  },
+  "mongo": {
+    "type": "object",
+    "properties": {
+      "mongo_id": {
+        "type": "string"
+      },
+      "auto_backup_time": {
+        "type": "integer"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "alarm_status": {
+        "type": "string",
+        "enum": [
+          "ok",
+          "alarm",
+          "insufficient"
+        ]
+      },
+      "mongo_name": {
+        "type": "string"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "active",
+          "stopped",
+          "deleted",
+          "suspended",
+          "ceased"
+        ]
+      },
+      "description": {
+        "type": "string"
+      },
+      "transition_status": {
+        "type": "string",
+        "enum": [
+          "creating",
+          "stopping",
+          "starting",
+          "deleting",
+          "resizing",
+          "suspending",
+          "vxnet-changing",
+          "snapshot-creating",
+          "instances-adding",
+          "instances-removing",
+          "pg-applying"
+        ]
+      },
+      "storage_size": {
+        "type": "integer"
+      },
+      "mongo_type": {
+        "type": "integer"
+      },
+      "auto_minor_ver_upgrade": {
+        "type": "integer"
+      },
+      "lastest_snapshot_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "mongo_version": {
+        "type": "string"
+      }
+    }
+  },
+  "mongo_node": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "mongo_id": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "ip": {
+        "type": "string"
+      },
+      "primary": {
+        "type": "integer"
+      },
+      "mongo_node_id": {
+        "type": "string"
+      }
+    }
+  },
+  "mongo_parameter": {
+    "type": "object",
+    "properties": {
+      "is_static": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "parameter_value": {
+        "type": "string"
+      },
+      "parameter_type": {
+        "type": "string",
+        "enum": [
+          "string",
+          "int",
+          "bool"
+        ]
+      },
+      "is_readonly": {
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "opt_name": {
+        "type": "string"
+      },
+      "parameter_name": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    }
+  },
+  "mongo_private_ip": {
+    "type": "object",
+    "properties": {
+      "replica": {
+        "type": "string"
+      },
+      "priority0": {
+        "type": "string"
+      }
+    }
+  },
+  "meter": {
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "string"
+      },
+      "data_set": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/data"
+        }
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "meter_id": {
+        "type": "string"
+      },
+      "sequence": {
+        "type": "integer"
+      }
+    }
+  },
+  "data": {
+    "type": "object",
+    "properties": {
+      "eip_id": {
+        "type": "string"
+      },
+      "data": {
+        "type": "string"
+      }
+    }
+  },
+  "job": {
+    "type": "object",
+    "properties": {
+      "job_id": {
+        "type": "string"
+      },
+      "job_action": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "resource_ids": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "working",
+          "failed",
+          "successful",
+          "done with failure"
+        ]
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "tag": {
+    "type": "object",
+    "properties": {
+      "tag_id": {
+        "type": "string"
+      },
+      "tag_name": {
+        "type": "string"
+      },
+      "tag_key": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "resource_count": {
+        "type": "integer"
+      },
+      "resource_type_count": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/resource_type_count"
+        }
+      },
+      "resource_tag_pairs": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/resource_tag_pair"
+        }
+      },
+      "color": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "owner": {
+        "type": "string"
+      }
+    }
+  },
+  "resource_tag_pair": {
+    "type": "object",
+    "properties": {
+      "tag_id": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      },
+      "resource_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "resource_type_count": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "type": "integer"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    }
+  },
+  "zone": {
+    "type": "object",
+    "properties": {
+      "zone_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "faulty",
+          "defunct"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "DescribeImages": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "DescribeImages",
+      "summary": "DescribeImages",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/describe_images.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "processor_type": {
+                "type": "string",
+                "enum": [
+                  "64bit",
+                  "32bit"
+                ]
+              },
+              "os_family": {
+                "type": "string"
+              },
+              "visibility": {
+                "type": "string",
+                "enum": [
+                  "public",
+                  "private"
+                ]
+              },
+              "provider": {
+                "type": "string",
+                "enum": [
+                  "system",
+                  "self"
+                ]
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "available",
+                    "deprecated",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "image_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/image"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CaptureInstance": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "CaptureInstance",
+      "summary": "CaptureInstance",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/capture_instance.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "instance": {
+                "type": "string"
+              },
+              "image_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "instance"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "image_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteImages": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "DeleteImages",
+      "summary": "DeleteImages",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/delete_images.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "images"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyImageAttributes": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "ModifyImageAttributes",
+      "summary": "ModifyImageAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/modify_image_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "image_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "image"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "image_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GrantImageToUsers": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "GrantImageToUsers",
+      "summary": "GrantImageToUsers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/grant-image-to-users.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "image",
+              "users"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RevokeImageFromUsers": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "RevokeImageFromUsers",
+      "summary": "RevokeImageFromUsers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/revoke-image-from-users.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "image",
+              "users"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeImageUsers": {
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "DescribeImageUsers",
+      "summary": "DescribeImageUsers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/describe-image-users.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "image_id": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone",
+              "image_id"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "image_user_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/image_user"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

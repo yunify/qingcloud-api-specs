@@ -1,0 +1,1042 @@
+{
+  "DescribeMongoNodes": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "DescribeMongoNodes",
+      "summary": "DescribeMongoNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/describe_mongo_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "mongo"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "mongo_node_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_node"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeMongoParameters": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "DescribeMongoParameters",
+      "summary": "DescribeMongoParameters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/describe_mongo_parameters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone",
+              "mongo"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "parameter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_parameter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeMongos": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "ResizeMongos",
+      "summary": "ResizeMongos",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/resize_mongos.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mongo_type": {
+                "type": "integer"
+              },
+              "storage_size": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "mongos"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateMongo": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "CreateMongo",
+      "summary": "CreateMongo",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/create_mongo.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "mongo_version": {
+                "type": "integer"
+              },
+              "resource_class": {
+                "type": "integer"
+              },
+              "mongo_type": {
+                "type": "integer"
+              },
+              "storage_size": {
+                "type": "integer"
+              },
+              "mongo_name": {
+                "type": "string"
+              },
+              "mongo_password": {
+                "type": "string"
+              },
+              "mongo_username": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "vxnet",
+              "mongo_type",
+              "storage_size"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StopMongos": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "StopMongos",
+      "summary": "StopMongos",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/stop_mongos.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "mongos"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StartMongos": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "StartMongos",
+      "summary": "StartMongos",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/start_mongos.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "mongos"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeMongos": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "DescribeMongos",
+      "summary": "DescribeMongos",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/describe_mongos.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "stopped",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "mongo_name": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "mongo_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteMongos": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "DeleteMongos",
+      "summary": "DeleteMongos",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/delete_mongos.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "mongos"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "mongos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateMongoFromSnapshot": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "CreateMongoFromSnapshot",
+      "summary": "CreateMongoFromSnapshot",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/create_mongo_from_snapshot.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "mongo_version": {
+                "type": "integer"
+              },
+              "resource_class": {
+                "type": "integer"
+              },
+              "mongo_type": {
+                "type": "integer"
+              },
+              "storage_size": {
+                "type": "integer"
+              },
+              "mongo_name": {
+                "type": "string"
+              },
+              "snapshot": {
+                "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeMongoVxnet": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "ChangeMongoVxnet",
+      "summary": "ChangeMongoVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/change_mongo_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "mongo",
+              "vxnet"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddMongoInstances": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "AddMongoInstances",
+      "summary": "AddMongoInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/add_mongo_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "node_count": {
+                "type": "integer"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo_node": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RemoveMongoInstances": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "RemoveMongoInstances",
+      "summary": "RemoveMongoInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/remove_mongo_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "mongo_instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "mongo",
+              "mongo_instances"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyMongoAttributes": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "ModifyMongoAttributes",
+      "summary": "ModifyMongoAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/modify_mongo_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "mongo_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone",
+              "mongo"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyMongoInstances": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "ModifyMongoInstances",
+      "summary": "ModifyMongoInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/mongo/modify_mongo_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/mongo_private_ip"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "mongo"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "mongo": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetMongoMonitor": {
+    "get": {
+      "tags": [
+        "Mongo"
+      ],
+      "operationId": "GetMongoMonitor",
+      "summary": "GetMongoMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_mongo_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "cpu",
+                    "memory",
+                    "disk-us-volume",
+                    "disk-iops-volume",
+                    "disk-volume"
+                  ]
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

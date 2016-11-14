@@ -1,0 +1,1329 @@
+{
+  "DescribeRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DescribeRouters",
+      "summary": "DescribeRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/describe_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "active",
+                    "poweroffed",
+                    "suspended",
+                    "deleted",
+                    "ceased"
+                  ]
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "router_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "CreateRouters",
+      "summary": "CreateRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/create_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_name": {
+                "type": "string"
+              },
+              "router_type": {
+                "type": "integer",
+                "default": 1,
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              },
+              "vpc_network": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              },
+              "security_group": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DeleteRouters",
+      "summary": "DeleteRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/delete_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "routers"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "UpdateRouters",
+      "summary": "UpdateRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/update_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "routers",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "PowerOffRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "PowerOffRouters",
+      "summary": "PowerOffRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/poweroff_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "routers",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "PowerOnRouters": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "PowerOnRouters",
+      "summary": "PowerOnRouters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/poweron_routers.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "routers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "routers",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "JoinRouter": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "JoinRouter",
+      "summary": "JoinRouter",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/join_router.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "router": {
+                "type": "string"
+              },
+              "ip_network": {
+                "type": "string"
+              },
+              "features": {
+                "type": "integer",
+                "default": 1,
+                "enum": [
+                  1
+                ]
+              },
+              "manager_ip": {
+                "type": "string"
+              },
+              "dyn_ip_start": {
+                "type": "string"
+              },
+              "dyn_ip_end": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnet",
+              "router",
+              "ip_network",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "vxnet_id": {
+                "type": "string"
+              },
+              "router_id": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "LeaveRouter": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "LeaveRouter",
+      "summary": "LeaveRouter",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/leave_router.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "router": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "vxnets",
+              "router",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "router_id": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyRouterAttributes": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "ModifyRouterAttributes",
+      "summary": "ModifyRouterAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/modify_router_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router": {
+                "type": "string"
+              },
+              "eip": {
+                "type": "string"
+              },
+              "security_group": {
+                "type": "string"
+              },
+              "router_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "features": {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2
+                ]
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "dyn_ip_start": {
+                "type": "string"
+              },
+              "dyn_ip_end": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeRouterStatics": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DescribeRouterStatics",
+      "summary": "DescribeRouterStatics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/describe_router_statics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_statics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "router": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "static_type": {
+                "type": "integer",
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8
+                ]
+              },
+              "verbose": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "router"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "router_static_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router_static"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddRouterStatics": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "AddRouterStatics",
+      "summary": "AddRouterStatics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/add_router_statics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              },
+              "statics": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router_static"
+                }
+              }
+            },
+            "required": [
+              "router",
+              "statics",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_statics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyRouterStaticAttributes": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "ModifyRouterStaticAttributes",
+      "summary": "ModifyRouterStaticAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/modify_router_static_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_static": {
+                "type": "string"
+              },
+              "router_static_name": {
+                "type": "string"
+              },
+              "val1": {
+                "type": "string"
+              },
+              "val2": {
+                "type": "string"
+              },
+              "val3": {
+                "type": "string"
+              },
+              "val4": {
+                "type": "string"
+              },
+              "val5": {
+                "type": "string"
+              },
+              "val6": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router_static",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_static_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteRouterStatics": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DeleteRouterStatics",
+      "summary": "DeleteRouterStatics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/delete_router_statics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_statics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router_statics",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_statics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeRouterVxnets": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DescribeRouterVxnets",
+      "summary": "DescribeRouterVxnets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/describe_router_vxnets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "router"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "router_vxnet_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router_vxnet"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddRouterStaticEntries": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "AddRouterStaticEntries",
+      "summary": "AddRouterStaticEntries",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/add_router_static_entries.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_static": {
+                "type": "string"
+              },
+              "entries": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router_static_entry"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "router_static"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_static_entries": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteRouterStaticEntries": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DeleteRouterStaticEntries",
+      "summary": "DeleteRouterStaticEntries",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/delete_router_static_entries.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_static_entries": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router_static_entries",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_static_entries": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyRouterStaticEntryAttributes": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "ModifyRouterStaticEntryAttributes",
+      "summary": "ModifyRouterStaticEntryAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/modify_router_static_entry_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_static_entry": {
+                "type": "string"
+              },
+              "router_static_entry_name": {
+                "type": "string"
+              },
+              "val1": {
+                "type": "string"
+              },
+              "val2": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router_static_entry",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_static_entry": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeRouterStaticEntries": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "DescribeRouterStaticEntries",
+      "summary": "DescribeRouterStaticEntries",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/describe_router_static_entries.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router_static_entry_id": {
+                "type": "string"
+              },
+              "router_static": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "router_static_entry_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/router_static_entry"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetRouterMonitor": {
+    "get": {
+      "tags": [
+        "Router"
+      ],
+      "operationId": "GetRouterMonitor",
+      "summary": "GetMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/monitor/get_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "zone",
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

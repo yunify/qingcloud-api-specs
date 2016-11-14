@@ -1,0 +1,355 @@
+{
+  "DescribeTags": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "DescribeTags",
+      "summary": "DescribeTags",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/describe_tags.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 0
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "tag_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/tag"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateTag": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "CreateTag",
+      "summary": "CreateTag",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/create_tag.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "tag_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "tag_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteTags": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "DeleteTags",
+      "summary": "DeleteTags",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/delete_tags.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "tags"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyTagAttributes": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "ModifyTagAttributes",
+      "summary": "ModifyTagAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/modify_tag_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "tag": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "tag_name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "tag"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AttachTags": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "AttachTags",
+      "summary": "AttachTags",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/attach_tags.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource_tag_pairs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/resource_tag_pair"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "resource_tag_pairs"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DetachTags": {
+    "get": {
+      "tags": [
+        "Tag"
+      ],
+      "operationId": "DetachTags",
+      "summary": "DetachTags",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/tag/detach_tags.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "resource_tag_pairs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/resource_tag_pair"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "resource_tag_pairs"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

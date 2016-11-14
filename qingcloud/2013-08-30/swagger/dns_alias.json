@@ -1,0 +1,244 @@
+{
+  "DescribeDNSAliases": {
+    "get": {
+      "tags": [
+        "DNS Alias"
+      ],
+      "operationId": "DescribeDNSAliases",
+      "summary": "DescribeDNSAliases",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/dns_alias/describe_dns_aliases.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "dns_aliases": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "dns_alias_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/dns_alias"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AssociateDNSAlias": {
+    "get": {
+      "tags": [
+        "DNS Alias"
+      ],
+      "operationId": "AssociateDNSAlias",
+      "summary": "AssociateDNSAlias",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/dns_alias/associate_dns_alias.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "prefix": {
+                "type": "string"
+              },
+              "resource": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone",
+              "prefix",
+              "resource"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "dns_alias_id": {
+                "type": "string"
+              },
+              "domain_name": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DissociateDNSAliases": {
+    "get": {
+      "tags": [
+        "DNS Alias"
+      ],
+      "operationId": "DissociateDNSAliases",
+      "summary": "DissociateDNSAliases",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/dns_alias/dissociate_dns_aliases.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "dns_aliases": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone",
+              "dns_aliases"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetDNSLabel": {
+    "get": {
+      "tags": [
+        "DNS Alias"
+      ],
+      "operationId": "GetDNSLabel",
+      "summary": "GetDNSLabel",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/dns_alias/get_dns_label.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "dns_label": {
+                "type": "string"
+              },
+              "domain_name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

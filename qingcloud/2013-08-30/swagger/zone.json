@@ -1,0 +1,64 @@
+{
+  "DescribeZones": {
+    "get": {
+      "operationId": "DescribeZones",
+      "summary": "DescribeZones",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/zone/describe_zones.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "active",
+                    "faulty",
+                    "defunct"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "zone_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/zone"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
