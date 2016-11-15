@@ -1,5 +1,10 @@
 {
   "DescribeSecurityGroups": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -42,14 +47,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -81,6 +80,11 @@
     }
   },
   "CreateSecurityGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -99,14 +103,8 @@
             "properties": {
               "security_group_name": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -132,6 +130,11 @@
     }
   },
   "DeleteSecurityGroups": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -153,14 +156,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_groups",
-              "zone"
+              "security_groups"
             ]
           }
         }
@@ -190,6 +189,11 @@
     }
   },
   "ApplySecurityGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -208,14 +212,10 @@
             "properties": {
               "security_group": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group",
-              "zone"
+              "security_group"
             ]
           }
         }
@@ -242,6 +242,11 @@
     }
   },
   "ModifySecurityGroupAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -266,14 +271,10 @@
               },
               "description": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group",
-              "zone"
+              "security_group"
             ]
           }
         }
@@ -300,6 +301,11 @@
     }
   },
   "DescribeSecurityGroupRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -340,13 +346,9 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "security_group"
             ]
           }
@@ -380,6 +382,11 @@
     }
   },
   "AddSecurityGroupRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -404,15 +411,11 @@
                 "items": {
                   "$ref": "#/definitions/security_group_rule"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "security_group",
-              "rules",
-              "zone"
+              "rules"
             ]
           }
         }
@@ -442,6 +445,11 @@
     }
   },
   "DeleteSecurityGroupRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -463,14 +471,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group_rules",
-              "zone"
+              "security_group_rules"
             ]
           }
         }
@@ -500,6 +504,11 @@
     }
   },
   "ModifySecurityGroupRuleAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -553,14 +562,10 @@
               },
               "val3": {
                 "type": "integer"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group_rule",
-              "zone"
+              "security_group_rule"
             ]
           }
         }
@@ -587,6 +592,11 @@
     }
   },
   "CreateSecurityGroupSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -608,14 +618,10 @@
               },
               "name": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group",
-              "zone"
+              "security_group"
             ]
           }
         }
@@ -645,6 +651,11 @@
     }
   },
   "DescribeSecurityGroupSnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -681,14 +692,10 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group",
-              "zone"
+              "security_group"
             ]
           }
         }
@@ -721,6 +728,11 @@
     }
   },
   "DeleteSecurityGroupSnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -742,14 +754,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group_snapshots",
-              "zone"
+              "security_group_snapshots"
             ]
           }
         }
@@ -779,6 +787,11 @@
     }
   },
   "RollbackSecurityGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -800,15 +813,11 @@
               },
               "security_group_snapshot": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "security_group",
-              "security_group_snapshot",
-              "zone"
+              "security_group_snapshot"
             ]
           }
         }
@@ -838,6 +847,11 @@
     }
   },
   "DescribeSecurityGroupIPSets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -887,14 +901,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -926,6 +934,11 @@
     }
   },
   "CreateSecurityGroupIPSet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -954,15 +967,11 @@
               },
               "val": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "ipset_type",
-              "val",
-              "zone"
+              "val"
             ]
           }
         }
@@ -989,6 +998,11 @@
     }
   },
   "DeleteSecurityGroupIPSets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -1010,14 +1024,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group_ipsets",
-              "zone"
+              "security_group_ipsets"
             ]
           }
         }
@@ -1047,6 +1057,11 @@
     }
   },
   "ModifySecurityGroupIPSetAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Security Group"
@@ -1074,14 +1089,10 @@
               },
               "val": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "security_group_ipset",
-              "zone"
+              "security_group_ipset"
             ]
           }
         }

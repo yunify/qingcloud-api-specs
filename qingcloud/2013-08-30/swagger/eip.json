@@ -1,5 +1,10 @@
 {
   "DescribeEips": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -58,14 +63,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -97,6 +96,11 @@
     }
   },
   "AllocateEips": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -138,14 +142,10 @@
                   0,
                   1
                 ]
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "bandwidth",
-              "zone"
+              "bandwidth"
             ]
           }
         }
@@ -175,6 +175,11 @@
     }
   },
   "ReleaseEips": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -196,14 +201,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "eips",
-              "zone"
+              "eips"
             ]
           }
         }
@@ -230,6 +231,11 @@
     }
   },
   "AssociateEip": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -251,15 +257,11 @@
               },
               "instance": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "eip",
-              "instance",
-              "zone"
+              "instance"
             ]
           }
         }
@@ -286,6 +288,11 @@
     }
   },
   "DissociateEips": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -307,14 +314,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "eips",
-              "zone"
+              "eips"
             ]
           }
         }
@@ -341,6 +344,11 @@
     }
   },
   "ChangeEipsBandwidth": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -365,15 +373,11 @@
               },
               "bandwidth": {
                 "type": "integer"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "eips",
-              "bandwidth",
-              "zone"
+              "bandwidth"
             ]
           }
         }
@@ -400,6 +404,11 @@
     }
   },
   "ChangeEipsBillingMode": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "EIP"
@@ -430,17 +439,13 @@
                   "traffic"
                 ]
               },
-              "zone": {
-                "type": "string"
-              },
               "eip_group": {
                 "type": "string"
               }
             },
             "required": [
               "eips",
-              "billing_mode",
-              "zone"
+              "billing_mode"
             ]
           }
         }
@@ -491,14 +496,10 @@
               },
               "description": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "eip",
-              "zone"
+              "eip"
             ]
           }
         }
@@ -541,9 +542,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -572,7 +570,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

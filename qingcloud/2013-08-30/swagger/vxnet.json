@@ -1,5 +1,10 @@
 {
   "DescribeVxnets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -53,14 +58,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -92,6 +91,11 @@
     }
   },
   "CreateVxnets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -121,14 +125,10 @@
               "count": {
                 "type": "integer",
                 "default": 1
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "vxnet_type",
-              "zone"
+              "vxnet_type"
             ]
           }
         }
@@ -158,6 +158,11 @@
     }
   },
   "DeleteVxnets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -179,14 +184,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "vxnets",
-              "zone"
+              "vxnets"
             ]
           }
         }
@@ -216,6 +217,11 @@
     }
   },
   "JoinVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -240,15 +246,11 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "vxnet",
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -275,6 +277,11 @@
     }
   },
   "LeaveVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -299,15 +306,11 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "vxnet",
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -334,6 +337,11 @@
     }
   },
   "ModifyVxnetAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -358,14 +366,10 @@
               },
               "description": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "vxnet",
-              "zone"
+              "vxnet"
             ]
           }
         }
@@ -389,6 +393,11 @@
     }
   },
   "DescribeVxnetInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "VxNet"
@@ -430,14 +439,10 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "vxnet",
-              "zone"
+              "vxnet"
             ]
           }
         }

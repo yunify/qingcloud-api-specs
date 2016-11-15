@@ -1,5 +1,10 @@
 {
   "DescribeInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -79,14 +84,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -118,6 +117,11 @@
     }
   },
   "RunInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -251,15 +255,11 @@
               },
               "billing_id": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "image_id",
-              "login_mode",
-              "zone"
+              "login_mode"
             ]
           }
         }
@@ -292,6 +292,11 @@
     }
   },
   "TerminateInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -313,14 +318,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -347,6 +348,11 @@
     }
   },
   "StartInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -368,14 +374,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -402,6 +404,11 @@
     }
   },
   "StopInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -431,14 +438,10 @@
                   0,
                   1
                 ]
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -465,6 +468,11 @@
     }
   },
   "RestartInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -486,14 +494,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "instances",
-              "zone"
+              "instances"
             ]
           }
         }
@@ -520,6 +524,11 @@
     }
   },
   "ResetInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -562,15 +571,11 @@
                   0,
                   1
                 ]
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "instances",
-              "login_mode",
-              "zone"
+              "login_mode"
             ]
           }
         }
@@ -597,6 +602,11 @@
     }
   },
   "ResizeInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -645,9 +655,6 @@
                   24576,
                   32768
                 ]
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
@@ -678,6 +685,11 @@
     }
   },
   "ModifyInstanceAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -702,14 +714,10 @@
               },
               "description": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "instance",
-              "zone"
+              "instance"
             ]
           }
         }
@@ -733,6 +741,11 @@
     }
   },
   "DescribeInstanceTypes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -749,19 +762,13 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "instance_types": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -793,6 +800,11 @@
     }
   },
   "GetInstanceMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Instance"
@@ -809,9 +821,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -840,7 +849,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

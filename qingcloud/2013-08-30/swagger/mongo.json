@@ -1,5 +1,10 @@
 {
   "DescribeMongoNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -36,7 +38,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo"
             ]
           }
@@ -70,6 +71,11 @@
     }
   },
   "DescribeMongoParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -86,9 +92,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -102,7 +105,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo"
             ]
           }
@@ -136,6 +138,11 @@
     }
   },
   "ResizeMongos": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -152,9 +159,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongos": {
                 "type": "array",
                 "items": {
@@ -169,7 +173,6 @@
               }
             },
             "required": [
-              "zone",
               "mongos"
             ]
           }
@@ -203,6 +206,11 @@
     }
   },
   "CreateMongo": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -219,9 +227,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -260,7 +265,6 @@
               }
             },
             "required": [
-              "zone",
               "vxnet",
               "mongo_type",
               "storage_size"
@@ -293,6 +297,11 @@
     }
   },
   "StopMongos": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -309,9 +318,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongos": {
                 "type": "array",
                 "items": {
@@ -320,7 +326,6 @@
               }
             },
             "required": [
-              "zone",
               "mongos"
             ]
           }
@@ -348,6 +353,11 @@
     }
   },
   "StartMongos": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -364,15 +374,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongos": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "mongos"
             ]
           }
@@ -400,6 +406,11 @@
     }
   },
   "DescribeMongos": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -416,9 +427,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongos": {
                 "type": "array",
                 "items": {
@@ -459,10 +467,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -494,6 +499,11 @@
     }
   },
   "DeleteMongos": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -510,9 +520,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongos": {
                 "type": "array",
                 "items": {
@@ -521,7 +528,6 @@
               }
             },
             "required": [
-              "zone",
               "mongos"
             ]
           }
@@ -555,6 +561,11 @@
     }
   },
   "CreateMongoFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -571,9 +582,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -598,10 +606,7 @@
               "auto_backup_time": {
                 "type": "integer"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -630,6 +635,11 @@
     }
   },
   "ChangeMongoVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -646,9 +656,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -663,7 +670,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo",
               "vxnet"
             ]
@@ -695,6 +701,11 @@
     }
   },
   "AddMongoInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -711,9 +722,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -726,10 +734,7 @@
                   "$ref": "#/definitions/mongo_private_ip"
                 }
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -764,6 +769,11 @@
     }
   },
   "RemoveMongoInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -780,9 +790,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -794,7 +801,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo",
               "mongo_instances"
             ]
@@ -826,6 +832,11 @@
     }
   },
   "ModifyMongoAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -842,9 +853,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -859,7 +867,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo"
             ]
           }
@@ -887,6 +894,11 @@
     }
   },
   "ModifyMongoInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -903,9 +915,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "mongo": {
                 "type": "string"
               },
@@ -917,7 +926,6 @@
               }
             },
             "required": [
-              "zone",
               "mongo"
             ]
           }
@@ -948,6 +956,11 @@
     }
   },
   "GetMongoMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Mongo"
@@ -964,9 +977,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -1002,7 +1012,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

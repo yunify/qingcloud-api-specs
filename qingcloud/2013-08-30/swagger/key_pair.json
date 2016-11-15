@@ -1,5 +1,10 @@
 {
   "DescribeKeyPairs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -52,14 +57,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -91,6 +90,11 @@
     }
   },
   "CreateKeyPair": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -128,14 +132,8 @@
               },
               "public_key": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -164,6 +162,11 @@
     }
   },
   "DeleteKeyPairs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -185,13 +188,9 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "keypairs"
             ]
           }
@@ -222,6 +221,11 @@
     }
   },
   "AttachKeyPairs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -238,9 +242,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "keypairs": {
                 "type": "array",
                 "items": {
@@ -255,7 +256,6 @@
               }
             },
             "required": [
-              "zone",
               "keypairs",
               "instances"
             ]
@@ -284,6 +284,11 @@
     }
   },
   "DetachKeyPairs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -300,9 +305,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "keypairs": {
                 "type": "array",
                 "items": {
@@ -317,7 +319,6 @@
               }
             },
             "required": [
-              "zone",
               "keypairs",
               "instances"
             ]
@@ -346,6 +347,11 @@
     }
   },
   "ModifyKeyPairAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Keypair"
@@ -362,9 +368,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "keypair": {
                 "type": "string"
               },
@@ -376,7 +379,6 @@
               }
             },
             "required": [
-              "zone",
               "keypair"
             ]
           }

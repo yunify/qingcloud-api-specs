@@ -1,5 +1,10 @@
 {
   "CreateS2Server": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -41,10 +43,7 @@
               "description": {
                 "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -73,6 +72,11 @@
     }
   },
   "DescribeS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -89,9 +93,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_servers": {
                 "type": "array",
                 "items": {
@@ -132,10 +133,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -167,6 +165,11 @@
     }
   },
   "ModifyS2Server": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -183,9 +186,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_server": {
                 "type": "string"
               },
@@ -197,7 +197,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_server"
             ]
           }
@@ -222,6 +221,11 @@
     }
   },
   "ResizeS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -238,9 +242,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_server": {
                 "type": "string"
               },
@@ -249,7 +250,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_server",
               "s2_server_type"
             ]
@@ -278,6 +278,11 @@
     }
   },
   "DeleteS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -294,9 +299,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_servers": {
                 "type": "array",
                 "items": {
@@ -305,7 +307,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_servers"
             ]
           }
@@ -339,6 +340,11 @@
     }
   },
   "PowerOnS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -355,9 +361,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_servers": {
                 "type": "array",
                 "items": {
@@ -366,7 +369,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_servers"
             ]
           }
@@ -394,6 +396,11 @@
     }
   },
   "PowerOffS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -410,15 +417,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_servers": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "s2_servers"
             ]
           }
@@ -446,6 +449,11 @@
     }
   },
   "UpdateS2Servers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -462,9 +470,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_servers": {
                 "type": "array",
                 "items": {
@@ -473,7 +478,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_servers"
             ]
           }
@@ -501,6 +505,11 @@
     }
   },
   "ChangeS2ServerVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -517,9 +526,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_server": {
                 "type": "string"
               },
@@ -531,7 +537,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_server",
               "vxnet"
             ]
@@ -560,6 +565,11 @@
     }
   },
   "CreateS2SharedTarget": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -576,9 +586,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "s2_server_id": {
                 "type": "string"
               },
@@ -615,7 +622,6 @@
               }
             },
             "required": [
-              "zone",
               "s2_server_id",
               "export_name",
               "target_type"
@@ -645,6 +651,11 @@
     }
   },
   "DescribeS2SharedTargets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -661,9 +672,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_targets": {
                 "type": "array",
                 "items": {
@@ -687,10 +695,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -722,6 +727,11 @@
     }
   },
   "DeleteS2SharedTargets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -738,9 +748,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_targets": {
                 "type": "array",
                 "items": {
@@ -749,7 +756,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_targets"
             ]
           }
@@ -780,6 +786,11 @@
     }
   },
   "EnableS2SharedTargets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -796,9 +807,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_targets": {
                 "type": "array",
                 "items": {
@@ -807,7 +815,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_targets"
             ]
           }
@@ -838,6 +845,11 @@
     }
   },
   "DisableS2SharedTargets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -854,9 +866,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_targets": {
                 "type": "array",
                 "items": {
@@ -865,7 +874,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_targets"
             ]
           }
@@ -896,6 +904,11 @@
     }
   },
   "ModifyS2SharedTargets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -912,9 +925,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_targets": {
                 "type": "array",
                 "items": {
@@ -938,7 +948,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_targets",
               "operation",
               "parameters"
@@ -965,6 +974,11 @@
     }
   },
   "AttachToS2SharedTarget": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -981,9 +995,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_target": {
                 "type": "string"
               },
@@ -995,7 +1006,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_target",
               "volumes"
             ]
@@ -1024,6 +1034,11 @@
     }
   },
   "DetachFromS2SharedTarget": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -1040,9 +1055,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "shared_target": {
                 "type": "string"
               },
@@ -1054,7 +1066,6 @@
               }
             },
             "required": [
-              "zone",
               "shared_target",
               "volumes"
             ]
@@ -1083,6 +1094,11 @@
     }
   },
   "DescribeS2DefaultParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Shared Storage"
@@ -1099,9 +1115,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "service_type": {
                 "type": "string",
                 "enum": [
@@ -1122,10 +1135,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],

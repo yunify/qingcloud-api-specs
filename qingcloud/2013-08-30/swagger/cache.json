@@ -1,5 +1,10 @@
 {
   "DescribeCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -69,10 +71,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -104,6 +103,11 @@
     }
   },
   "CreateCache": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -120,9 +124,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -170,7 +171,6 @@
               }
             },
             "required": [
-              "zone",
               "vxnet",
               "cache_size",
               "cache_type"
@@ -209,6 +209,11 @@
     }
   },
   "StopCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -225,9 +230,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -236,7 +238,6 @@
               }
             },
             "required": [
-              "zone",
               "caches"
             ]
           }
@@ -270,6 +271,11 @@
     }
   },
   "StartCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -286,9 +292,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -297,7 +300,6 @@
               }
             },
             "required": [
-              "zone",
               "caches"
             ]
           }
@@ -331,6 +333,11 @@
     }
   },
   "RestartCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -348,9 +355,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -359,7 +363,6 @@
               }
             },
             "required": [
-              "zone",
               "caches"
             ]
           }
@@ -387,6 +390,11 @@
     }
   },
   "DeleteCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -403,9 +411,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -414,7 +419,6 @@
               }
             },
             "required": [
-              "zone",
               "caches"
             ]
           }
@@ -448,6 +452,11 @@
     }
   },
   "ResizeCaches": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -464,9 +473,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "caches": {
                 "type": "array",
                 "items": {
@@ -478,7 +484,6 @@
               }
             },
             "required": [
-              "zone",
               "caches",
               "cache_size"
             ]
@@ -507,6 +512,11 @@
     }
   },
   "UpdateCache": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -523,9 +533,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -537,7 +544,6 @@
               }
             },
             "required": [
-              "zone",
               "cache"
             ]
           }
@@ -565,6 +571,11 @@
     }
   },
   "ChangeCacheVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -581,9 +592,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -598,7 +606,6 @@
               }
             },
             "required": [
-              "zone",
               "cache",
               "vxnet"
             ]
@@ -633,6 +640,11 @@
     }
   },
   "ModifyCacheAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -649,9 +661,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -667,7 +676,6 @@
               }
             },
             "required": [
-              "zone",
               "cache"
             ]
           }
@@ -692,6 +700,11 @@
     }
   },
   "DescribeCacheNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -708,9 +721,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -747,10 +757,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -782,6 +789,11 @@
     }
   },
   "AddCacheNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -798,9 +810,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -815,7 +824,6 @@
               }
             },
             "required": [
-              "zone",
               "cache",
               "node_count"
             ]
@@ -850,6 +858,11 @@
     }
   },
   "DeleteCacheNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -866,9 +879,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -880,7 +890,6 @@
               }
             },
             "required": [
-              "zone",
               "cache",
               "cache_nodes"
             ]
@@ -915,6 +924,11 @@
     }
   },
   "RestartCacheNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -931,9 +945,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache": {
                 "type": "string"
               },
@@ -945,7 +956,6 @@
               }
             },
             "required": [
-              "zone",
               "cache",
               "cache_nodes"
             ]
@@ -974,6 +984,11 @@
     }
   },
   "ModifyCacheNodeAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -990,9 +1005,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_node": {
                 "type": "string"
               },
@@ -1001,7 +1013,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_node"
             ]
           }
@@ -1026,6 +1037,11 @@
     }
   },
   "CreateCacheFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1042,9 +1058,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshot": {
                 "type": "string"
               },
@@ -1087,7 +1100,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshot",
               "vxnet"
             ]
@@ -1125,6 +1137,11 @@
     }
   },
   "DescribeCacheParameterGroups": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1141,9 +1158,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_groups": {
                 "type": "array",
                 "items": {
@@ -1167,10 +1181,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1202,6 +1213,11 @@
     }
   },
   "CreateCacheParameterGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1218,9 +1234,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_type": {
                 "type": "string",
                 "enum": [
@@ -1233,7 +1246,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_type"
             ]
           }
@@ -1261,6 +1273,11 @@
     }
   },
   "ApplyCacheParameterGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1277,9 +1294,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_group": {
                 "type": "string"
               },
@@ -1291,7 +1305,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_group"
             ]
           }
@@ -1319,6 +1332,11 @@
     }
   },
   "DeleteCacheParameterGroups": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1335,9 +1353,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_groups": {
                 "type": "array",
                 "items": {
@@ -1346,7 +1361,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_groups"
             ]
           }
@@ -1377,6 +1391,11 @@
     }
   },
   "ModifyCacheParameterGroupAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1393,9 +1412,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_group": {
                 "type": "string"
               },
@@ -1407,7 +1423,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_group"
             ]
           }
@@ -1435,6 +1450,11 @@
     }
   },
   "DescribeCacheParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1451,9 +1471,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_group": {
                 "type": "string"
               },
@@ -1462,7 +1479,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_group"
             ]
           }
@@ -1496,6 +1512,11 @@
     }
   },
   "UpdateCacheParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1512,9 +1533,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_group": {
                 "type": "string"
               },
@@ -1523,7 +1541,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_group",
               "parameters"
             ]
@@ -1549,6 +1566,11 @@
     }
   },
   "ResetCacheParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1565,9 +1587,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "cache_parameter_group": {
                 "type": "string"
               },
@@ -1579,7 +1598,6 @@
               }
             },
             "required": [
-              "zone",
               "cache_parameter_group"
             ]
           }
@@ -1604,6 +1622,11 @@
     }
   },
   "GetCacheMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Cache"
@@ -1620,9 +1643,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -1655,7 +1675,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

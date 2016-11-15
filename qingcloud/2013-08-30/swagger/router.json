@@ -1,5 +1,10 @@
 {
   "DescribeRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -60,14 +65,8 @@
               },
               "limit": {
                 "type": "integer"
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -99,6 +98,11 @@
     }
   },
   "CreateRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -137,14 +141,8 @@
               },
               "security_group": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -176,6 +174,11 @@
     }
   },
   "DeleteRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -197,13 +200,9 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "routers"
             ]
           }
@@ -237,6 +236,11 @@
     }
   },
   "UpdateRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -258,14 +262,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "routers",
-              "zone"
+              "routers"
             ]
           }
         }
@@ -292,6 +292,11 @@
     }
   },
   "PowerOffRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -313,14 +318,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "routers",
-              "zone"
+              "routers"
             ]
           }
         }
@@ -347,6 +348,11 @@
     }
   },
   "PowerOnRouters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -368,14 +374,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "routers",
-              "zone"
+              "routers"
             ]
           }
         }
@@ -402,6 +404,11 @@
     }
   },
   "JoinRouter": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -442,16 +449,12 @@
               },
               "dyn_ip_end": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "vxnet",
               "router",
-              "ip_network",
-              "zone"
+              "ip_network"
             ]
           }
         }
@@ -484,6 +487,11 @@
     }
   },
   "LeaveRouter": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -508,15 +516,11 @@
               },
               "router": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "vxnets",
-              "router",
-              "zone"
+              "router"
             ]
           }
         }
@@ -552,6 +556,11 @@
     }
   },
   "ModifyRouterAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -598,14 +607,10 @@
               },
               "dyn_ip_end": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "router",
-              "zone"
+              "router"
             ]
           }
         }
@@ -629,6 +634,11 @@
     }
   },
   "DescribeRouterStatics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -684,13 +694,9 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "router"
             ]
           }
@@ -724,6 +730,11 @@
     }
   },
   "AddRouterStatics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -746,9 +757,6 @@
               "vxnet": {
                 "type": "string"
               },
-              "zone": {
-                "type": "string"
-              },
               "statics": {
                 "type": "array",
                 "items": {
@@ -758,8 +766,7 @@
             },
             "required": [
               "router",
-              "statics",
-              "zone"
+              "statics"
             ]
           }
         }
@@ -789,6 +796,11 @@
     }
   },
   "ModifyRouterStaticAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -828,14 +840,10 @@
               },
               "val6": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "router_static",
-              "zone"
+              "router_static"
             ]
           }
         }
@@ -862,6 +870,11 @@
     }
   },
   "DeleteRouterStatics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -883,14 +896,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "router_statics",
-              "zone"
+              "router_statics"
             ]
           }
         }
@@ -920,6 +929,11 @@
     }
   },
   "DescribeRouterVxnets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -956,13 +970,9 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "router"
             ]
           }
@@ -996,6 +1006,11 @@
     }
   },
   "AddRouterStaticEntries": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -1020,13 +1035,9 @@
                 "items": {
                   "$ref": "#/definitions/router_static_entry"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "zone",
               "router_static"
             ]
           }
@@ -1057,6 +1068,11 @@
     }
   },
   "DeleteRouterStaticEntries": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -1078,14 +1094,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "router_static_entries",
-              "zone"
+              "router_static_entries"
             ]
           }
         }
@@ -1115,6 +1127,11 @@
     }
   },
   "ModifyRouterStaticEntryAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -1142,14 +1159,10 @@
               },
               "val2": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "router_static_entry",
-              "zone"
+              "router_static_entry"
             ]
           }
         }
@@ -1176,6 +1189,11 @@
     }
   },
   "DescribeRouterStaticEntries": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -1203,14 +1221,8 @@
               },
               "limit": {
                 "type": "integer"
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1242,6 +1254,11 @@
     }
   },
   "GetRouterMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Router"
@@ -1258,9 +1275,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -1289,7 +1303,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

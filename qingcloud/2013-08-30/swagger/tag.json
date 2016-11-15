@@ -1,5 +1,10 @@
 {
   "DescribeTags": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "tags": {
                 "type": "array",
                 "items": {
@@ -44,10 +46,7 @@
                 "type": "integer",
                 "default": 0
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -79,6 +78,11 @@
     }
   },
   "CreateTag": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -95,19 +99,13 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "color": {
                 "type": "string"
               },
               "tag_name": {
                 "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -133,6 +131,11 @@
     }
   },
   "DeleteTags": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -149,9 +152,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "tags": {
                 "type": "array",
                 "items": {
@@ -160,7 +160,6 @@
               }
             },
             "required": [
-              "zone",
               "tags"
             ]
           }
@@ -191,6 +190,11 @@
     }
   },
   "ModifyTagAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -207,9 +211,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "tag": {
                 "type": "string"
               },
@@ -224,7 +225,6 @@
               }
             },
             "required": [
-              "zone",
               "tag"
             ]
           }
@@ -249,6 +249,11 @@
     }
   },
   "AttachTags": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -265,9 +270,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource_tag_pairs": {
                 "type": "array",
                 "items": {
@@ -276,7 +278,6 @@
               }
             },
             "required": [
-              "zone",
               "resource_tag_pairs"
             ]
           }
@@ -301,6 +302,11 @@
     }
   },
   "DetachTags": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Tag"
@@ -317,9 +323,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource_tag_pairs": {
                 "type": "array",
                 "items": {
@@ -328,7 +331,6 @@
               }
             },
             "required": [
-              "zone",
               "resource_tag_pairs"
             ]
           }

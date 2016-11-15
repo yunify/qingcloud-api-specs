@@ -1,0 +1,9 @@
+{
+  "zone": {
+    "name": "zone",
+    "description": "QingCloud Zone ID",
+    "type": "string",
+    "required": true,
+    "in": "query"
+  }
+}

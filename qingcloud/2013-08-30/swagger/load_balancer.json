@@ -1,5 +1,10 @@
 {
   "CreateLoadBalancer": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "eips": {
                 "type": "array",
                 "items": {
@@ -49,10 +51,7 @@
               "security_group": {
                 "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -81,6 +80,11 @@
     }
   },
   "DescribeLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -97,9 +101,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "array",
                 "items": {
@@ -141,10 +142,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -173,6 +171,11 @@
     }
   },
   "DeleteLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -189,9 +192,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "array",
                 "items": {
@@ -200,7 +200,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancers"
             ]
           }
@@ -234,6 +233,11 @@
     }
   },
   "ModifyLoadBalancerAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -250,9 +254,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer": {
                 "type": "string"
               },
@@ -270,7 +271,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer"
             ]
           }
@@ -295,6 +295,11 @@
     }
   },
   "StartLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -311,9 +316,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "array",
                 "items": {
@@ -322,7 +324,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancers"
             ]
           }
@@ -350,6 +351,11 @@
     }
   },
   "StopLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -366,15 +372,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "loadbalancers"
             ]
           }
@@ -402,6 +404,11 @@
     }
   },
   "UpdateLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -418,15 +425,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "loadbalancers"
             ]
           }
@@ -454,6 +457,11 @@
     }
   },
   "ResizeLoadBalancers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -470,9 +478,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancers": {
                 "type": "array",
                 "items": {
@@ -490,10 +495,7 @@
                   5
                 ]
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -519,6 +521,11 @@
     }
   },
   "AssociateEipsToLoadBalancer": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -535,9 +542,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "eips": {
                 "type": "array",
                 "items": {
@@ -549,7 +553,6 @@
               }
             },
             "required": [
-              "zone",
               "eips",
               "loadbalancer"
             ]
@@ -578,6 +581,11 @@
     }
   },
   "DissociateEipsFromLoadBalancer": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -594,9 +602,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "eips": {
                 "type": "array",
                 "items": {
@@ -608,7 +613,6 @@
               }
             },
             "required": [
-              "zone",
               "eips",
               "loadbalancer"
             ]
@@ -637,6 +641,11 @@
     }
   },
   "AddLoadBalancerListeners": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -653,9 +662,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer": {
                 "type": "string"
               },
@@ -665,10 +671,7 @@
                   "$ref": "#/definitions/loadbalancer_listener"
                 }
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -697,6 +700,11 @@
     }
   },
   "DescribeLoadBalancerListeners": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -713,9 +721,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_listeners": {
                 "type": "array",
                 "items": {
@@ -736,10 +741,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -771,6 +773,11 @@
     }
   },
   "DeleteLoadBalancerListeners": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -787,9 +794,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_listeners": {
                 "type": "array",
                 "items": {
@@ -798,7 +802,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_listeners"
             ]
           }
@@ -829,6 +832,11 @@
     }
   },
   "ModifyLoadBalancerListenerAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -845,9 +853,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_listener": {
                 "type": "string"
               },
@@ -874,7 +879,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_listener"
             ]
           }
@@ -899,6 +903,11 @@
     }
   },
   "AddLoadBalancerBackends": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -915,9 +924,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_listener": {
                 "type": "string"
               },
@@ -929,7 +935,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_listener",
               "backends"
             ]
@@ -961,6 +966,11 @@
     }
   },
   "DescribeLoadBalancerBackends": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -977,9 +987,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_backends": {
                 "type": "string"
               },
@@ -1000,10 +1007,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1032,6 +1036,11 @@
     }
   },
   "DeleteLoadBalancerBackends": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1048,9 +1057,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_backends": {
                 "type": "array",
                 "items": {
@@ -1059,7 +1065,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_backends"
             ]
           }
@@ -1087,6 +1092,11 @@
     }
   },
   "ModifyLoadBalancerBackendAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1103,9 +1113,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_backend": {
                 "type": "string"
               },
@@ -1128,10 +1135,7 @@
               "loadbalancer_policy_id": {
                 "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1154,6 +1158,11 @@
     }
   },
   "CreateLoadBalancerPolicy": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1170,9 +1179,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy_name": {
                 "type": "string"
               },
@@ -1186,7 +1192,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policy_name"
             ]
           }
@@ -1214,6 +1219,11 @@
     }
   },
   "DescribeLoadBalancerPolicies": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1230,9 +1240,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policies": {
                 "type": "array",
                 "items": {
@@ -1250,10 +1257,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1285,6 +1289,11 @@
     }
   },
   "ModifyLoadBalancerPolicyAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1301,9 +1310,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy": {
                 "type": "string"
               },
@@ -1315,7 +1321,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policy"
             ]
           }
@@ -1343,6 +1348,11 @@
     }
   },
   "ApplyLoadBalancerPolicy": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1359,15 +1369,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policy"
             ]
           }
@@ -1395,6 +1401,11 @@
     }
   },
   "DeleteLoadBalancerPolicies": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1411,9 +1422,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policies": {
                 "type": "array",
                 "items": {
@@ -1422,7 +1430,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policies"
             ]
           }
@@ -1453,6 +1460,11 @@
     }
   },
   "AddLoadBalancerPolicyRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1469,9 +1481,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy": {
                 "type": "string"
               },
@@ -1481,10 +1490,7 @@
                   "$ref": "#/definitions/loadbalancer_policy_rule"
                 }
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1513,6 +1519,11 @@
     }
   },
   "DescribeLoadBalancerPolicyRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1529,9 +1540,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy_rules": {
                 "type": "array",
                 "items": {
@@ -1549,10 +1557,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1584,6 +1589,11 @@
     }
   },
   "ModifyLoadBalancerPolicyRuleAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1600,9 +1610,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy_rule": {
                 "type": "string"
               },
@@ -1614,7 +1621,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policy_rule"
             ]
           }
@@ -1642,6 +1648,11 @@
     }
   },
   "DeleteLoadBalancerPolicyRules": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1658,9 +1669,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "loadbalancer_policy_rules": {
                 "type": "array",
                 "items": {
@@ -1669,7 +1677,6 @@
               }
             },
             "required": [
-              "zone",
               "loadbalancer_policy_rules"
             ]
           }
@@ -1700,6 +1707,11 @@
     }
   },
   "CreateServerCertificate": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1716,9 +1728,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "server_certificate_name": {
                 "type": "string"
               },
@@ -1730,7 +1739,6 @@
               }
             },
             "required": [
-              "zone",
               "certificate_content",
               "private_key"
             ]
@@ -1759,6 +1767,11 @@
     }
   },
   "DescribeServerCertificates": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1775,9 +1788,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "server_certificates": {
                 "type": "string"
               },
@@ -1796,10 +1806,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -1831,6 +1838,11 @@
     }
   },
   "ModifyServerCertificateAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1847,9 +1859,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "server_certificate": {
                 "type": "string"
               },
@@ -1861,7 +1870,6 @@
               }
             },
             "required": [
-              "zone",
               "server_certificate"
             ]
           }
@@ -1886,6 +1894,11 @@
     }
   },
   "DeleteServerCertificates": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1902,9 +1915,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "server_certificates": {
                 "type": "array",
                 "items": {
@@ -1913,7 +1923,6 @@
               }
             },
             "required": [
-              "zone",
               "server_certificates"
             ]
           }
@@ -1944,6 +1953,11 @@
     }
   },
   "GetLoadBalancerMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Load Balancer"
@@ -1960,9 +1974,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource_type": {
                 "type": "string",
                 "default": "loadbalancer"
@@ -1998,7 +2009,6 @@
               }
             },
             "required": [
-              "zone",
               "resource",
               "meters",
               "step",

@@ -1,5 +1,10 @@
 {
   "DescribeDNSAliases": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "DNS Alias"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "dns_aliases": {
                 "type": "array",
                 "items": {
@@ -39,10 +41,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -74,6 +73,11 @@
     }
   },
   "AssociateDNSAlias": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "DNS Alias"
@@ -90,9 +94,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "prefix": {
                 "type": "string"
               },
@@ -101,7 +102,6 @@
               }
             },
             "required": [
-              "zone",
               "prefix",
               "resource"
             ]
@@ -136,6 +136,11 @@
     }
   },
   "DissociateDNSAliases": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "DNS Alias"
@@ -152,9 +157,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "dns_aliases": {
                 "type": "array",
                 "items": {
@@ -163,7 +165,6 @@
               }
             },
             "required": [
-              "zone",
               "dns_aliases"
             ]
           }
@@ -191,6 +192,11 @@
     }
   },
   "GetDNSLabel": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "DNS Alias"
@@ -200,23 +206,6 @@
       "externalDocs": {
         "url": "https://docs.qingcloud.com/api/dns_alias/get_dns_label.html"
       },
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "zone": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "zone"
-            ]
-          }
-        }
-      ],
       "responses": {
         "200": {
           "description": "OK",

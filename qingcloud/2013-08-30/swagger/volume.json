@@ -1,5 +1,10 @@
 {
   "DescribeVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -70,14 +75,8 @@
               "limit": {
                 "type": "integer",
                 "default": 20
-              },
-              "zone": {
-                "type": "string"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -109,6 +108,11 @@
     }
   },
   "CreateVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -147,14 +151,10 @@
               "count": {
                 "type": "integer",
                 "default": 1
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "size",
-              "zone"
+              "size"
             ]
           }
         }
@@ -187,6 +187,11 @@
     }
   },
   "DeleteVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -208,14 +213,10 @@
                 "items": {
                   "type": "string"
                 }
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "volumes",
-              "zone"
+              "volumes"
             ]
           }
         }
@@ -242,6 +243,11 @@
     }
   },
   "AttachVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -266,15 +272,11 @@
               },
               "instance": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "volumes",
-              "instance",
-              "zone"
+              "instance"
             ]
           }
         }
@@ -301,6 +303,11 @@
     }
   },
   "DetachVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -325,15 +332,11 @@
               },
               "instance": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "volumes",
-              "instance",
-              "zone"
+              "instance"
             ]
           }
         }
@@ -360,6 +363,11 @@
     }
   },
   "ResizeVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -387,15 +395,11 @@
                 "minimum": 10,
                 "maximum": 5000,
                 "multipleOf": 10
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
               "volumes",
-              "size",
-              "zone"
+              "size"
             ]
           }
         }
@@ -422,6 +426,11 @@
     }
   },
   "ModifyVolumeAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Volume"
@@ -446,14 +455,10 @@
               },
               "description": {
                 "type": "string"
-              },
-              "zone": {
-                "type": "string"
               }
             },
             "required": [
-              "volume",
-              "zone"
+              "volume"
             ]
           }
         }

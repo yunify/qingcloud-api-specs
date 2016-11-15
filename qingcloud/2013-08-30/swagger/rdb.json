@@ -1,5 +1,10 @@
 {
   "CreateRDB": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -87,7 +89,6 @@
               }
             },
             "required": [
-              "zone",
               "vxnet",
               "rdb_username",
               "rdb_password",
@@ -122,6 +123,11 @@
     }
   },
   "DescribeRDBs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -138,9 +144,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -177,10 +180,7 @@
               "limit": {
                 "type": "integer"
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -212,6 +212,11 @@
     }
   },
   "DeleteRDBs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -228,9 +233,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -239,7 +241,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs"
             ]
           }
@@ -273,6 +274,11 @@
     }
   },
   "StartRDBs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -289,9 +295,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -300,7 +303,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs"
             ]
           }
@@ -334,6 +336,11 @@
     }
   },
   "StopRDBs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -350,9 +357,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -361,7 +365,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs"
             ]
           }
@@ -395,6 +398,11 @@
     }
   },
   "ResizeRDBs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -411,9 +419,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -436,7 +441,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs"
             ]
           }
@@ -470,6 +474,11 @@
     }
   },
   "RDBsLeaveVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -486,9 +495,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -500,7 +506,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs",
               "vxnet"
             ]
@@ -529,6 +534,11 @@
     }
   },
   "RDBsJoinVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -545,9 +555,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdbs": {
                 "type": "array",
                 "items": {
@@ -559,7 +566,6 @@
               }
             },
             "required": [
-              "zone",
               "rdbs",
               "vxnet"
             ]
@@ -597,6 +603,11 @@
     }
   },
   "CreateRDBFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -613,9 +624,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "vxnet": {
                 "type": "string"
               },
@@ -629,10 +637,13 @@
               },
               "engine_version": {
                 "type": "string",
-                "default": "閳ワ拷5.5閳ワ拷",
+                "default": "mysql,5.7",
                 "enum": [
-                  "閳ワ拷5.5閳ワ拷",
-                  "閳ワ拷9.4閳ワ拷"
+                  "mysql,5.5",
+                  "mysql,5.6",
+                  "mysql,5.7",
+                  "psql,9.3",
+                  "psql,9.4"
                 ]
               },
               "snapshot": {
@@ -675,7 +686,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshot",
               "vxnet",
               "rdb_type"
@@ -708,6 +718,11 @@
     }
   },
   "CreateTempRDBInstanceFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -724,9 +739,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb": {
                 "type": "string"
               },
@@ -735,7 +747,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb",
               "snapshot"
             ]
@@ -767,6 +778,11 @@
     }
   },
   "GetRDBInstanceFiles": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -783,15 +799,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb_instance": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "rdb_instance"
             ]
           }
@@ -822,6 +834,11 @@
     }
   },
   "CopyRDBInstanceFilesToFTP": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -838,9 +855,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb_instance": {
                 "type": "string"
               },
@@ -852,7 +866,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb_instance",
               "files"
             ]
@@ -884,6 +897,11 @@
     }
   },
   "CeaseRDBInstance": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -900,9 +918,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb": {
                 "type": "string"
               },
@@ -911,7 +926,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb",
               "rdb_instance"
             ]
@@ -940,6 +954,11 @@
     }
   },
   "GetRDBMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -956,9 +975,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resource": {
                 "type": "string"
               },
@@ -996,7 +1012,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb_engine",
               "role",
               "resource",
@@ -1036,6 +1051,11 @@
     }
   },
   "ModifyRDBParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -1052,9 +1072,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb": {
                 "type": "string"
               },
@@ -1066,7 +1083,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb"
             ]
           }
@@ -1094,6 +1110,11 @@
     }
   },
   "ApplyRDBParameterGroup": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -1110,15 +1131,11 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb": {
                 "type": "string"
               }
             },
             "required": [
-              "zone",
               "rdb"
             ]
           }
@@ -1149,6 +1166,11 @@
     }
   },
   "DescribeRDBParameters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "RDB"
@@ -1165,9 +1187,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "rdb": {
                 "type": "string"
               },
@@ -1182,7 +1201,6 @@
               }
             },
             "required": [
-              "zone",
               "rdb"
             ]
           }

@@ -653,6 +653,11 @@
       "$ref": "./zone.json#/DescribeZones"
     }
   },
+  "parameters": {
+    "zone": {
+      "$ref": "./parameters.json#/zone"
+    }
+  },
   "definitions": {
     "instance": {
       "$ref": "./definitions.json#/instance"

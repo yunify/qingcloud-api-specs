@@ -1,5 +1,10 @@
 {
   "DescribeSnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -16,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshots": {
                 "type": "array",
                 "items": {
@@ -73,10 +75,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -105,6 +104,11 @@
     }
   },
   "CreateSnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -121,9 +125,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "resources": {
                 "type": "array",
                 "items": {
@@ -142,7 +143,6 @@
               }
             },
             "required": [
-              "zone",
               "resources"
             ]
           }
@@ -176,6 +176,11 @@
     }
   },
   "DeleteSnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -192,9 +197,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshots": {
                 "type": "array",
                 "items": {
@@ -203,7 +205,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshots"
             ]
           }
@@ -231,6 +232,11 @@
     }
   },
   "ApplySnapshots": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -247,9 +253,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshots": {
                 "type": "array",
                 "items": {
@@ -258,7 +261,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshots"
             ]
           }
@@ -286,6 +288,11 @@
     }
   },
   "ModifySnapshotAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -302,9 +309,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshot": {
                 "type": "string"
               },
@@ -316,7 +320,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshot"
             ]
           }
@@ -341,6 +344,11 @@
     }
   },
   "CaptureInstanceFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -357,9 +365,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshot": {
                 "type": "string"
               },
@@ -368,7 +373,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshot"
             ]
           }
@@ -399,6 +403,11 @@
     }
   },
   "CreateVolumeFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
         "Snapshot"
@@ -415,9 +424,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "snapshot": {
                 "type": "string"
               },
@@ -426,7 +432,6 @@
               }
             },
             "required": [
-              "zone",
               "snapshot"
             ]
           }

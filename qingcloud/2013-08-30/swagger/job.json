@@ -1,6 +1,14 @@
 {
   "DescribeJobs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
+      "tags": [
+        "Job"
+      ],
       "operationId": "DescribeJobs",
       "summary": "DescribeJobs",
       "externalDocs": {
@@ -13,9 +21,6 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
               "jobs": {
                 "type": "array",
                 "items": {
@@ -50,10 +55,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
