@@ -37,14 +37,13 @@ The structure of the directories has following levels:
 #### For Example:
 
 ``` bash
-└── qingcloud
-    └── 2013-08-30
-        └── swagger
-            ├── api_v2.0.json
-            ├── definitions.json
-            ├── instance.json
-            ├── volume.json
-            ...
+└── 2013-08-30
+    └── swagger
+        ├── api_v2.0.json
+        ├── definitions.json
+        ├── instance.json
+        ├── volume.json
+        ...
 ```
 
 Currently, the specifications are expected to be in the OpenAPI Specification (Swagger) v2.0's JSON format.
