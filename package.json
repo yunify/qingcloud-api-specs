@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/yunify/qingcloud-api-specs.git"
   },
-  "author": "Yunify SDK <sdk@yunify.com>",
+  "author": "Yunify SDK Group <sdk_group@yunify.com>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/yunify/qingcloud-api-specs/issues"
