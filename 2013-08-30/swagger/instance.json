@@ -41,7 +41,6 @@
               },
               "instance_class": {
                 "type": "integer",
-                "default": 0,
                 "enum": [
                   0,
                   1
