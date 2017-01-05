@@ -201,12 +201,6 @@
       },
       "usb": {
         "type": "integer"
-      },
-      "slots": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
       }
     }
   },
