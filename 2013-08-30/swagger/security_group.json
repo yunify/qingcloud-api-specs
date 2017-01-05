@@ -212,6 +212,12 @@
             "properties": {
               "security_group": {
                 "type": "string"
+              },
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
