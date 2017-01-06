@@ -352,8 +352,7 @@
         "type": "string"
       },
       "priority": {
-        "type": "integer",
-        "default": 0
+        "type": "integer"
       },
       "protocol": {
         "type": "string"
