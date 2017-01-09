@@ -725,14 +725,11 @@
     "loadbalancer_listener": {
       "$ref": "./definitions.json#/loadbalancer_listener"
     },
-    "loadbalancer_listener_listener": {
-      "$ref": "./definitions.json#/loadbalancer_listener_listener"
-    },
     "loadbalancer_backend": {
       "$ref": "./definitions.json#/loadbalancer_backend"
     },
-    "add_loadbalancer_backends_backend": {
-      "$ref": "./definitions.json#/add_loadbalancer_backends_backend"
+    "loadbalancer_backend": {
+      "$ref": "./definitions.json#/loadbalancer_backend"
     },
     "loadbalancer_policy": {
       "$ref": "./definitions.json#/loadbalancer_policy"

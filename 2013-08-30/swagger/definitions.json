@@ -991,6 +991,18 @@
       "loadbalancer_listener_name": {
         "type": "string"
       },
+      "loadbalancer_id":{
+        "type": "string"
+      },
+      "listener_port":{
+        "type": "integer"
+      },
+      "listener_protocol":{
+        "type": "string"
+      },
+      "backend_protocol":{
+        "type": "string"
+      },
       "backends": {
         "type": "array",
         "items": {
@@ -1022,19 +1034,11 @@
         "type": "string",
         "default": "10|5|2|5"
       },
-      "listeners": {
+      "listener_option": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/loadbalancer_listener_listener"
+          "type":"integer"
         }
-      }
-    }
-  },
-  "loadbalancer_listener_listener": {
-    "type": "object",
-    "properties": {
-      "listener_option": {
-        "type": "integer"
       }
     }
   },
@@ -1048,6 +1052,9 @@
         "type": "string"
       },
       "loadbalancer_listener_id": {
+        "type": "string"
+      },
+      "loadbalancer_policy_id": {
         "type": "string"
       },
       "loadbalancer_id": {
@@ -1068,26 +1075,6 @@
       "create_time": {
         "type": "string",
         "format": "date-time"
-      }
-    }
-  },
-  "add_loadbalancer_backends_backend": {
-    "type": "object",
-    "properties": {
-      "resource_id": {
-        "type": "string"
-      },
-      "loadbalancer_backend_name": {
-        "type": "string"
-      },
-      "loadbalancer_policy_id": {
-        "type": "string"
-      },
-      "port": {
-        "type": "integer"
-      },
-      "weight": {
-        "type": "integer"
       }
     }
   },

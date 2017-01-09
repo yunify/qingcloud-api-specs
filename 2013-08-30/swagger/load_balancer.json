@@ -930,7 +930,7 @@
               "backends": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/add_loadbalancer_backends_backend"
+                  "$ref": "#/definitions/loadbalancer_backend"
                 }
               }
             },
