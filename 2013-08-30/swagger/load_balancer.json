@@ -426,7 +426,10 @@
             "type": "object",
             "properties": {
               "loadbalancers": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
@@ -448,7 +451,7 @@
                 "type": "integer"
               },
               "job_id": {
-                "type": "integer"
+                "type": "string"
               }
             }
           }
