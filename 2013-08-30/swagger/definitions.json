@@ -1035,10 +1035,7 @@
         "default": "10|5|2|5"
       },
       "listener_option": {
-        "type": "array",
-        "items": {
-          "type":"integer"
-        }
+        "type": "integer"
       }
     }
   },
