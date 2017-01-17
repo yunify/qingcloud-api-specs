@@ -1036,6 +1036,9 @@
       },
       "listener_option": {
         "type": "integer"
+      },
+      "server_certificate_id": {
+        "type": "string"
       }
     }
   },
