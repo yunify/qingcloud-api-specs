@@ -881,7 +881,7 @@
         "type": "string"
       },
       "features": {
-        "type": "string"
+        "type": "integer"
       },
       "create_time": {
         "type": "string",
