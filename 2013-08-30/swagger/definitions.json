@@ -2394,6 +2394,55 @@
       }
     }
   },
+  "nic": {
+    "type": "object",
+    "properties": {
+      "nic_id": {
+        "type": "string"
+      },
+      "nic_name": {
+        "type": "string"
+      },
+      "instance_id": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "sequence": {
+        "type": "integer"
+      },
+      "role": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "available",
+          "in-use"
+        ]
+      },
+      "status_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "create_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "nic_ip": {
+    "type": "object",
+    "properties": {
+      "nic_id": {
+        "type": "string"
+      },
+      "private_ip": {
+        "type": "string"
+      }
+    }
+  },
   "zone": {
     "type": "object",
     "properties": {

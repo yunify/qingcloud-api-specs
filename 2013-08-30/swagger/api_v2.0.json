@@ -649,6 +649,24 @@
     "/DetachTags": {
       "$ref": "./tag.json#/DetachTags"
     },
+    "/DescribeNics": {
+      "$ref": "./nic.json#/DescribeNics"
+    },
+    "/CreateNics": {
+      "$ref": "./nic.json#/CreateNics"
+    },
+    "/DeleteNics": {
+      "$ref": "./nic.json#/DeleteNics"
+    },
+    "/AttachNics": {
+      "$ref": "./nic.json#/AttachNics"
+    },
+    "/DetachNics": {
+      "$ref": "./nic.json#/DetachNics"
+    },
+    "/ModifyNicAttributes": {
+      "$ref": "./nic.json#/ModifyNicAttributes"
+    },
     "/DescribeZones": {
       "$ref": "./zone.json#/DescribeZones"
     }
@@ -826,6 +844,12 @@
     },
     "resource_type_count": {
       "$ref": "./definitions.json#/resource_type_count"
+    },
+    "nic": {
+      "$ref": "./definitions.json#/nic"
+    },
+    "nic_ip": {
+      "$ref": "./definitions.json#/nic_ip"
     },
     "zone": {
       "$ref": "./definitions.json#/zone"

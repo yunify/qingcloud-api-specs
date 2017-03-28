@@ -1,0 +1,389 @@
+{
+  "DescribeNics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "DescribeNics",
+      "summary": "DescribeNics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/describe_nics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "nics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnet_type": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "available",
+                  "in-use"
+                ]
+              },
+              "nic_name": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "nic_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/nic"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateNics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "CreateNics",
+      "summary": "CreateNics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/create_nics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "vxnet": {
+                "type": "string"
+              },
+              "nic_name": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              }
+            },
+            "required": [
+              "vxnet"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "nics": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/nic_ip"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteNics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "DeleteNics",
+      "summary": "DeleteNics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/delete_nics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "nics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "nics"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AttachNics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "AttachNics",
+      "summary": "AttachNics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/attach_nics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instance": {
+                "type": "string"
+              },
+              "nics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "nics",
+              "instance"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DetachNics": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "DetachNics",
+      "summary": "DetachNics",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/detach_nics.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "nics": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "nics"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyNicAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Nic"
+      ],
+      "operationId": "ModifyNicAttributes",
+      "summary": "ModifyNicAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/nic/modify-nic-attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "nic_id": {
+                "type": "string"
+              },
+              "nic_name": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ip": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "nic_id"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
