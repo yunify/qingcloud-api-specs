@@ -29,7 +29,6 @@
               },
               "volume_type": {
                 "type": "integer",
-                "default": 0,
                 "enum": [
                   0,
                   1,
