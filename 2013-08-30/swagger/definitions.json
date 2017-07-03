@@ -979,6 +979,12 @@
       },
       "security_group_id": {
         "type": "string"
+      },
+      "private_ips":{
+        "type": "array",
+        "items":{
+          "type": "string"
+        }
       }
     }
   },
