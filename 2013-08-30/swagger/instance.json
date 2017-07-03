@@ -83,6 +83,10 @@
               "limit": {
                 "type": "integer",
                 "default": 20
+              },
+              "is_cluster_node": {
+                "type": "integer",
+                "default": 0
               }
             }
           }

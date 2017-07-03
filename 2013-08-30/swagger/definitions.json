@@ -963,7 +963,7 @@
           "$ref": "#/definitions/tag"
         }
       },
-      "eips": {
+      "cluster": {
         "type": "array",
         "items": {
           "$ref": "#/definitions/eip"
