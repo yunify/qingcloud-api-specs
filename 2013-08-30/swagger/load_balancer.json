@@ -1086,7 +1086,10 @@
                 "type": "integer"
               },
               "loadbalancer_backends": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
