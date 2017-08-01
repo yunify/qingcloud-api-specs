@@ -324,6 +324,12 @@
       "description": {
         "type": "string"
       },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
+      },
       "is_applied": {
         "type": "integer"
       },
@@ -810,6 +816,12 @@
       "status_time": {
         "type": "string",
         "format": "date-time"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
       }
     }
   },
