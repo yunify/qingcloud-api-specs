@@ -27,6 +27,12 @@
                   "type": "string"
                 }
               },
+              "instances":{
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "vxnets": {
                 "type": "array",
                 "items": {
