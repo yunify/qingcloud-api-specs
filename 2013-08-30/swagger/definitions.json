@@ -717,6 +717,9 @@
       },
       "vpc_router_id": {
         "type": "string"
+      },
+      "role":{
+        "type": "integer"
       }
     }
   },
