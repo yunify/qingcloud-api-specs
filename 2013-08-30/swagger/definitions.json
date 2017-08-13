@@ -2436,6 +2436,12 @@
       "role": {
         "type": "integer"
       },
+      "root_user_id":{
+        "type": "string"
+      },
+      "owner":{
+        "type": "string"
+      },
       "status": {
         "type": "string",
         "enum": [
@@ -2450,7 +2456,18 @@
       "create_time": {
         "type": "string",
         "format": "date-time"
-      }
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+      },
+      "security_group":{
+        "type": "string"
+      },
     }
   },
   "nic_ip": {
