@@ -2464,10 +2464,11 @@
         "type": "array",
         "items": {
           "$ref": "#/definitions/tag"
+        }
       },
       "security_group":{
         "type": "string"
-      },
+      }
     }
   },
   "nic_ip": {
