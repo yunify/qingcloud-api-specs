@@ -62,7 +62,7 @@
       "vxnets": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/vxnet"
+          "$ref": "#/definitions/instance_vxnet"
         }
       },
       "eip": {
@@ -720,6 +720,33 @@
       },
       "role":{
         "type": "integer"
+      }
+    }
+  },
+  "instance_vxnet":{
+    "type": "object",
+    "properties": {
+      "vxnet_type":{
+        "type": "integer",
+        "enum": [
+          0,
+          1
+        ]
+      },
+      "vxnet_id":{
+        "type": "string"
+      },
+      "vxnet_name":{
+        "type": "string"
+      },
+      "role":{
+        "type": "integer"
+      },
+      "private_ip":{
+        "type": "string"
+      },
+      "nic_id":{
+        "type": "string"
       }
     }
   },
