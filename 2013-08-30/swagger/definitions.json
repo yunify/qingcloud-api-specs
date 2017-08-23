@@ -933,6 +933,17 @@
       "loadbalancer_name": {
         "type": "string"
       },
+      "loadbalancer_type": {
+        "type": "integer",
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
       "description": {
         "type": "string"
       },
@@ -983,6 +994,9 @@
         "items": {
           "$ref": "#/definitions/eip"
         }
+      },
+      "vxnet_id": {
+        "type": "string"
       },
       "create_time": {
         "type": "string",
@@ -2276,13 +2290,14 @@
     "type": "object",
     "properties": {
       "data": {
-        "type": "string"
+        "type": "object"
       },
       "data_set": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/data"
+          "type": "object"
         }
+
       },
       "vxnet_id": {
         "type": "string"
