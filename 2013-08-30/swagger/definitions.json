@@ -2293,7 +2293,11 @@
         "type": "object"
       },
       "data_set": {
-        "type": "object"
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+
       },
       "vxnet_id": {
         "type": "string"
