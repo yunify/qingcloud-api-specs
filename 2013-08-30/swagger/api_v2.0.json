@@ -683,6 +683,9 @@
     "instance_type": {
       "$ref": "./definitions.json#/instance_type"
     },
+    "instance_vxnet": {
+      "$ref": "./definitions.json#/instance_vxnet"
+    },
     "extra": {
       "$ref": "./definitions.json#/extra"
     },
