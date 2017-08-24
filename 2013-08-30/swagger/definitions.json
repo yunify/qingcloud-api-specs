@@ -681,12 +681,6 @@
           1
         ]
       },
-      "nic_id": {
-        "type": "string"
-      },
-      "private_ip": {
-        "type": "string"
-      },
       "create_time": {
         "type": "string",
         "format": "date-time"
@@ -717,9 +711,6 @@
       },
       "vpc_router_id": {
         "type": "string"
-      },
-      "role":{
-        "type": "integer"
       }
     }
   },
