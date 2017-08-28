@@ -398,7 +398,7 @@
                 "type": "integer"
               },
               "job_id": {
-                "type": "integer"
+                "type": "string"
               }
             }
           }
