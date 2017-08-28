@@ -373,7 +373,10 @@
             "type": "object",
             "properties": {
               "loadbalancers": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
