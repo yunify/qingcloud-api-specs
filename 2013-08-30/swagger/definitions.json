@@ -1295,8 +1295,13 @@
       },
       "vxnet": {
         "$ref": "#/definitions/vxnet"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
       }
-    }
   },
   "s2_shared_target": {
     "type": "object",
@@ -2228,8 +2233,13 @@
       },
       "mongo_version": {
         "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/tag"
+        }
       }
-    }
   },
   "mongo_node": {
     "type": "object",

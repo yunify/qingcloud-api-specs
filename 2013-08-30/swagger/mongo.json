@@ -231,7 +231,7 @@
                 "type": "string"
               },
               "mongo_version": {
-                "type": "integer"
+                "type": "string"
               },
               "resource_class": {
                 "type": "integer"
