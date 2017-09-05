@@ -1302,6 +1302,7 @@
           "$ref": "#/definitions/tag"
         }
       }
+    }
   },
   "s2_shared_target": {
     "type": "object",
@@ -2240,6 +2241,7 @@
           "$ref": "#/definitions/tag"
         }
       }
+    }
   },
   "mongo_node": {
     "type": "object",
