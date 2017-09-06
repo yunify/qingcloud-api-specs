@@ -669,6 +669,60 @@
     },
     "/DescribeZones": {
       "$ref": "./zone.json#/DescribeZones"
+    },
+    "/CreateCluster": {
+      "$ref": "./cluster.json#/CreateCluster"
+    },
+    "/DescribeClusters": {
+      "$ref": "./cluster.json#/DescribeClusters"
+    },
+    "/DescribeClusterNodes": {
+      "$ref": "./cluster.json#/DescribeClusterNodes"
+    },
+    "/StopClusters": {
+      "$ref": "./cluster.json#/StopClusters"
+    },
+    "/StartClusters": {
+      "$ref": "./cluster.json#/StartClusters"
+    },
+    "/DeleteClusters": {
+      "$ref": "./cluster.json#/DeleteClusters"
+    },
+    "/DeleteClusterNodes": {
+      "$ref": "./cluster.json#/DeleteClusterNodes"
+    },
+    "/AddClusterNodes": {
+      "$ref": "./cluster.json#/AddClusterNodes"
+    },
+    "/ResizeCluster": {
+      "$ref": "./cluster.json#/ResizeCluster"
+    },
+    "/ChangeClusterVxnet": {
+      "$ref": "./cluster.json#/ChangeClusterVxnet"
+    },
+    "/SuspendClusters": {
+      "$ref": "./cluster.json#/SuspendClusters"
+    },
+    "/UpdateClusterEnvironment": {
+      "$ref": "./cluster.json#/UpdateClusterEnvironment"
+    },
+    "/ModifyClusterAttributes": {
+      "$ref": "./cluster.json#/ModifyClusterAttributes"
+    },
+    "/ModifyClusterNodeAttributes": {
+      "$ref": "./cluster.json#/ModifyClusterNodeAttributes"
+    },
+    "/GetClustersStats": {
+      "$ref": "./cluster.json#/GetClustersStats"
+    },
+    "/DescribeClusterUsers": {
+      "$ref": "./cluster.json#/DescribeClusterUsers"
+    },
+    "/RestartClusterService": {
+      "$ref": "./cluster.json#/RestartClusterService"
+    },
+    "/UpgradeClusters": {
+      "$ref": "./cluster.json#/UpgradeClusters"
     }
   },
   "parameters": {
