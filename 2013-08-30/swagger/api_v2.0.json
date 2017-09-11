@@ -908,6 +908,12 @@
     "nic_ip": {
       "$ref": "./definitions.json#/nic_ip"
     },
+    "cluster": {
+      "$ref": "./definitions.json#/cluster"
+    },
+    "cluster_node": {
+      "$ref": "./definitions.json#/cluster_node"
+    },
     "zone": {
       "$ref": "./definitions.json#/zone"
     }

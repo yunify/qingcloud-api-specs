@@ -2527,6 +2527,249 @@
       }
     }
   },
+  "cluster": {
+    "type": "object",
+    "properties": {
+      "global_uuid": {
+        "type": "string"
+      },
+      "auto_backup_time": {
+        "type": "integer"
+      },
+      "cfgmgmt_id": {
+        "type":"string"
+      },
+      "app_id": {
+        "type":"string"
+      },
+      "console_id": {
+        "type":"string"
+      },
+      "create_time": {
+        "type":"string",
+        "format":"date-time"
+      },
+      "cluster_id": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "upgrade_time": {
+        "type":"string",
+        "format":"date-time"
+      },
+      "incremental_backup_supported": {
+        "type": "integer"
+      },
+      "cluster_type": {
+        "type": "integer"
+      },
+      "sub_code": {
+        "type": "integer"
+      },
+      "metadata_root_access": {
+        "type": "integer"
+      },
+      "upgrade_status": {
+        "type": "string"
+      },
+      "status_time": {
+        "type":"string",
+        "format":"date-time"
+      },
+      "node_count": {
+        "type": "integer"
+      },
+      "app_version": {
+        "type": "string"
+      },
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
+      },
+      "status": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "transition_status": {
+        "type": "string"
+      },
+      "reuse_hyper": {
+        "type": "integer"
+      },
+      "controller": {
+        "type": "string"
+      },
+      "partner_access": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "roles": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "lastest_snapshot_time": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "debug": {
+        "type": "integer"
+      }
+    }
+  },
+  "cluster_node": {
+    "type": "object",
+    "properties": {
+      "vertical_scaling_policy": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "custom_service": {
+        "type": "string"
+      },
+      "app_id": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "stop_service": {
+        "type": "string"
+      },
+      "user_access": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string",
+        "format":"date-time"
+      },
+      "cluster_id": {
+        "type": "string"
+      },
+      "private_ip": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "alarm_status": {
+        "type": "string"
+      },
+      "incremental_backup_supported": {
+        "type": "integer"
+      },
+      "server_id": {
+        "type": "integer"
+      },
+      "monitor": {
+        "type": "string"
+      },
+      "health_status": {
+        "type": "string"
+      },
+      "is_backup": {
+        "type": "integer"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "role": {
+        "type": "string"
+      },
+      "memory": {
+        "type": "integer"
+      },
+      "status_time": {
+        "type": "string",
+        "format":"date-time"
+      },
+      "restart_service": {
+        "type": "string"
+      },
+      "app_version": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "global_server_id": {
+        "type": "integer"
+      },
+      "scale_in_service": {
+        "type": "string"
+      },
+      "auto_backup": {
+        "type": "integer"
+      },
+      "transition_status": {
+        "type": "string"
+      },
+      "storage_size": {
+        "type": "integer"
+      },
+      "image_id": {
+        "type": "string"
+      },
+      "controller": {
+        "type": "string"
+      },
+      "node_id": {
+        "type": "string"
+      },
+      "agent_installed": {
+        "type": "integer"
+      },
+      "start_service": {
+        "type": "string"
+      },
+      "volume_ids": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "hypervisor": {
+        "type": "string"
+      },
+      "init_service": {
+        "type": "string"
+      },
+      "instance_id": {
+        "type": "string"
+      },
+      "scale_out_service": {
+        "type": "string"
+      },
+      "repl": {
+        "type": "string"
+      },
+      "health_check": {
+        "type": "string"
+      },
+      "debug": {
+        "type": "integer"
+      },
+      "single_node_repl": {
+        "type": "string"
+      },
+      "group_id": {
+        "type": "integer"
+      },
+      "cpu": {
+        "type": "integer"
+      }
+    }
+  },
   "zone": {
     "type": "object",
     "properties": {

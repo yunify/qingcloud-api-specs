@@ -84,6 +84,9 @@
                   "cfgmgmt"
                 ]
               },
+              "role": {
+                "type": "string"
+              },
               "app_id": {
                 "type": "array",
                 "items": {
@@ -124,7 +127,7 @@
               "cluster_set": {
                 "type": "array",
                 "items": {
-                  "type": "object"
+                  "$ref": "#/definitions/cluster"
                 }
               }
             }
@@ -189,7 +192,7 @@
               "node_set": {
                 "type": "array",
                 "items": {
-                  "type": "object"
+                  "$ref": "#/definitions/cluster_node"
                 }
               }
             }
