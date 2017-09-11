@@ -40,9 +40,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -118,9 +115,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               },
@@ -186,9 +180,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               },
@@ -251,9 +242,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -304,9 +292,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -355,9 +340,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -422,9 +404,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -479,9 +458,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -543,9 +519,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -605,9 +578,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -656,9 +626,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -717,9 +684,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -771,9 +735,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -829,9 +790,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -880,9 +838,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -959,9 +914,6 @@
               "action": {
                 "type": "string"
               },
-              "message": {
-                "type": "string"
-              },
               "ret_code": {
                 "type": "integer"
               }
@@ -1010,9 +962,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
@@ -1066,9 +1015,6 @@
             "type": "object",
             "properties": {
               "action": {
-                "type": "string"
-              },
-              "message": {
                 "type": "string"
               },
               "ret_code": {
