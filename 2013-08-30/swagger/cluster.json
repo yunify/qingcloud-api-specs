@@ -1,0 +1,1032 @@
+{
+  "CreateCluster": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "CreateCluster",
+      "summary": "CreateCluster",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/create_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "conf": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conf"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DescribeClusters",
+      "summary": "DescribeClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/describe_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "scope": {
+                "type": "string",
+                "enum": [
+                  "all",
+                  "cfgmgmt"
+                ]
+              },
+              "role": {
+                "type": "string"
+              },
+              "app_id": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "app_version": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "cluster_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cluster"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeClusterNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DescribeClusterNodes",
+      "summary": "DescribeClusterNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/describe_cluster_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "cluster_nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count" : {
+                "type": "integer"
+              },
+              "node_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/cluster_node"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StopClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "StopClusters",
+      "summary": "StopClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/stop_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "force": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "StartClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "StartClusters",
+      "summary": "StartClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/start_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DeleteClusters",
+      "summary": "DeleteClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/delete_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddClusterNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "AddClusterNodes",
+      "summary": "AddClusterNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/add_cluster_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "node_count": {
+                "type": "integer"
+              },
+              "node_role": {
+                "type": "string"
+              },
+              "node_name": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteClusterNodes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DeleteClusterNodes",
+      "summary": "DeleteClusterNodes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/delete_cluster_nodes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "force": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ResizeCluster": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "ResizeCluster",
+      "summary": "ResizeCluster",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/resize_cluster.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "node_role": {
+                "type": "string"
+              },
+              "cpu": {
+                "type": "integer"
+              },
+              "memory": {
+                "type": "integer"
+              },
+              "storage_size": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ChangeClusterVxnet": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "ChangeClusterVxnet",
+      "summary": "ChangeClusterVxnet",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/change_cluster_vxnet.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "private_ips": {
+                "type": "object"
+              },
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "SuspendClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "SuspendClusters",
+      "summary": "SuspendClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/suspend_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpdateClusterEnvironment": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "UpdateClusterEnvironment",
+      "summary": "UpdateClusterEnvironment",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/update_cluster_environment.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "roles": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "env": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyClusterAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "ModifyClusterAttributes",
+      "summary": "ModifyClusterAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/modify_cluster_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ModifyClusterNodeAttributes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "ModifyClusterNodeAttributes",
+      "summary": "ModifyClusterNodeAttributes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/modify_cluster_node_attributes.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "cluster_node": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetClustersStats": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "GetClustersStats",
+      "summary": "GetClustersStats",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/get_clusters_stats.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeClusterUsers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DescribeClusterUsers",
+      "summary": "DescribeClusterUsers",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/describe_cluster_users.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "apps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "app_versions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cluster_status": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RestartClusterService": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "CreateCluster",
+      "summary": "CreateCluster",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/create_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "UpgradeClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "UpgradeClusters",
+      "summary": "UpgradeClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/upgrade_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "app_version": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
