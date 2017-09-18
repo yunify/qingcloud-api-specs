@@ -247,6 +247,12 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "job_ids": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -297,6 +303,12 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "job_ids": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
