@@ -261,6 +261,7 @@
               },
               "cpu_max": {
                 "type": "integer",
+                "nullable": true,
                 "default": null,
                 "enum": [
                   1,
@@ -272,6 +273,7 @@
               },
               "mem_max": {
                 "type": "integer",
+                "nullable": true,
                 "default": null,
                 "enum": [
                   1024,
