@@ -258,6 +258,34 @@
               },
               "billing_id": {
                 "type": "string"
+              },
+              "cpu_max": {
+                "type": "integer",
+                "nullable": true,
+                "default": null,
+                "enum": [
+                  1,
+                  2,
+                  4,
+                  8,
+                  16
+                ]
+              },
+              "mem_max": {
+                "type": "integer",
+                "nullable": true,
+                "default": null,
+                "enum": [
+                  1024,
+                  2048,
+                  4096,
+                  6144,
+                  8192,
+                  12288,
+                  16384,
+                  24576,
+                  32768
+                ]
               }
             },
             "required": [
