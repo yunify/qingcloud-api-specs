@@ -561,13 +561,13 @@
                 "type": "string"
               },
               "val1": {
-                "type": "integer"
+                "type": "string"
               },
               "val2": {
-                "type": "integer"
+                "type": "string"
               },
               "val3": {
-                "type": "integer"
+                "type": "string"
               }
             },
             "required": [
