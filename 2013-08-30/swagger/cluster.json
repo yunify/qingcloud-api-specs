@@ -948,10 +948,10 @@
       "tags": [
         "Cluster"
       ],
-      "operationId": "CreateCluster",
-      "summary": "CreateCluster",
+      "operationId": "RestartClusterService",
+      "summary": "RestartClusterService",
       "externalDocs": {
-        "url": "https://docs.qingcloud.com/api/cluster/create_clusters.html"
+        "url": "https://docs.qingcloud.com/api/cluster/restart_cluster_service.html"
       },
       "parameters": [
         {
