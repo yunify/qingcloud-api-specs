@@ -352,10 +352,7 @@
                 "type": "integer",
                 "default": 20
               }
-            },
-            "required": [
-              "security_group"
-            ]
+            }
           }
         }
       ],
