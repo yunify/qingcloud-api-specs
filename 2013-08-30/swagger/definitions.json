@@ -899,6 +899,12 @@
       },
       "val4": {
         "type": "string"
+      },
+      "val5": {
+        "type": "string"
+      },
+      "val6": {
+        "type": "string"
       }
     }
   },
