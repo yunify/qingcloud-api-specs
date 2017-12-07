@@ -2576,7 +2576,7 @@
         "format":"date-time"
       },
       "incremental_backup_supported": {
-        "type": "integer"
+        "type": "boolean"
       },
       "cluster_type": {
         "type": "integer"
@@ -2619,7 +2619,7 @@
         "type": "string"
       },
       "partner_access": {
-        "type": "integer"
+        "type": "boolean"
       },
       "name": {
         "type": "string"
@@ -2637,7 +2637,76 @@
         "type": "string"
       },
       "debug": {
-        "type": "integer"
+        "type": "boolean"
+      },
+      "links": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "health_check_enablement": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean"
+        }
+      },
+      "custom_service": {
+        "type": "object"
+      },
+      "restore_service": {
+        "type": "object"
+      },
+      "backup_service": {
+        "type": "object"
+      },
+      "advanced_actions": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "role_count": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
+      "upgrade_policy": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "app_info": {
+        "type": "object"
+      },
+      "app_version_info": {
+        "type": "object"
+      },
+      "display_tabs": {
+        "type": "object"
+      },
+      "backup": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean"
+        }
+      },
+      "security_group_id": {
+        "type": "string"
+      },
+      "backup_policy": {
+        "type": "string"
+      },
+      "endpoints": {
+        "type": "object"
+      },
+      "nodes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/cluster_node"
+        }
       }
     }
   },
@@ -2650,20 +2719,14 @@
       "vxnet_id": {
         "type": "string"
       },
-      "custom_service": {
-        "type": "string"
-      },
       "app_id": {
         "type": "string"
       },
       "console_id": {
         "type": "string"
       },
-      "stop_service": {
-        "type": "string"
-      },
       "user_access": {
-        "type": "string"
+        "type": "integer"
       },
       "create_time": {
         "type": "string",
@@ -2682,13 +2745,10 @@
         "type": "string"
       },
       "incremental_backup_supported": {
-        "type": "integer"
+        "type": "boolean"
       },
       "server_id": {
         "type": "integer"
-      },
-      "monitor": {
-        "type": "string"
       },
       "health_status": {
         "type": "string"
@@ -2709,9 +2769,6 @@
         "type": "string",
         "format":"date-time"
       },
-      "restart_service": {
-        "type": "string"
-      },
       "app_version": {
         "type": "string"
       },
@@ -2720,9 +2777,6 @@
       },
       "global_server_id": {
         "type": "integer"
-      },
-      "scale_in_service": {
-        "type": "string"
       },
       "auto_backup": {
         "type": "integer"
@@ -2743,10 +2797,7 @@
         "type": "string"
       },
       "agent_installed": {
-        "type": "integer"
-      },
-      "start_service": {
-        "type": "string"
+        "type": "boolean"
       },
       "volume_ids": {
         "type": "string"
@@ -2757,23 +2808,20 @@
       "hypervisor": {
         "type": "string"
       },
-      "init_service": {
-        "type": "string"
-      },
       "instance_id": {
-        "type": "string"
-      },
-      "scale_out_service": {
         "type": "string"
       },
       "repl": {
         "type": "string"
       },
       "health_check": {
-        "type": "string"
+        "type": "object"
+      },
+      "monitor": {
+        "type": "object"
       },
       "debug": {
-        "type": "integer"
+        "type": "boolean"
       },
       "single_node_repl": {
         "type": "string"
@@ -2783,6 +2831,75 @@
       },
       "cpu": {
         "type": "integer"
+      },
+      "resource_class": {
+        "type": "integer"
+      },
+      "volume_type": {
+        "type": "integer"
+      },
+      "gpu": {
+        "type": "integer"
+      },
+      "gpu_class": {
+        "type": "integer"
+      },
+      "server_id_upper_bound": {
+        "type": "integer"
+      },
+      "env": {
+        "type": "string"
+      },
+      "passphraseless": {
+        "type": "string"
+      },
+      "advanced_actions": {
+        "type": "string"
+      },
+      "custom_metadata_script": {
+        "type": "object"
+      },
+      "security_group": {
+        "type": "string"
+      },
+      "eip": {
+        "type": "string"
+      },
+      "backup_policy": {
+        "type": "string"
+      },
+      "display_tabs": {
+        "type": "object"
+      },
+      "restore_service": {
+        "type": "object"
+      },
+      "backup_service": {
+        "type": "object"
+      },
+      "destroy_service": {
+        "type": "object"
+      },
+      "scale_out_service": {
+        "type": "object"
+      },
+      "init_service": {
+        "type": "object"
+      },
+      "start_service": {
+        "type": "object"
+      },
+      "scale_in_service": {
+        "type": "object"
+      },
+      "restart_service": {
+        "type": "object"
+      },
+      "stop_service": {
+        "type": "object"
+      },
+      "custom_service": {
+        "type": "object"
       }
     }
   },

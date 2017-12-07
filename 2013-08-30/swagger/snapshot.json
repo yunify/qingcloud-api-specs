@@ -134,6 +134,9 @@
               "snapshot_name": {
                 "type": "string"
               },
+              "service_params": {
+                "type": "string"
+              },
               "is_full": {
                 "type": "integer",
                 "enum": [
