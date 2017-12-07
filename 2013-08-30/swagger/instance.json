@@ -247,11 +247,11 @@
               },
               "userdata_path": {
                 "type": "string",
-                "default": "etc/qingcloud/userdata"
+                "default": "/etc/qingcloud/userdata"
               },
               "userdata_file": {
                 "type": "string",
-                "default": "etc/rc.local"
+                "default": "/etc/rc.local"
               },
               "ui_type": {
                 "type": "string"
