@@ -688,6 +688,12 @@
     "/DeleteClusters": {
       "$ref": "./cluster.json#/DeleteClusters"
     },
+    "/RecoverClusters": {
+      "$ref": "./cluster.json#/RecoverClusters"
+    },
+    "/CeaseClusters": {
+      "$ref": "./cluster.json#/CeaseClusters"
+    },
     "/DeleteClusterNodes": {
       "$ref": "./cluster.json#/DeleteClusterNodes"
     },
@@ -700,9 +706,6 @@
     "/ChangeClusterVxnet": {
       "$ref": "./cluster.json#/ChangeClusterVxnet"
     },
-    "/SuspendClusters": {
-      "$ref": "./cluster.json#/SuspendClusters"
-    },
     "/UpdateClusterEnvironment": {
       "$ref": "./cluster.json#/UpdateClusterEnvironment"
     },
@@ -712,17 +715,35 @@
     "/ModifyClusterNodeAttributes": {
       "$ref": "./cluster.json#/ModifyClusterNodeAttributes"
     },
-    "/GetClustersStats": {
-      "$ref": "./cluster.json#/GetClustersStats"
-    },
     "/DescribeClusterUsers": {
+      "$ref": "./cluster.json#/DescribeClusterUsers"
+    },
+    "/GetClusterMonitor": {
       "$ref": "./cluster.json#/DescribeClusterUsers"
     },
     "/RestartClusterService": {
       "$ref": "./cluster.json#/RestartClusterService"
     },
+    "/RunClusterCustomService": {
+      "$ref": "./cluster.json#/RunClusterCustomService"
+    },
+    "/AssociateEipToClusterNode": {
+      "$ref": "./cluster.json#/AssociateEipToClusterNode"
+    },
+    "/DissociateEipFromClusterNode": {
+      "$ref": "./cluster.json#/DissociateEipFromClusterNode"
+    },
+    "/DescribeClusterDisplayTabs": {
+      "$ref": "./cluster.json#/DescribeClusterDisplayTabs"
+    },
     "/UpgradeClusters": {
       "$ref": "./cluster.json#/UpgradeClusters"
+    },
+    "/CreateClusterFromSnapshot": {
+      "$ref": "./cluster.json#/CreateClusterFromSnapshot"
+    },
+    "/RestoreClusterFromSnapshot": {
+      "$ref": "./cluster.json#/RestoreClusterFromSnapshot"
     }
   },
   "parameters": {

@@ -12,7 +12,7 @@
       "operationId": "CreateCluster",
       "summary": "CreateCluster",
       "externalDocs": {
-        "url": "https://docs.qingcloud.com/api/cluster/create_clusters.html"
+        "url": "https://docs.qingcloud.com/api/cluster/create_cluster.html"
       },
       "parameters": [
         {
@@ -42,6 +42,30 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "app_id": {
+                "type": "string"
+              },
+              "app_version": {
+                "type": "string"
+              },
+              "cluster_name": {
+                "type": "string"
+              },
+              "vxnet_id": {
+                "type": "string"
+              },
+              "node_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
               }
             }
           }
@@ -87,13 +111,13 @@
               "role": {
                 "type": "string"
               },
-              "app_id": {
+              "apps": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "app_version": {
+              "app_versions": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -104,6 +128,51 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "link": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "transition_status": {
+                "type": "string"
+              },
+              "console": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "sort_key": {
+                "type": "string"
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "cfgmgmt_id": {
+                "type": "string"
+              },
+              "external_cluster_id": {
+                "type": "string"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "reverse": {
+                "type": "integer"
               }
             }
           }
@@ -161,7 +230,7 @@
               "cluster": {
                 "type": "string"
               },
-              "cluster_nodes": {
+              "nodes": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -169,6 +238,33 @@
               },
               "role": {
                 "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "console": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "string"
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "sort_key": {
+                "type": "string"
+              },
+              "limit": {
+                "type": "integer"
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "verbose": {
+                "type": "integer"
+              },
+              "reverse": {
+                "type": "integer"
               }
             }
           }
@@ -232,7 +328,10 @@
               "force": {
                 "type": "integer"
               }
-            }
+            },
+            "required": [
+              "clusters"
+            ]
           }
         }
       ],
@@ -288,7 +387,10 @@
                   "type": "string"
                 }
               }
-            }
+            },
+            "required": [
+              "clusters"
+            ]
           }
         }
       ],
@@ -343,6 +445,68 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "force": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "clusters"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_ids": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RecoverClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "RecoverClusters",
+      "summary": "Lease",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/recover_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "resources": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -359,6 +523,65 @@
               },
               "ret_code": {
                 "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CeaseClusters": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "CeaseClusters",
+      "summary": "CeaseClusters",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/cease_clusters.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "clusters": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "clusters"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_ids": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -405,8 +628,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "resource_conf": {
+                "type": "string"
               }
-            }
+            },
+            "required": [
+              "cluster",
+              "node_count"
+            ]
           }
         }
       ],
@@ -421,6 +651,18 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "new_node_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -462,7 +704,11 @@
               "force": {
                 "type": "integer"
               }
-            }
+            },
+            "required": [
+              "cluster",
+              "nodes"
+            ]
           }
         }
       ],
@@ -477,6 +723,18 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "deleted_node_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -515,13 +773,19 @@
               "cpu": {
                 "type": "integer"
               },
+              "gpu": {
+                "type": "integer"
+              },
               "memory": {
                 "type": "integer"
               },
               "storage_size": {
                 "type": "integer"
               }
-            }
+            },
+            "required": [
+              "cluster"
+            ]
           }
         }
       ],
@@ -535,6 +799,27 @@
                 "type": "string"
               },
               "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "cpu": {
+                "type": "integer"
+              },
+              "gpu": {
+                "type": "integer"
+              },
+              "memory": {
+                "type": "integer"
+              },
+              "storage_size": {
                 "type": "integer"
               }
             }
@@ -580,7 +865,11 @@
                   "type": "string"
                 }
               }
-            }
+            },
+            "required": [
+              "cluster",
+              "vxnet"
+            ]
           }
         }
       ],
@@ -595,56 +884,15 @@
               },
               "ret_code": {
                 "type": "integer"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "SuspendClusters": {
-    "parameters": [
-      {
-        "$ref": "#/parameters/zone"
-      }
-    ],
-    "get": {
-      "tags": [
-        "Cluster"
-      ],
-      "operationId": "SuspendClusters",
-      "summary": "SuspendClusters",
-      "externalDocs": {
-        "url": "https://docs.qingcloud.com/api/cluster/suspend_clusters.html"
-      },
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "clusters": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "action": {
+              },
+              "job_id": {
                 "type": "string"
               },
-              "ret_code": {
-                "type": "integer"
+              "cluster_id": {
+                "type": "string"
+              },
+              "vxnet_id": {
+                "type": "string"
               }
             }
           }
@@ -738,8 +986,14 @@
               },
               "description": {
                 "type": "string"
+              },
+              "auto_backup_time": {
+                "type": "integer"
               }
-            }
+            },
+            "required": [
+              "cluster"
+            ]
           }
         }
       ],
@@ -783,66 +1037,16 @@
           "schema": {
             "type": "object",
             "properties": {
-              "cluster": {
-                "type": "string"
-              },
               "cluster_node": {
                 "type": "string"
               },
               "name": {
                 "type": "string"
               }
-            }
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "action": {
-                "type": "string"
-              },
-              "ret_code": {
-                "type": "integer"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "GetClustersStats": {
-    "parameters": [
-      {
-        "$ref": "#/parameters/zone"
-      }
-    ],
-    "get": {
-      "tags": [
-        "Cluster"
-      ],
-      "operationId": "GetClustersStats",
-      "summary": "GetClustersStats",
-      "externalDocs": {
-        "url": "https://docs.qingcloud.com/api/cluster/get_clusters_stats.html"
-      },
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "zones": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
+            },
+            "required": [
+              "cluster_node"
+            ]
           }
         }
       ],
@@ -915,8 +1119,20 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
               }
-            }
+            },
+            "required": [
+              "apps",
+              "zones"
+            ]
           }
         }
       ],
@@ -931,6 +1147,124 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "apps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "GetClusterMonitor": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "GetClusterMonitor",
+      "summary": "GetClusterMonitor",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/get_cluster_monitor.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "resource": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "app_id": {
+                "type": "string"
+              },
+              "app_version": {
+                "type": "string"
+              },
+              "app_versions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "meters": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "traffic",
+                    "stats"
+                  ]
+                }
+              },
+              "step": {
+                "type": "string",
+                "enum": [
+                  "10s",
+                  "5m",
+                  "15m",
+                  "2h",
+                  "1d"
+                ]
+              },
+              "start_time": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "end_time": {
+                "type": "string",
+                "format": "date-time"
+              }
+            },
+            "required": [
+              "resource",
+              "meters",
+              "step",
+              "start_time",
+              "end_time"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "meter_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/meter"
+                }
               }
             }
           }
@@ -981,6 +1315,266 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RunClusterCustomService": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "RunClusterCustomService",
+      "summary": "RunClusterCustomService",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/run_cluster_custom_service.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "service_params": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cluster",
+              "service"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AssociateEipToClusterNode": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "AssociateEipToClusterNode",
+      "summary": "AssociateEipToClusterNode",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/associate_eip_to_cluster_node.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster_node": {
+                "type": "string"
+              },
+              "eip": {
+                "type": "string"
+              },
+              "nic": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cluster_node",
+              "eip"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DissociateEipFromClusterNode": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DissociateEipFromClusterNode",
+      "summary": "DissociateEipFromClusterNode",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/dissociate_eip_from_cluster_node.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "eips": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "eips"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeClusterDisplayTabs": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "DescribeClusterDisplayTabs",
+      "summary": "DescribeClusterDisplayTabs",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/describe_cluster_display_tabs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "display_tabs": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cluster",
+              "display_tabs"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "display_tabs": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
               }
             }
           }
@@ -1018,6 +1612,9 @@
               },
               "app_version": {
                 "type": "string"
+              },
+              "service_params": {
+                "type": "string"
               }
             }
           }
@@ -1034,6 +1631,159 @@
               },
               "ret_code": {
                 "type": "integer"
+              },
+              "cluster_id": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "CreateClusterFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "CreateClusterFromSnapshot",
+      "summary": "CreateClusterFromSnapshot",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/create_cluster_from_snapshot.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "conf": {
+                "type": "string"
+              },
+              "snapshot_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conf",
+              "snapshot_id"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "app_id": {
+                "type": "string"
+              },
+              "app_version": {
+                "type": "string"
+              },
+              "cluster_name": {
+                "type": "string"
+              },
+              "vxnet_id": {
+                "type": "string"
+              },
+              "node_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "job_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "RestoreClusterFromSnapshot": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Cluster"
+      ],
+      "operationId": "RestoreClusterFromSnapshot",
+      "summary": "RestoreClusterFromSnapshot",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/cluster/restore_cluster_from_snapshot.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "string"
+              },
+              "snapshot": {
+                "type": "string"
+              },
+              "service_params": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cluster",
+              "snapshot"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "cluster_id": {
+                "type": "string"
+              },
+              "snapshot_id": {
+                "type": "string"
+              },
+              "service_params": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
               }
             }
           }
