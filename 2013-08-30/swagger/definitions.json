@@ -1048,6 +1048,9 @@
         "items":{
           "type": "string"
         }
+      },
+      "node_count": {
+        "type": "integer"
       }
     }
   },
