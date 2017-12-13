@@ -45,6 +45,9 @@
                   5
                 ]
               },
+              "node_count": {
+                "type": "integer"
+              },
               "loadbalancer_name": {
                 "type": "string"
               },
@@ -268,6 +271,9 @@
               },
               "private_ip": {
                 "type": "string"
+              },
+              "node_count": {
+                "type": "integer"
               }
             },
             "required": [
