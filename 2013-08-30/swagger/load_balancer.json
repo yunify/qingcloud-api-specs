@@ -33,6 +33,9 @@
               "private_ip": {
                 "type": "string"
               },
+              "http_header_size" : {
+                "type": "integer"
+              },
               "loadbalancer_type": {
                 "type": "integer",
                 "default": 0,
@@ -881,6 +884,9 @@
                 "type": "string"
               },
               "forwardfor": {
+                "type": "integer"
+              },
+              "http_header_size" : {
                 "type": "integer"
               },
               "healthy_check_method": {
