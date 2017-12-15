@@ -277,6 +277,9 @@
               },
               "node_count": {
                 "type": "integer"
+              },
+              "http_header_size" : {
+                "type": "integer"
               }
             },
             "required": [
@@ -884,9 +887,6 @@
                 "type": "string"
               },
               "forwardfor": {
-                "type": "integer"
-              },
-              "http_header_size" : {
                 "type": "integer"
               },
               "healthy_check_method": {
