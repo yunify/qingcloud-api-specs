@@ -1023,7 +1023,7 @@
           "$ref": "#/definitions/tag"
         }
       },
-      "cluster": {
+      "eips": {
         "type": "array",
         "items": {
           "$ref": "#/definitions/eip"
