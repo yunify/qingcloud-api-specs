@@ -1001,6 +1001,9 @@
         "enum": {
           "$ref": "http://json-schema.org/draft-04/schema#/properties/enum"
         },
+        "nullable":{
+          "type": "boolean"
+        },
         "additionalProperties": {
           "anyOf": [
             {

@@ -795,6 +795,84 @@
       }
     }
   },
+  "GetVPNCerts": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get":{
+      "tags": [
+        "Router"
+      ],
+      "operationId": "GetVPNCerts",
+      "summary": "GetVPNCerts",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/router/get_vpn_certs.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "router": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "router"
+            ]
+          }
+        }
+      ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "ret_code": {
+                  "type": "integer"
+                },
+                "client_crt": {
+                  "type": "string"
+                },
+                "client_key": {
+                  "type": "string"
+                },
+                "static_key": {
+                  "type": "string"
+                },
+                "ca_cert": {
+                  "type": "string"
+                },               
+                "router_id": {
+                  "type": "string"
+                },
+                "mac_conf_sample":{
+                  "type": "string"
+                },
+                "windows_conf_sample":{
+                  "type": "string"
+                },
+                "linux_conf_sample":{
+                  "type": "string"
+                }
+              }
+            }
+          }
+      
+        }
+    }
+  },
   "ModifyRouterStaticAttributes": {
     "parameters": [
       {
