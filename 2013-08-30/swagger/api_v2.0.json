@@ -120,6 +120,9 @@
     "/LeaveRouter": {
       "$ref": "./router.json#/LeaveRouter"
     },
+    "/GetVPNCerts":{
+      "$ref": "./router.json#/GetVPNCerts"
+    },
     "/ModifyRouterAttributes": {
       "$ref": "./router.json#/ModifyRouterAttributes"
     },
