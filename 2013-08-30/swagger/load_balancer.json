@@ -1733,7 +1733,7 @@
         "$ref": "#/parameters/zone"
       }
     ],
-    "get": {
+    "post": {
       "tags": [
         "Load Balancer"
       ],
