@@ -1810,7 +1810,10 @@
             "type": "object",
             "properties": {
               "server_certificates": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "search_word": {
                 "type": "string"
