@@ -896,7 +896,7 @@
                 "type": "string"
               },
               "listener_option": {
-                "type": "int"
+                "type": "integer"
               }
             },
             "required": [
