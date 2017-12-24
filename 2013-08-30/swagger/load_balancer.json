@@ -894,6 +894,9 @@
               },
               "healthy_check_option": {
                 "type": "string"
+              },
+              "listener_option": {
+                "type": "integer"
               }
             },
             "required": [
