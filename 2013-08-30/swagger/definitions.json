@@ -1153,6 +1153,9 @@
       "create_time": {
         "type": "string",
         "format": "date-time"
+      },
+      "timeout": {
+        "type": "integer"
       }
     }
   },
