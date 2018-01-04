@@ -897,6 +897,9 @@
               },
               "listener_option": {
                 "type": "integer"
+              },
+              "timeout": {
+                "type": "integer"
               }
             },
             "required": [
