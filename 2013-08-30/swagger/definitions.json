@@ -1117,6 +1117,9 @@
       },
       "server_certificate_id": {
         "type": "string"
+      },
+      "timeout": {
+        "type": "integer"
       }
     }
   },
@@ -1153,9 +1156,6 @@
       "create_time": {
         "type": "string",
         "format": "date-time"
-      },
-      "timeout": {
-        "type": "integer"
       }
     }
   },
