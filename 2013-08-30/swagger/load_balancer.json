@@ -1012,7 +1012,10 @@
             "type": "object",
             "properties": {
               "loadbalancer_backends": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "loadbalancer_listener": {
                 "type": "string"
