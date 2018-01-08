@@ -1147,10 +1147,10 @@
                 "type": "string"
               },
               "port": {
-                "type": "string"
+                "type": "integer"
               },
               "weight": {
-                "type": "string"
+                "type": "integer"
               },
               "disabled": {
                 "type": "integer",
