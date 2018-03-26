@@ -45,6 +45,9 @@
     "/ResizeInstances": {
       "$ref": "./instance.json#/ResizeInstances"
     },
+    "/CeaseInstances": {
+      "$ref": "./instance.json#/CeaseInstances"
+    },
     "/ModifyInstanceAttributes": {
       "$ref": "./instance.json#/ModifyInstanceAttributes"
     },

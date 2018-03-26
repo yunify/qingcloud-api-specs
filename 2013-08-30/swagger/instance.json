@@ -632,6 +632,62 @@
       }
     }
   },
+  "CeaseInstances": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "CeaseInstances",
+      "summary": "CeaseInstances",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/instance/cease_instances.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "instances"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "ResizeInstances": {
     "parameters": [
       {
