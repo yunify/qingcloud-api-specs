@@ -821,6 +821,9 @@
     "router_static_entry": {
       "$ref": "./definitions.json#/router_static_entry"
     },
+    "router_static_entry_simple" :{
+      "$ref": "./definitions.json#/router_static_entry_simple"
+    },
     "loadbalancer": {
       "$ref": "./definitions.json#/loadbalancer"
     },
@@ -943,6 +946,12 @@
     },
     "zone": {
       "$ref": "./definitions.json#/zone"
+    },
+    "nic_eip":{
+      "$ref": "./definitions.json#/nic_eip"
+    },
+    "nic_vxnet":{
+      "$ref": "./definitions.json#/nic_vxnet"
     }
   }
 }

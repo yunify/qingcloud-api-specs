@@ -53,29 +53,17 @@
         "type": "string",
         "format": "date-time"
       },
-      "image_id": {
-        "type": "string"
-      },
       "image": {
         "$ref": "#/definitions/image"
       },
       "vxnets": {
         "type": "array",
         "items": {
-          "$ref": "#/definitions/instance_vxnet"
+          "$ref": "#/definitions/nic_vxnet"
         }
       },
       "eip": {
         "$ref": "#/definitions/eip"
-      },
-      "private_ip": {
-        "type": "string"
-      },
-      "dhcp_options": {
-        "$ref": "#/definitions/dhcp_option"
-      },
-      "security_group": {
-        "$ref": "#/definitions/security_group"
       },
       "volume_ids": {
         "type": "array",
@@ -130,6 +118,9 @@
       },
       "device": {
         "type": "string"
+      },
+      "security_group": {
+        "$ref": "#/definitions/security_group"
       }
     }
   },
@@ -789,6 +780,9 @@
       "ip_network": {
         "type": "string"
       },
+      "vpc_network": {
+        "type": "string"
+      },
       "dyn_ip_end": {
         "type": "string"
       },
@@ -905,6 +899,35 @@
       },
       "val6": {
         "type": "string"
+      },
+      "val7": {
+        "type": "string"
+      },
+      "val8": {
+        "type": "string"
+      },
+      "val9": {
+        "type": "string"
+      },
+      "entry_set": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/router_static_entry_simple"
+        }
+      }
+    }
+  },
+  "router_static_entry_simple": {
+    "type": "object",
+    "properties": {
+      "router_static_entry_id": {
+        "type": "string"
+      },
+      "val1": {
+        "type": "string"
+      },
+      "val2": {
+        "type": "string"
       }
     }
   },
@@ -948,6 +971,9 @@
         "type": "string"
       },
       "router_static_entry_id": {
+        "type": "string"
+      },
+      "router_static_id": {
         "type": "string"
       },
       "val1": {
@@ -1397,7 +1423,7 @@
         "type": "string"
       },
       "snapshot_type": {
-        "type": "string",
+        "type": "integer",
         "enum": [
           0,
           1
@@ -1464,12 +1490,12 @@
       "total_count": {
         "type": "integer"
       },
-      "lastest_snapshot_time": {
+      "latest_snapshot_time": {
         "type": "string",
         "format": "date-time"
       },
       "head_chain": {
-        "type": "string"
+        "type": "integer"
       },
       "provider": {
         "type": "string"
@@ -1528,6 +1554,9 @@
       "keypair_id": {
         "type": "string"
       },
+      "priv_key": {
+        "type":"string"
+      },
       "keypair_name": {
         "type": "string"
       },
@@ -1555,6 +1584,16 @@
         "items": {
           "type": "string"
         }
+      },
+      "create_time":{
+        "type":"string",
+        "format": "date-time"
+      },
+      "owner":{
+        "type":"string"
+      },
+      "resource_ids": {
+        "type":"string"
       }
     }
   },
@@ -2348,14 +2387,10 @@
     "type": "object",
     "properties": {
       "data": {
-        "type": "object"
-      },
-      "data_set": {
         "type": "array",
-        "items": {
-          "type": "object"
+        "items":{
+          "type":"object"
         }
-
       },
       "vxnet_id": {
         "type": "string"
@@ -2541,6 +2576,9 @@
       },
       "security_group":{
         "type": "string"
+      },
+      "eip": {
+        "$ref": "#/definitions/nic_eip"
       }
     }
   },
@@ -2549,6 +2587,43 @@
     "properties": {
       "nic_id": {
         "type": "string"
+      },
+      "private_ip": {
+        "type": "string"
+      }
+    }
+  },
+  "nic_eip": {
+    "type": "object",
+    "properties": {
+      "eip_id": {
+        "type": "string"
+      },
+      "eip_addr": {
+        "type": "string"
+      },
+      "bandwidth": {
+        "type": "integer"
+      }
+    }
+  },
+  "nic_vxnet": {
+    "type": "object",
+    "properties": {
+      "nic_id": {
+        "type": "string"
+      },
+      "vxnet_id": {
+        "type": "string"
+      },
+      "role": {
+        "type": "integer"
+      },
+      "vxnet_name": {
+        "type": "string"
+      },
+      "vxnet_type": {
+        "type": "integer"
       },
       "private_ip": {
         "type": "string"

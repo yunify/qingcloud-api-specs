@@ -355,7 +355,7 @@
           "schema": {
             "type": "object",
             "properties": {
-              "nic_id": {
+              "nic": {
                 "type": "string"
               },
               "nic_name": {
@@ -369,7 +369,7 @@
               }
             },
             "required": [
-              "nic_id"
+              "nic"
             ]
           }
         }

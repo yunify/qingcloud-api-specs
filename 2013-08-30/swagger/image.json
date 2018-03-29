@@ -173,6 +173,71 @@
       }
     }
   },
+  "CloneImages": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Image"
+      ],
+      "operationId": "CloneImages",
+      "summary": "CloneImages",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/image/clone-images.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string"
+              },
+              "count": {
+                "type": "integer"
+              },
+              "image_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "image"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "DeleteImages": {
     "parameters": [
       {

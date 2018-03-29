@@ -835,47 +835,54 @@
           }
         }
       ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "action": {
-                  "type": "string"
-                },
-                "ret_code": {
-                  "type": "integer"
-                },
-                "client_crt": {
-                  "type": "string"
-                },
-                "client_key": {
-                  "type": "string"
-                },
-                "static_key": {
-                  "type": "string"
-                },
-                "ca_cert": {
-                  "type": "string"
-                },               
-                "router_id": {
-                  "type": "string"
-                },
-                "mac_conf_sample":{
-                  "type": "string"
-                },
-                "windows_conf_sample":{
-                  "type": "string"
-                },
-                "linux_conf_sample":{
-                  "type": "string"
-                }
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "router_id": {
+                "type": "string"
+              },
+              "ca_cert": {
+                "type": "string"
+              },
+              "windows_conf_sample": {
+                "type": "string"
+              },
+              "mac_conf_sample": {
+                "type": "string"
+              },
+              "linux_conf_sample": {
+                "type": "string"
+              },
+              "static_key": {
+                "type": "string"
+              },
+              "client_crt": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string",
+                "enum": [
+                  "linux",
+                  "windows",
+                  "mac"
+                ]
+              },
+              "client_key": {
+                "type": "string"
               }
             }
           }
-      
         }
+      }
     }
   },
   "ModifyRouterStaticAttributes": {
@@ -922,6 +929,15 @@
                 "type": "string"
               },
               "val6": {
+                "type": "string"
+              },
+              "val7": {
+                "type": "string"
+              },
+              "val8": {
+                "type": "string"
+              },
+              "val9": {
                 "type": "string"
               }
             },
@@ -1293,7 +1309,7 @@
           "schema": {
             "type": "object",
             "properties": {
-              "router_static_entry_id": {
+              "router_static_entries": {
                 "type": "string"
               },
               "router_static": {
