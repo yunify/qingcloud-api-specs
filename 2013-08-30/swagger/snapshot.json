@@ -37,6 +37,9 @@
                   1
                 ]
               },
+              "snapshot_time": {
+                "type": "string"
+              },
               "status": {
                 "type": "array",
                 "items": {
@@ -96,6 +99,9 @@
                 "items": {
                   "$ref": "#/definitions/snapshot"
                 }
+              },
+              "total_count": {
+                "type": "integer"
               }
             }
           }

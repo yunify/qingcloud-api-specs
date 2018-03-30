@@ -54,9 +54,6 @@
     "/DescribeInstanceTypes": {
       "$ref": "./instance.json#/DescribeInstanceTypes"
     },
-    "/GetInstanceMonitor": {
-      "$ref": "./instance.json#/GetInstanceMonitor"
-    },
     "/DescribeImages": {
       "$ref": "./image.json#/DescribeImages"
     },
@@ -279,9 +276,6 @@
     },
     "/ModifyEipAttributes": {
       "$ref": "./eip.json#/ModifyEipAttributes"
-    },
-    "/GetEIPMonitor": {
-      "$ref": "./eip.json#/GetEIPMonitor"
     },
     "/DescribeDNSAliases": {
       "$ref": "./dns_alias.json#/DescribeDNSAliases"
@@ -750,6 +744,9 @@
     },
     "/RestoreClusterFromSnapshot": {
       "$ref": "./cluster.json#/RestoreClusterFromSnapshot"
+    },
+    "/GetMonitor": {
+      "$ref": "./monitor.json#/GetMonitor"
     }
   },
   "parameters": {
@@ -820,6 +817,9 @@
     },
     "router_static_entry": {
       "$ref": "./definitions.json#/router_static_entry"
+    },
+    "router_static_entry_simple" :{
+      "$ref": "./definitions.json#/router_static_entry_simple"
     },
     "loadbalancer": {
       "$ref": "./definitions.json#/loadbalancer"
@@ -943,6 +943,12 @@
     },
     "zone": {
       "$ref": "./definitions.json#/zone"
+    },
+    "nic_eip":{
+      "$ref": "./definitions.json#/nic_eip"
+    },
+    "nic_vxnet":{
+      "$ref": "./definitions.json#/nic_vxnet"
     }
   }
 }
