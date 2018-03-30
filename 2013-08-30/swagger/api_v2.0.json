@@ -54,9 +54,6 @@
     "/DescribeInstanceTypes": {
       "$ref": "./instance.json#/DescribeInstanceTypes"
     },
-    "/GetInstanceMonitor": {
-      "$ref": "./instance.json#/GetInstanceMonitor"
-    },
     "/DescribeImages": {
       "$ref": "./image.json#/DescribeImages"
     },
@@ -279,9 +276,6 @@
     },
     "/ModifyEipAttributes": {
       "$ref": "./eip.json#/ModifyEipAttributes"
-    },
-    "/GetEIPMonitor": {
-      "$ref": "./eip.json#/GetEIPMonitor"
     },
     "/DescribeDNSAliases": {
       "$ref": "./dns_alias.json#/DescribeDNSAliases"
@@ -750,6 +744,9 @@
     },
     "/RestoreClusterFromSnapshot": {
       "$ref": "./cluster.json#/RestoreClusterFromSnapshot"
+    },
+    "/GetMonitor": {
+      "$ref": "./monitor.json#/GetMonitor"
     }
   },
   "parameters": {
