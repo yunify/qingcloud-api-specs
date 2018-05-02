@@ -245,6 +245,17 @@
                   1
                 ]
               },
+              "cpu_model": {
+                "type": "string",
+                "default": "Westmere",
+                "enum": [
+                  "Westmere",
+                  "SandyBridge",
+                  "IvyBridge",
+                  "Haswell",
+                  "Broadwell"
+                ]
+              },
               "userdata_path": {
                 "type": "string",
                 "default": "/etc/qingcloud/userdata"
