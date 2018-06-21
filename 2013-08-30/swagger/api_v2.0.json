@@ -747,6 +747,9 @@
     },
     "/GetMonitor": {
       "$ref": "./monitor.json#/GetMonitor"
+    },
+    "/GetQuotaLeft": {
+      "$ref": "./misc.json#/GetQuotaLeft"
     }
   },
   "parameters": {
@@ -949,6 +952,9 @@
     },
     "nic_vxnet":{
       "$ref": "./definitions.json#/nic_vxnet"
+    },
+    "quota_left":{
+      "$ref": "./definitions.json#/quota_left"
     }
   }
 }

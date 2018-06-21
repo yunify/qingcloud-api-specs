@@ -3005,5 +3005,16 @@
         ]
       }
     }
+  },
+  "quota_left": {
+    "type": "object",
+    "properties": {
+      "resource_type": {
+        "type": "string"
+      },
+      "left": {
+        "type": "integer"
+      }
+    }
   }
 }
