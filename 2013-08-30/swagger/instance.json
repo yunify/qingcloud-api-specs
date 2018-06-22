@@ -158,6 +158,10 @@
                   16
                 ]
               },
+              "gpu": {
+                "type": "integer",
+                "default": 0
+              },
               "memory": {
                 "type": "integer",
                 "default": 1024,

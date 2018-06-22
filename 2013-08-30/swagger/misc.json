@@ -1,0 +1,62 @@
+{
+  "GetQuotaLeft": {
+    "get": {
+      "tags": [
+        "Misc"
+      ],
+      "operationId": "GetQuotaLeft",
+      "summary": "GetQuotaLeft",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "resource_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "quota_left_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/quota_left"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
