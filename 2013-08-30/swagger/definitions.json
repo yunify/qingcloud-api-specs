@@ -1142,7 +1142,10 @@
         "type": "integer"
       },
       "server_certificate_id": {
-        "type": "string"
+        "type": "array",
+        "items":{
+          "type": "string"
+        }
       },
       "timeout": {
         "type": "integer"

@@ -878,7 +878,10 @@
                 "type": "string"
               },
               "server_certificate_id": {
-                "type": "string"
+                "type": "array",
+                "items":{
+                  "type": "string"
+                }
               },
               "balance_mode": {
                 "type": "string"
