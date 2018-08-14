@@ -60,6 +60,9 @@
                   1
                 ]
               },
+              "owner": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer"
               },
@@ -687,6 +690,9 @@
                   1
                 ]
               },
+              "owner": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer",
                 "default": 0
@@ -1313,6 +1319,9 @@
                 "type": "string"
               },
               "router_static": {
+                "type": "string"
+              },
+              "owner": {
                 "type": "string"
               },
               "offset": {

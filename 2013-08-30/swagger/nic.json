@@ -56,6 +56,9 @@
               "nic_name": {
                 "type": "string"
               },
+              "owner": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer",
                 "default": 0

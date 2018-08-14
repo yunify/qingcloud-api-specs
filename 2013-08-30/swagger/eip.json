@@ -53,6 +53,9 @@
                   "type": "string"
                 }
               },
+              "owner": {
+                "type": "string"
+              },
               "verbose": {
                 "type": "integer"
               },
