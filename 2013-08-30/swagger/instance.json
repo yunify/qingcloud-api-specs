@@ -84,6 +84,9 @@
                 "type": "integer",
                 "default": 20
               },
+              "owner": {
+                "type": "string"
+              },
               "is_cluster_node": {
                 "type": "integer",
                 "default": 0

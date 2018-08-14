@@ -75,6 +75,9 @@
                   0
                 ]
               },
+              "owner": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer",
                 "default": 0

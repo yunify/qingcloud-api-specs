@@ -40,6 +40,9 @@
                 "type": "integer",
                 "default": 0
               },
+              "owner": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer",
                 "default": 0
@@ -343,6 +346,9 @@
                   0,
                   1
                 ]
+              },
+              "owner": {
+                "type": "string"
               },
               "offset": {
                 "type": "integer",
@@ -895,6 +901,9 @@
               "verbose": {
                 "type": "integer",
                 "default": 0
+              },
+              "owner": {
+                "type": "string"
               },
               "offset": {
                 "type": "integer",
