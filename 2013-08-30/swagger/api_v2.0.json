@@ -972,13 +972,13 @@
       "$ref": "./definitions.json#/quota_left"
     },
     "app":{
-      "$ref": "./app.json#/app"
+      "$ref": "./definitions.json#/app"
     },
     "app_version":{
-      "$ref": "./app.json#/app_version"
+      "$ref": "./definitions.json#/app_version"
     },
     "app_version_attachment":{
-      "$ref": "./app.json#/app_version_attachment"
+      "$ref": "./definitions.json#/app_version_attachment"
     }
   }
 }
