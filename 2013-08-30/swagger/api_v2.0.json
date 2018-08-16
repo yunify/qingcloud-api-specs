@@ -750,6 +750,21 @@
     },
     "/GetQuotaLeft": {
       "$ref": "./misc.json#/GetQuotaLeft"
+    },
+    "/DescribeApps": {
+      "$ref": "./app.json#/DescribeApps"
+    },
+    "/DescribeAppVersions": {
+      "$ref": "./app.json#/DescribeAppVersions"
+    },
+    "/DescribeAppVersionAttachments": {
+      "$ref": "./app.json#/DescribeAppVersionAttachments"
+    },
+    "/GetGlobalUniqueId": {
+      "$ref": "./app.json#/GetGlobalUniqueId"
+    },
+    "/DeployAppVersion": {
+      "$ref": "./app.json#/DeployAppVersion"
     }
   },
   "parameters": {
@@ -955,6 +970,15 @@
     },
     "quota_left":{
       "$ref": "./definitions.json#/quota_left"
+    },
+    "app":{
+      "$ref": "./definitions.json#/app"
+    },
+    "app_version":{
+      "$ref": "./definitions.json#/app_version"
+    },
+    "app_version_attachment":{
+      "$ref": "./definitions.json#/app_version_attachment"
     }
   }
 }
