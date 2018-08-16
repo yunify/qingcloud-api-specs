@@ -59,7 +59,7 @@
               },
               "verbose":{
                 "type":"integer",
-                "range":[
+                "enum":[
                   1,
                   0
                 ]
@@ -149,7 +149,7 @@
               },
               "verbose":{
                 "type":"integer",
-                "range":[
+                "enum":[
                   1,
                   0
                 ]
