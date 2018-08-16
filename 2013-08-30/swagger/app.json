@@ -221,7 +221,7 @@
             "properties": {
               "content_keys": {
                 "type": "array",
-                "range":["config.json","locale/zh-cn.json","locale/en.json","cluster.json.mustache"],
+                "enum":["config.json","locale/zh-cn.json","locale/en.json","cluster.json.mustache"],
                 "items":{
                   "type":"string"
                 }
