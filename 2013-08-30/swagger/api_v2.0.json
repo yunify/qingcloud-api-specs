@@ -760,9 +760,6 @@
     "/DescribeAppVersionAttachments": {
       "$ref": "./app.json#/DescribeAppVersionAttachments"
     },
-    "/GetGlobalUniqueId": {
-      "$ref": "./app.json#/GetGlobalUniqueId"
-    },
     "/DeployAppVersion": {
       "$ref": "./app.json#/DeployAppVersion"
     }

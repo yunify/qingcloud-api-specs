@@ -266,56 +266,6 @@
       }
     }
   },
-  "GetGlobalUniqueId": {
-    "parameters": [
-      {
-        "$ref": "#/parameters/zone"
-      }
-    ],
-    "get": {
-      "tags": [
-        "App"
-      ],
-      "operationId": "GetGlobalUniqueId",
-      "summary": "GetGlobalUniqueId",
-      "externalDocs": {
-        "url": "https://docs.qingcloud.com/api/bot/describe_app_version_attachments.html"
-      },
-      "parameters": [
-        {
-          "name": "body",
-          "in": "body",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "user_id": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "OK",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "action": {
-                "type": "string"
-              },
-              "ret_code": {
-                "type": "integer"
-              },
-              "uuid": {
-                "type": "string"
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "DeployAppVersion": {
     "parameters": [
       {
