@@ -2642,11 +2642,23 @@
       "auto_backup_time": {
         "type": "integer"
       },
-      "cfgmgmt_id": {
-        "type":"string"
+      "health_check_enablement": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean"
+        }
       },
       "app_id": {
         "type":"string"
+      },
+      "custom_service": {
+        "type": "object"
+      },
+      "advanced_actions": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
       },
       "console_id": {
         "type":"string"
@@ -2668,21 +2680,17 @@
       "incremental_backup_supported": {
         "type": "boolean"
       },
+      "display_tabs": {
+        "type": "object"
+      },
       "cluster_type": {
         "type": "integer"
       },
-      "sub_code": {
-        "type": "integer"
-      },
-      "metadata_root_access": {
-        "type": "integer"
+      "security_group_id": {
+        "type": "string"
       },
       "upgrade_status": {
         "type": "string"
-      },
-      "status_time": {
-        "type":"string",
-        "format":"date-time"
       },
       "node_count": {
         "type": "integer"
@@ -2690,8 +2698,11 @@
       "app_version": {
         "type": "string"
       },
-      "vxnet": {
-        "$ref": "#/definitions/vxnet"
+      "role_count": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer"
+        }
       },
       "status": {
         "type": "string"
@@ -2699,17 +2710,20 @@
       "description": {
         "type": "string"
       },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "app_info": {
+        "type": "object"
+      },
       "transition_status": {
         "type": "string"
       },
-      "reuse_hyper": {
-        "type": "integer"
-      },
-      "controller": {
+      "root_user_id": {
         "type": "string"
-      },
-      "partner_access": {
-        "type": "boolean"
       },
       "name": {
         "type": "string"
@@ -2723,68 +2737,8 @@
       "lastest_snapshot_time": {
         "type": "string"
       },
-      "root_user_id": {
-        "type": "string"
-      },
-      "debug": {
-        "type": "boolean"
-      },
-      "links": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "health_check_enablement": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "boolean"
-        }
-      },
-      "custom_service": {
-        "type": "object"
-      },
-      "restore_service": {
-        "type": "object"
-      },
-      "backup_service": {
-        "type": "object"
-      },
-      "advanced_actions": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "role_count": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "integer"
-        }
-      },
-      "upgrade_policy": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "app_info": {
-        "type": "object"
-      },
-      "app_version_info": {
-        "type": "object"
-      },
-      "display_tabs": {
-        "type": "object"
-      },
-      "backup": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "boolean"
-        }
-      },
-      "security_group_id": {
-        "type": "string"
+      "vxnet": {
+        "$ref": "#/definitions/vxnet"
       },
       "backup_policy": {
         "type": "string"
@@ -2792,11 +2746,8 @@
       "endpoints": {
         "type": "object"
       },
-      "nodes": {
-        "type": "array",
-        "items": {
-          "$ref": "#/definitions/cluster_node"
-        }
+      "app_version_info": {
+        "type": "object"
       }
     }
   },

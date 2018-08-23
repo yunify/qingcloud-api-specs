@@ -101,6 +101,12 @@
                   "type": "string"
                 }
               },
+              "apps": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "scope": {
                 "type": "string",
                 "enum": [
@@ -108,67 +114,49 @@
                   "cfgmgmt"
                 ]
               },
-              "role": {
-                "type": "string"
-              },
-              "apps": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "app_versions": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "users": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "cluster_name": {
+                "type": "string"
               },
               "link": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "transition_status": {
-                "type": "string"
-              },
-              "console": {
-                "type": "string"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "search_word": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "sort_key": {
-                "type": "string"
-              },
-              "vxnet": {
-                "type": "string"
-              },
-              "cfgmgmt_id": {
                 "type": "string"
               },
               "external_cluster_id": {
                 "type": "string"
               },
+              "status": {
+                "type": "array",
+                "enum": [
+                  "active",
+                  "suspended",
+                  "deleted",
+                  "ceased"
+                ]
+              },
+              "vxnet": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "owner": {
+                "type": "string"
+              },
+              "verbose": {
+                "type": "integer"
+              },
               "limit": {
                 "type": "integer"
               },
               "offset": {
-                "type": "integer"
-              },
-              "verbose": {
                 "type": "integer"
               },
               "reverse": {
@@ -446,7 +434,7 @@
                   "type": "string"
                 }
               },
-              "force": {
+              "direct_cease": {
                 "type": "integer"
               }
             },
