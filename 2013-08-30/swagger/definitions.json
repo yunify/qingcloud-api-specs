@@ -2717,7 +2717,7 @@
         }
       },
       "app_info": {
-        "type": "object"
+        "$ref": "#/definitions/app"
       },
       "transition_status": {
         "type": "string"
@@ -2747,7 +2747,7 @@
         "type": "object"
       },
       "app_version_info": {
-        "type": "object"
+        "$ref": "#/definitions/app_version"
       }
     }
   },
