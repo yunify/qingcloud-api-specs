@@ -131,12 +131,9 @@
               },
               "status": {
                 "type": "array",
-                "enum": [
-                  "active",
-                  "suspended",
-                  "deleted",
-                  "ceased"
-                ]
+                "items": {
+                  "type": "string"
+                }
               },
               "vxnet": {
                 "type": "string"
