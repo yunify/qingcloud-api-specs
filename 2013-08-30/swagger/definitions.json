@@ -1596,7 +1596,10 @@
         "type":"string"
       },
       "resource_ids": {
-        "type":"string"
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     }
   },
