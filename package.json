@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Specifications of QingCloud APIs.",
   "scripts": {
-    "test": "./node_modules/.bin/mocha api_spec_validate.js"
+    "test": "./node_modules/.bin/mocha --timeout 5000 api_spec_validate.js"
   },
   "repository": {
     "type": "git",
