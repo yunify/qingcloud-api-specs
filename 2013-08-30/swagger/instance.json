@@ -166,7 +166,7 @@
                 "default": 0
               },
               "os_disk_size": {
-                "type": "integer",
+                "type": "integer"
               },
               "memory": {
                 "type": "integer",
@@ -746,7 +746,7 @@
               "os_disk_size": {
                 "type": "integer"
               },
-              "cpu_model ": {
+              "cpu_model": {
                 "type": "string"
               },
               "cpu": {
