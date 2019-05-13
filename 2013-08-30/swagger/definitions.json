@@ -2722,7 +2722,7 @@
         "type": "integer"
       },
       "metadata_root_access": {
-        "type": "integer"
+        "type": "boolean"
       },
       "upgrade_status": {
         "type": "string"
@@ -2750,7 +2750,7 @@
         "type": "string"
       },
       "reuse_hyper": {
-        "type": "integer"
+        "type": "boolean"
       },
       "controller": {
         "type": "string"
