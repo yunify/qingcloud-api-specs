@@ -1554,6 +1554,47 @@
       }
     }
   },
+  "access_key": {
+    "type": "object",
+    "properties": {
+      "access_key_id": {
+        "type": "string"
+      },
+      "access_key_name": {
+        "type":"string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "controller": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "ip_white_list": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "secret_access_key": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "status_time": {
+        "type": "string"
+      }
+    }
+  },
   "keypair": {
     "type": "object",
     "properties": {
