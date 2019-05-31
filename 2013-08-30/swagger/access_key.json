@@ -81,5 +81,67 @@
         }
       }
     }
-  } 
+  },
+  "DeleteAccessKeys": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Accesskey"
+      ],
+      "operationId": "DeleteAccessKeys",
+      "summary": "DeleteAccessKeys",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "access_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "access_keys"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "access_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
