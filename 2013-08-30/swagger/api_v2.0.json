@@ -436,6 +436,9 @@
     "/ModifySecurityGroupIPSetAttributes": {
       "$ref": "./security_group.json#/ModifySecurityGroupIPSetAttributes"
     },
+    "/ApplySecurityGroupIPSets": {
+      "$ref": "./security_group.json#/ApplySecurityGroupIPSets"
+    },
     "/DescribeKeyPairs": {
       "$ref": "./key_pair.json#/DescribeKeyPairs"
     },
