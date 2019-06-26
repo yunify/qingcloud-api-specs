@@ -436,6 +436,12 @@
     "/ModifySecurityGroupIPSetAttributes": {
       "$ref": "./security_group.json#/ModifySecurityGroupIPSetAttributes"
     },
+    "/DescribeAccessKeys": {
+      "$ref": "./access_key.json#/DescribeAccessKeys"
+    },
+    "/DeleteAccessKeys": {
+      "$ref": "./access_key.json#/DeleteAccessKeys"
+    },
     "/ApplySecurityGroupIPSets": {
       "$ref": "./security_group.json#/ApplySecurityGroupIPSets"
     },
@@ -778,6 +784,9 @@
   "definitions": {
     "instance": {
       "$ref": "./definitions.json#/instance"
+    },
+    "access_key": {
+      "$ref": "./definitions.json#/access_key"
     },
     "instance_type": {
       "$ref": "./definitions.json#/instance_type"
