@@ -1546,10 +1546,25 @@
   "snapshot_resource": {
     "type": "object",
     "properties": {
-      "os_family": {
+      "mount_point": {
         "type": "string"
       },
-      "platform": {
+      "volume_id": {
+        "type": "string"
+      },
+      "volume_type": {
+        "type": "integer"
+      },
+      "mount_options": {
+        "type": "string"
+      },
+      "filesystem": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "architecture": {
         "type": "string"
       }
     }

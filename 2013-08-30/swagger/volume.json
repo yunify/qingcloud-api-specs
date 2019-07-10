@@ -495,5 +495,92 @@
         }
       }
     }
+  },
+  "CloneVolumes": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Volume"
+      ],
+      "operationId": "CloneVolumes",
+      "summary": "CloneVolumes",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "volume": {
+                "type": "string"
+              },
+              "volume_name": {
+                "type": "string"
+              },
+              "zone": {
+                "type": "string"
+              },
+              "sub_zones": {
+                "type": "string"
+              },
+              "volume_type": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  10,
+                  100,
+                  200
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "default": 1
+              }
+            },
+            "required": [
+              "volume"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
+                "type": "string"
+              },
+              "volumes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
