@@ -322,6 +322,9 @@
     "/ModifyVolumeAttributes": {
       "$ref": "./volume.json#/ModifyVolumeAttributes"
     },
+    "/CloneVolumes": {
+      "$ref": "./volume.json#/CloneVolumes"
+    },
     "/CreateS2Server": {
       "$ref": "./shared_storage.json#/CreateS2Server"
     },
