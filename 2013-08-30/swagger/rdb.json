@@ -144,6 +144,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "rdbs": {
                 "type": "array",
                 "items": {

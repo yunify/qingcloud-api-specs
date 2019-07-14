@@ -427,6 +427,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "mongos": {
                 "type": "array",
                 "items": {

@@ -1,4 +1,80 @@
 {
+  "project_resource_item": {
+    "type": "object",
+    "properties": {
+      "resource_group_id": {
+        "type": "string"
+      },
+      "project_name": {
+        "type": "string"
+      },
+      "zone_id": {
+        "type": "string"
+      }, 
+      "resource_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "meta": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "project_id": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    }
+  },
+  "project": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "resource_group_id": {
+        "type": "string"
+      },
+      "project_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "owner_name": {
+        "type": "string"
+      },
+      "enabled": {
+        "type": "integer"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "meta": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "project_id": {
+        "type": "string"
+      }
+    }
+  },
   "instance": {
     "type": "object",
     "properties": {
@@ -348,7 +424,7 @@
       "security_group_rule_id": {
         "type": "string"
       },
-      "security_group_rule_name":{
+      "security_group_rule_name": {
         "type": "string"
       },
       "direction": {
@@ -496,7 +572,7 @@
         "type": "string"
       },
       "repl": {
-      	"type": "string"
+        "type": "string"
       },
       "tags": {
         "type": "array",
@@ -718,29 +794,29 @@
       }
     }
   },
-  "instance_vxnet":{
+  "instance_vxnet": {
     "type": "object",
     "properties": {
-      "vxnet_type":{
+      "vxnet_type": {
         "type": "integer",
         "enum": [
           0,
           1
         ]
       },
-      "vxnet_id":{
+      "vxnet_id": {
         "type": "string"
       },
-      "vxnet_name":{
+      "vxnet_name": {
         "type": "string"
       },
-      "role":{
+      "role": {
         "type": "integer"
       },
-      "private_ip":{
+      "private_ip": {
         "type": "string"
       },
-      "nic_id":{
+      "nic_id": {
         "type": "string"
       }
     }
@@ -1078,9 +1154,9 @@
       "security_group_id": {
         "type": "string"
       },
-      "private_ips":{
+      "private_ips": {
         "type": "array",
-        "items":{
+        "items": {
           "type": "string"
         }
       },
@@ -1098,16 +1174,16 @@
       "loadbalancer_listener_name": {
         "type": "string"
       },
-      "loadbalancer_id":{
+      "loadbalancer_id": {
         "type": "string"
       },
-      "listener_port":{
+      "listener_port": {
         "type": "integer"
       },
-      "listener_protocol":{
+      "listener_protocol": {
         "type": "string"
       },
-      "backend_protocol":{
+      "backend_protocol": {
         "type": "string"
       },
       "backends": {
@@ -1146,7 +1222,7 @@
       },
       "server_certificate_id": {
         "type": "array",
-        "items":{
+        "items": {
           "type": "string"
         }
       },
@@ -1561,7 +1637,7 @@
         "type": "string"
       },
       "access_key_name": {
-        "type":"string"
+        "type": "string"
       },
       "console_id": {
         "type": "string"
@@ -1602,7 +1678,7 @@
         "type": "string"
       },
       "priv_key": {
-        "type":"string"
+        "type": "string"
       },
       "keypair_name": {
         "type": "string"
@@ -1632,12 +1708,12 @@
           "type": "string"
         }
       },
-      "create_time":{
-        "type":"string",
+      "create_time": {
+        "type": "string",
         "format": "date-time"
       },
-      "owner":{
-        "type":"string"
+      "owner": {
+        "type": "string"
       },
       "resource_ids": {
         "type": "array",
@@ -2438,8 +2514,8 @@
     "properties": {
       "data": {
         "type": "array",
-        "items":{
-          "type":"object"
+        "items": {
+          "type": "object"
         }
       },
       "vxnet_id": {
@@ -2594,10 +2670,10 @@
       "role": {
         "type": "integer"
       },
-      "root_user_id":{
+      "root_user_id": {
         "type": "string"
       },
-      "owner":{
+      "owner": {
         "type": "string"
       },
       "status": {
@@ -2624,7 +2700,7 @@
           "$ref": "#/definitions/tag"
         }
       },
-      "security_group":{
+      "security_group": {
         "type": "string"
       },
       "eip": {
@@ -2690,17 +2766,17 @@
         "type": "integer"
       },
       "cfgmgmt_id": {
-        "type":"string"
+        "type": "string"
       },
       "app_id": {
-        "type":"string"
+        "type": "string"
       },
       "console_id": {
-        "type":"string"
+        "type": "string"
       },
       "create_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "cluster_id": {
         "type": "string"
@@ -2709,8 +2785,8 @@
         "type": "string"
       },
       "upgrade_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "incremental_backup_supported": {
         "type": "boolean"
@@ -2728,8 +2804,8 @@
         "type": "string"
       },
       "status_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "node_count": {
         "type": "integer"
@@ -2867,7 +2943,7 @@
       },
       "create_time": {
         "type": "string",
-        "format":"date-time"
+        "format": "date-time"
       },
       "cluster_id": {
         "type": "string"
@@ -2904,7 +2980,7 @@
       },
       "status_time": {
         "type": "string",
-        "format":"date-time"
+        "format": "date-time"
       },
       "app_version": {
         "type": "string"
@@ -3067,90 +3143,90 @@
       }
     }
   },
-  "app":{
-    "type":"object",
-    "properties":{
-      "company_url":{
-        "type":"string"
+  "app": {
+    "type": "object",
+    "properties": {
+      "company_url": {
+        "type": "string"
       },
-      "terms_of_service_link":{
-        "type":"string"
+      "terms_of_service_link": {
+        "type": "string"
       },
-      "terms_of_service":{
-        "type":"string"
+      "terms_of_service": {
+        "type": "string"
       },
-      "app_id":{
-        "type":"string"
+      "app_id": {
+        "type": "string"
       },
-      "zones":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "zones": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
-      "screenshots":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "screenshots": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
-      "app_name":{
-        "type":"string"
+      "app_name": {
+        "type": "string"
       },
-      "category":{
-        "type":"string"
+      "category": {
+        "type": "string"
       },
-      "app_type":{
-        "type":"string"
+      "app_type": {
+        "type": "string"
       },
-      "usage_instructions_link":{
-        "type":"string"
+      "usage_instructions_link": {
+        "type": "string"
       },
-      "status":{
-        "type":"string"
+      "status": {
+        "type": "string"
       },
-      "abstraction":{
-        "type":"string"
+      "abstraction": {
+        "type": "string"
       },
-      "app_contract_status":{
-        "type":"string"
+      "app_contract_status": {
+        "type": "string"
       },
-      "description":{
-        "type":"string"
+      "description": {
+        "type": "string"
       },
-      "tags":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       },
-      "auth_level":{
-        "type":"integer"
+      "auth_level": {
+        "type": "integer"
       },
-      "visibility":{
-        "type":"string"
+      "visibility": {
+        "type": "string"
       },
-      "usage_instructions":{
-        "type":"string"
+      "usage_instructions": {
+        "type": "string"
       },
-      "icon":{
-        "type":"string"
+      "icon": {
+        "type": "string"
       },
-      "app_instance_id":{
-        "type":"string"
+      "app_instance_id": {
+        "type": "string"
       },
-      "url":{
-        "type":"string"
+      "url": {
+        "type": "string"
       },
-      "contact":{
-        "type":"string"
+      "contact": {
+        "type": "string"
       },
-      "cover_img":{
-        "type":"string"
+      "cover_img": {
+        "type": "string"
       }
     }
   },
-  "app_version":{
+  "app_version": {
     "type": "object",
     "properties": {
       "status": {
@@ -3168,20 +3244,20 @@
       "app_id": {
         "type": "string"
       },
-      "create_time":{
+      "create_time": {
         "type": "string",
         "format": "date-time"
       },
-      "status_time":{
+      "status_time": {
         "type": "string",
         "format": "date-time"
       },
-      "name":{
-         "type": "string"
+      "name": {
+        "type": "string"
       }
     }
   },
-  "app_version_attachment":{
+  "app_version_attachment": {
     "type": "object",
     "properties": {
       "category": {
@@ -3211,16 +3287,16 @@
       "resource_type": {
         "type": "string"
       },
-      "create_time":{
+      "create_time": {
         "type": "string",
         "format": "date-time"
       },
-      "status_time":{
+      "status_time": {
         "type": "string",
         "format": "date-time"
       },
-      "name":{
-         "type": "string"
+      "name": {
+        "type": "string"
       }
     }
   }

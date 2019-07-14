@@ -1,0 +1,306 @@
+{
+  "DescribeProjects": {
+    "parameters": [{
+      "$ref": "#/parameters/zone"
+    }],
+    "get": {
+      "tags": [
+        "Project"
+      ],
+      "operationId": "DescribeProjects",
+      "summary": "DescribeProjects",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [{
+        "name": "body",
+        "in": "body",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "project_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "status": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "default": "active"
+              }
+            },
+            "shared": {
+              "type": "string",
+              "default": "False"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "type": "integer",
+              "default": 20
+            }
+          }
+        }
+      }],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "project_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/project"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DescribeProjectResourceItems": {
+    "parameters": [{
+      "$ref": "#/parameters/zone"
+    }],
+    "get": {
+      "tags": [
+        "Project"
+      ],
+      "operationId": "DescribeProjectResourceItems",
+      "summary": "DescribeProjectResourceItems",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [{
+        "name": "body",
+        "in": "body",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "project_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "resources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "resource_types": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "owner": {
+              "type": "string"
+            },
+            "verbose": {
+              "type": "integer"
+            },
+            "in_global": {
+              "type": "integer"
+            },
+            "reserve": {
+              "type": "integer"
+            },
+            "sort_key": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "integer",
+              "default": 0
+            },
+            "limit": {
+              "type": "integer",
+              "default": 20
+            }
+          }
+        }
+      }],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "project_resource_item_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/project_resource_item"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "AddProjectResourceItems": {
+    "parameters": [{
+      "$ref": "#/parameters/zone"
+    }],
+    "get": {
+      "tags": [
+        "Project"
+      ],
+      "operationId": "AddProjectResourceItems",
+      "summary": "AddProjectResourceItems",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [{
+        "name": "body",
+        "in": "body",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "project_id": {
+              "type": "string"
+            },
+            "resources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "project_id",
+            "resources"
+          ]
+        }
+      }],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "zone_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "string"
+              },
+              "resource_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              } 
+            }
+          }
+        }
+      }
+    }
+  },
+  "DeleteProjectResourceItems": {
+    "parameters": [{
+      "$ref": "#/parameters/zone"
+    }],
+    "get": {
+      "tags": [
+        "Project"
+      ],
+      "operationId": "DeleteProjectResourceItems",
+      "summary": "DeleteProjectResourceItems",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [{
+        "name": "body",
+        "in": "body",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "project_id": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "resources": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "project_id",
+            "resources"
+          ]
+        }
+      }],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "zone_id": {
+                "type": "string"
+              },
+              "project_id": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "resource_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

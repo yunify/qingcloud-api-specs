@@ -21,6 +21,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_groups": {
                 "type": "array",
                 "items": {
@@ -680,6 +683,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_group": {
                 "type": "string"
               },
@@ -876,6 +882,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_group_ipsets": {
                 "type": "array",
                 "items": {
