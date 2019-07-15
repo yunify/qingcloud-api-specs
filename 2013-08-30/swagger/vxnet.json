@@ -21,6 +21,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "vxnets": {
                 "type": "array",
                 "items": {

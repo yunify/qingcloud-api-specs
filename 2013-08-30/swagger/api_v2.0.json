@@ -21,6 +21,18 @@
   "host": "api.qingcloud.com",
   "basePath": "/iaas",
   "paths": {
+    "/DescribeProjects": {
+      "$ref": "./project.json#/DescribeProjects"
+    },
+    "/DescribeProjectResourceItems": {
+      "$ref": "./project.json#/DescribeProjectResourceItems"
+    },
+    "/AddProjectResourceItems": {
+      "$ref": "./project.json#/AddProjectResourceItems"
+    },
+    "/DeleteProjectResourceItems": {
+      "$ref": "./project.json#/DeleteProjectResourceItems"
+    },
     "/DescribeInstances": {
       "$ref": "./instance.json#/DescribeInstances"
     },
@@ -785,6 +797,12 @@
     }
   },
   "definitions": {
+    "project": {
+      "$ref": "./definitions.json#/project"
+    },
+    "project_resource_item": {
+      "$ref": "./definitions.json#/project_resource_item"
+    },
     "instance": {
       "$ref": "./definitions.json#/instance"
     },
