@@ -457,6 +457,9 @@
     "/DeleteAccessKeys": {
       "$ref": "./access_key.json#/DeleteAccessKeys"
     },
+    "/ApplySecurityGroupIPSets": {
+      "$ref": "./security_group.json#/ApplySecurityGroupIPSets"
+    },
     "/DescribeKeyPairs": {
       "$ref": "./key_pair.json#/DescribeKeyPairs"
     },
