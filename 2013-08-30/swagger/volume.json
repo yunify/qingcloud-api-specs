@@ -78,6 +78,9 @@
               "owner": {
                 "type": "string"
               },
+              "zone": {
+                "type": "string"
+              },
               "offset": {
                 "type": "integer",
                 "default": 0
@@ -146,6 +149,9 @@
                 "multipleOf": 10
               },
               "volume_name": {
+                "type": "string"
+              },
+              "zone": {
                 "type": "string"
               },
               "repl": {
