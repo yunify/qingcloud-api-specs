@@ -444,6 +444,9 @@
               },
               "volume_name": {
                 "type": "string"
+              },
+              "zone": {
+                "type": "string"
               }
             },
             "required": [

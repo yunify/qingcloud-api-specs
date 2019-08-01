@@ -195,6 +195,12 @@
       "device": {
         "type": "string"
       },
+      "zone_id": {
+        "type": "string"
+      },
+      "repl": {
+        "type": "string"
+      },
       "security_group": {
         "$ref": "#/definitions/security_group"
       }
@@ -590,6 +596,9 @@
         ]
       },
       "device": {
+        "type": "string"
+      },
+      "zone_id": {
         "type": "string"
       }
     }
