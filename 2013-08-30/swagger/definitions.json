@@ -10,7 +10,7 @@
       },
       "zone_id": {
         "type": "string"
-      }, 
+      },
       "resource_id": {
         "type": "string"
       },
@@ -3160,6 +3160,269 @@
       },
       "left": {
         "type": "integer"
+      }
+    }
+  },
+  "resource_limits": {
+    "type": "object",
+    "properties": {
+      "__comments": {
+        "type": "string"
+      },
+      "ban_mm_vxnets": {
+        "type": "integer"
+      },
+      "bm_zones": {
+        "type": "array",
+         "items": {
+          "type": "string"
+        }
+      },
+      "bucket_create_whitelist": {
+        "type": "string"
+      },
+      "disabled_actions": {
+        "type": "array",
+         "items": {
+          "type": "string"
+        }
+      },
+      "disabled_features": {
+        "type": "array",
+         "items": {
+          "type": "string"
+        }
+      },
+      "enable_nic_bandwidth": {
+        "type": "integer"
+      },
+      "gpu_zones": {
+        "type": "array",
+         "items": {
+          "type": "string"
+        }
+      },
+      "hadoop_types": {
+        "type": "object"
+      },
+      "hbase_types": {
+        "type": "object"
+      },
+      "hc_volume_step": {
+        "type": "integer"
+      },
+      "hcs_volume_step": {
+        "type": "integer"
+      },
+      "hdfs_disks_per_node": {
+        "type": "integer"
+      },
+      "hps_volume_step": {
+        "type": "integer"
+      },
+      "ignore_mm_vxnet_users": {
+        "type": "string"
+      },
+      "max_abuse_eip_cnt": {
+        "type": "integer"
+      },
+      "max_alarm_policy_actions": {
+        "type": "integer"
+      },
+      "max_alarm_policy_resources": {
+        "type": "integer"
+      },
+      "max_alarm_policy_rules": {
+        "type": "integer"
+      },
+      "max_change_eip_billing_mode_cnt": {
+        "type": "integer"
+      },
+      "max_eip_bandwidth": {
+        "type": "integer"
+      },
+      "max_eip_count": {
+        "type": "integer"
+      },
+      "max_gpu_count": {
+        "type": "integer"
+      },
+      "max_hc_volume_size": {
+        "type": "integer"
+      },
+      "max_hcs_volume_size": {
+        "type": "integer"
+      },
+      "max_hps_volume_size": {
+        "type": "integer"
+      },
+      "max_image_shared_users": {
+        "type": "integer"
+      },
+      "max_instance_count": {
+        "type": "integer"
+      },
+      "max_item_in_resource_group": {
+        "type": "integer"
+      },
+      "max_listener_backends": {
+        "type": "integer"
+      },
+      "max_loadbalancer_listeners": {
+        "type": "integer"
+      },
+      "max_loadbalancer_policy_rewrite_rules": {
+        "type": "integer"
+      },
+      "max_loadbalancer_policy_rules": {
+        "type": "integer"
+      },
+      "max_member_in_user_group": {
+        "type": "integer"
+      },
+      "max_nic_per_instance": {
+        "type": "integer"
+      },
+      "max_resource_shared_users": {
+        "type": "integer"
+      },
+      "max_rg_cnt_item_can_join": {
+        "type": "integer"
+      },
+      "max_router_count": {
+        "type": "integer"
+      },
+      "max_router_entries": {
+        "type": "integer"
+      },
+      "max_router_statics": {
+        "type": "integer"
+      },
+      "max_router_vxnets": {
+        "type": "integer"
+      },
+      "max_rule_in_group_role": {
+        "type": "integer"
+      },
+      "max_security_group_rules": {
+        "type": "integer"
+      },
+      "max_security_group_rulesets": {
+        "type": "integer"
+      },
+      "max_security_group_snapshots": {
+        "type": "integer"
+      },
+      "max_users_in_one_department": {
+        "type": "integer"
+      },
+      "max_volume_count": {
+        "type": "integer"
+      },
+      "max_volume_per_inst": {
+        "type": "integer"
+      },
+      "max_volume_size": {
+        "type": "integer"
+      },
+      "max_vos_replica_count": {
+        "type": "integer"
+      },
+      "max_vxnet_count": {
+        "type": "integer"
+      },
+      "min_abuse_eip_sec": {
+        "type": "integer"
+      },
+      "min_hc_volume_size": {
+        "type": "integer"
+      },
+      "min_hcs_volume_size": {
+        "type": "integer"
+      },
+      "min_hosts_per_dedicated_group": {
+        "type": "integer"
+      },
+      "min_hps_volume_size": {
+        "type": "integer"
+      },
+      "min_reserved_hosts_in_pool": {
+        "type": "integer"
+      },
+      "min_volume_size": {
+        "type": "integer"
+      },
+      "privilege_of_lxc": {
+        "type": "integer"
+      },
+      "spark_types": {
+        "type": "object"
+      },
+      "storm_types": {
+        "type": "object"
+      },
+      "valid_cache_size": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_cpu_cores": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_cpu_memory_pairs": {
+        "type": "object"
+      },
+      "valid_dedicated_host_group_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_instance_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_loadbalancer_types": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_memory_size": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_resource_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_volume_types": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "volume_step": {
+        "type": "integer"
+      },
+      "vpc_ipv6_prefixlen": {
+        "type": "integer"
+      },
+      "vxnet_ipv6_prefixlen": {
+        "type": "integer"
+      },
+      "vxnet_ks_white_list": {
+        "type": "string"
       }
     }
   },
