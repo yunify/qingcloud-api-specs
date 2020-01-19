@@ -51,6 +51,22 @@
                   5
                 ]
               },
+              "mode": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "cluster_mode": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
               "node_count": {
                 "type": "integer"
               },
