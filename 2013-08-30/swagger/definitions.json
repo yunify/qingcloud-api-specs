@@ -3582,5 +3582,25 @@
         "type": "string"
       }
     }
+  },
+  "notification_data": {
+    "type": "object",
+    "properties": {
+      "prev_status": {
+        "type": "string"
+      },
+      "trigger_status": {
+        "type": "string"
+      },
+      "alarm_policy": {
+        "type": "string"
+      },
+      "user_id": {
+        "type": "string"
+      },
+      "rules": {
+        "type": "string"
+      }
+    }
   }
 }
