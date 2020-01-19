@@ -2908,7 +2908,7 @@
       "upgrade_policy": {
         "type": "array",
         "items": {
-          "type": "string"
+          "type": "object"
         }
       },
       "app_info": {
