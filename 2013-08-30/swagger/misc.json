@@ -58,5 +58,74 @@
         }
       }
     }
+  },
+  "GetResourceLimit": {
+    "get": {
+      "tags": [
+        "Misc"
+      ],
+      "operationId": "GetResourceLimit",
+      "summary": "GetResourceLimit",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/product/api/action/misc"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "zone": {
+                "type": "string"
+              },
+              "volume_type": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "resource_limits": {
+                "$ref": "#/definitions/resource_limits"
+              },
+              "vxnet_subnets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "vxnet_version": {
+                "type": "integer"
+              },
+              "min-size": {
+                "type": "integer"
+              },
+              "max-size": {
+                "type": "integer"
+              },
+              "step": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -775,6 +775,9 @@
     "/GetQuotaLeft": {
       "$ref": "./misc.json#/GetQuotaLeft"
     },
+    "/GetResourceLimit": {
+      "$ref": "./misc.json#/GetResourceLimit"
+    },
     "/DescribeApps": {
       "$ref": "./app.json#/DescribeApps"
     },
@@ -1003,6 +1006,9 @@
     },
     "quota_left":{
       "$ref": "./definitions.json#/quota_left"
+    },
+    "resource_limits":{
+      "$ref": "./definitions.json#/resource_limits"
     },
     "app":{
       "$ref": "./definitions.json#/app"
