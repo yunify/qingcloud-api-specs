@@ -1,0 +1,72 @@
+{
+    "SendAlarmNotification": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/zone"
+        }
+    ],
+    "get": {
+      "tags": [
+        "Notification"
+      ],
+      "operationId": "SendAlarmNotification",
+      "summary": "SendAlarmNotification",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "notification_list_id": {
+                "type": "string"
+              },
+              "user_id": {
+                "type": "string"
+              },
+              "resource_name": {
+                "type": "string"
+              },
+              "resource_type": {
+                "type": "string"
+              },
+              "resource_id": {
+                "type": "string"
+              },
+              "notification_data": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/notification_data"
+                }
+              }
+            },
+            "required": [
+              "notification_list_id",
+              "user_id",
+              "notification_data"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

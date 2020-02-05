@@ -792,6 +792,9 @@
     },
     "/DeployAppVersion": {
       "$ref": "./app.json#/DeployAppVersion"
+    },
+    "/SendAlarmNotification": {
+      "$ref": "./notification.json#/SendAlarmNotification"
     }
   },
   "parameters": {
@@ -1018,6 +1021,9 @@
     },
     "app_version_attachment":{
       "$ref": "./definitions.json#/app_version_attachment"
+    },
+    "notification_data":{
+      "$ref": "./definitions.json#/notification_data"
     }
   }
 }
