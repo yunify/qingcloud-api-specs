@@ -795,6 +795,9 @@
     },
     "/SendAlarmNotification": {
       "$ref": "./notification.json#/SendAlarmNotification"
+    },
+    "/DescribeNotificationLists": {
+      "$ref": "./notification.json#/DescribeNotificationLists"
     }
   },
   "parameters": {
@@ -1024,6 +1027,12 @@
     },
     "notification_data":{
       "$ref": "./definitions.json#/notification_data"
+    },
+    "notification_list":{
+      "$ref": "./definitions.json#/notification_list"
+    },
+    "notification_list_item":{
+      "$ref": "./definitions.json#/notification_list_item"
     }
   }
 }

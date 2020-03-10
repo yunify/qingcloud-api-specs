@@ -3602,5 +3602,84 @@
         "type": "string"
       }
     }
+  },
+  "notification_list_item": {
+    "type": "object",
+    "properties": {
+      "verification_code": {
+        "type": "string"
+      },
+      "verified": {
+        "type": "integer"
+      },
+      "verify_time": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "valid_status": {
+        "type": "integer"
+      },
+      "remarks": {
+        "type": "string"
+      },
+      "notification_item_id": {
+        "type": "string"
+      },
+      "notification_item_type": {
+        "type": "string"
+      }
+    }
+  },
+  "notification_list": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/notification_list_item"
+        }
+      },
+      "visibility": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "notification_list_name": {
+        "type": "string"
+      },
+      "is_mine": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "shared": {
+        "type": "string"
+      },
+      "notification_list_id": {
+        "type": "string"
+      }
+    }
   }
 }

@@ -68,5 +68,79 @@
         }
       }
     }
+  },
+    "DescribeNotificationLists": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/zone"
+        }
+    ],
+    "get": {
+      "tags": [
+        "Notification"
+      ],
+      "operationId": "DescribeNotificationLists",
+      "summary": "DescribeNotificationLists",
+      "externalDocs": {
+        "url": ""
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "notification_lists": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "owner": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 10
+              }
+            },
+            "required": [
+              "notification_lists",
+              "owner"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "total_count": {
+                "type": "integer"
+              },
+              "notification_list_set": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/notification_list"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
