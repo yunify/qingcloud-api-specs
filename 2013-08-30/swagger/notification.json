@@ -110,8 +110,7 @@
               }
             },
             "required": [
-              "notification_lists",
-              "owner"
+              "notification_lists"
             ]
           }
         }
