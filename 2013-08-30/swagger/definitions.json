@@ -1,4 +1,80 @@
 {
+  "project_resource_item": {
+    "type": "object",
+    "properties": {
+      "resource_group_id": {
+        "type": "string"
+      },
+      "project_name": {
+        "type": "string"
+      },
+      "zone_id": {
+        "type": "string"
+      },
+      "resource_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "meta": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "project_id": {
+        "type": "string"
+      },
+      "resource_type": {
+        "type": "string"
+      }
+    }
+  },
+  "project": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "resource_group_id": {
+        "type": "string"
+      },
+      "project_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "owner_name": {
+        "type": "string"
+      },
+      "enabled": {
+        "type": "integer"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "meta": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "project_id": {
+        "type": "string"
+      }
+    }
+  },
   "instance": {
     "type": "object",
     "properties": {
@@ -117,6 +193,12 @@
         }
       },
       "device": {
+        "type": "string"
+      },
+      "zone_id": {
+        "type": "string"
+      },
+      "repl": {
         "type": "string"
       },
       "security_group": {
@@ -348,7 +430,7 @@
       "security_group_rule_id": {
         "type": "string"
       },
-      "security_group_rule_name":{
+      "security_group_rule_name": {
         "type": "string"
       },
       "direction": {
@@ -496,7 +578,7 @@
         "type": "string"
       },
       "repl": {
-      	"type": "string"
+        "type": "string"
       },
       "tags": {
         "type": "array",
@@ -514,6 +596,9 @@
         ]
       },
       "device": {
+        "type": "string"
+      },
+      "zone_id": {
         "type": "string"
       }
     }
@@ -682,7 +767,8 @@
         "type": "integer",
         "enum": [
           0,
-          1
+          1,
+          2
         ]
       },
       "create_time": {
@@ -718,29 +804,29 @@
       }
     }
   },
-  "instance_vxnet":{
+  "instance_vxnet": {
     "type": "object",
     "properties": {
-      "vxnet_type":{
+      "vxnet_type": {
         "type": "integer",
         "enum": [
           0,
           1
         ]
       },
-      "vxnet_id":{
+      "vxnet_id": {
         "type": "string"
       },
-      "vxnet_name":{
+      "vxnet_name": {
         "type": "string"
       },
-      "role":{
+      "role": {
         "type": "integer"
       },
-      "private_ip":{
+      "private_ip": {
         "type": "string"
       },
-      "nic_id":{
+      "nic_id": {
         "type": "string"
       }
     }
@@ -1078,9 +1164,9 @@
       "security_group_id": {
         "type": "string"
       },
-      "private_ips":{
+      "private_ips": {
         "type": "array",
-        "items":{
+        "items": {
           "type": "string"
         }
       },
@@ -1098,16 +1184,16 @@
       "loadbalancer_listener_name": {
         "type": "string"
       },
-      "loadbalancer_id":{
+      "loadbalancer_id": {
         "type": "string"
       },
-      "listener_port":{
+      "listener_port": {
         "type": "integer"
       },
-      "listener_protocol":{
+      "listener_protocol": {
         "type": "string"
       },
-      "backend_protocol":{
+      "backend_protocol": {
         "type": "string"
       },
       "backends": {
@@ -1146,7 +1232,7 @@
       },
       "server_certificate_id": {
         "type": "array",
-        "items":{
+        "items": {
           "type": "string"
         }
       },
@@ -1546,10 +1632,66 @@
   "snapshot_resource": {
     "type": "object",
     "properties": {
-      "os_family": {
+      "mount_point": {
         "type": "string"
       },
-      "platform": {
+      "volume_id": {
+        "type": "string"
+      },
+      "volume_type": {
+        "type": "integer"
+      },
+      "mount_options": {
+        "type": "string"
+      },
+      "filesystem": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "architecture": {
+        "type": "string"
+      }
+    }
+  },
+  "access_key": {
+    "type": "object",
+    "properties": {
+      "access_key_id": {
+        "type": "string"
+      },
+      "access_key_name": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "controller": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "ip_white_list": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "secret_access_key": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "status_time": {
         "type": "string"
       }
     }
@@ -1561,7 +1703,7 @@
         "type": "string"
       },
       "priv_key": {
-        "type":"string"
+        "type": "string"
       },
       "keypair_name": {
         "type": "string"
@@ -1591,12 +1733,12 @@
           "type": "string"
         }
       },
-      "create_time":{
-        "type":"string",
+      "create_time": {
+        "type": "string",
         "format": "date-time"
       },
-      "owner":{
-        "type":"string"
+      "owner": {
+        "type": "string"
       },
       "resource_ids": {
         "type": "array",
@@ -2397,8 +2539,8 @@
     "properties": {
       "data": {
         "type": "array",
-        "items":{
-          "type":"object"
+        "items": {
+          "type": "object"
         }
       },
       "vxnet_id": {
@@ -2437,6 +2579,9 @@
         "format": "date-time"
       },
       "resource_ids": {
+        "type": "string"
+      },
+      "directive": {
         "type": "string"
       },
       "owner": {
@@ -2514,10 +2659,6 @@
       },
       "status": {
         "type": "string"
-      },
-      "status_time": {
-        "type": "string",
-        "format": "date-time"
       }
     }
   },
@@ -2553,10 +2694,10 @@
       "role": {
         "type": "integer"
       },
-      "root_user_id":{
+      "root_user_id": {
         "type": "string"
       },
-      "owner":{
+      "owner": {
         "type": "string"
       },
       "status": {
@@ -2583,7 +2724,7 @@
           "$ref": "#/definitions/tag"
         }
       },
-      "security_group":{
+      "security_group": {
         "type": "string"
       },
       "eip": {
@@ -2649,17 +2790,17 @@
         "type": "integer"
       },
       "cfgmgmt_id": {
-        "type":"string"
+        "type": "string"
       },
       "app_id": {
-        "type":"string"
+        "type": "string"
       },
       "console_id": {
-        "type":"string"
+        "type": "string"
       },
       "create_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "cluster_id": {
         "type": "string"
@@ -2668,8 +2809,8 @@
         "type": "string"
       },
       "upgrade_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "incremental_backup_supported": {
         "type": "boolean"
@@ -2681,14 +2822,14 @@
         "type": "integer"
       },
       "metadata_root_access": {
-        "type": "integer"
+        "type": "boolean"
       },
       "upgrade_status": {
         "type": "string"
       },
       "status_time": {
-        "type":"string",
-        "format":"date-time"
+        "type": "string",
+        "format": "date-time"
       },
       "node_count": {
         "type": "integer"
@@ -2709,7 +2850,7 @@
         "type": "string"
       },
       "reuse_hyper": {
-        "type": "integer"
+        "type": "boolean"
       },
       "controller": {
         "type": "string"
@@ -2771,7 +2912,7 @@
       "upgrade_policy": {
         "type": "array",
         "items": {
-          "type": "string"
+          "type": "object"
         }
       },
       "app_info": {
@@ -2826,7 +2967,7 @@
       },
       "create_time": {
         "type": "string",
-        "format":"date-time"
+        "format": "date-time"
       },
       "cluster_id": {
         "type": "string"
@@ -2863,7 +3004,7 @@
       },
       "status_time": {
         "type": "string",
-        "format":"date-time"
+        "format": "date-time"
       },
       "app_version": {
         "type": "string"
@@ -3026,90 +3167,353 @@
       }
     }
   },
-  "app":{
-    "type":"object",
-    "properties":{
-      "company_url":{
-        "type":"string"
+  "resource_limits": {
+    "type": "object",
+    "properties": {
+      "__comments": {
+        "type": "string"
       },
-      "terms_of_service_link":{
-        "type":"string"
+      "ban_mm_vxnets": {
+        "type": "integer"
       },
-      "terms_of_service":{
-        "type":"string"
-      },
-      "app_id":{
-        "type":"string"
-      },
-      "zones":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "bm_zones": {
+        "type": "array",
+         "items": {
+          "type": "string"
         }
       },
-      "screenshots":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "bucket_create_whitelist": {
+        "type": "string"
+      },
+      "disabled_actions": {
+        "type": "array",
+         "items": {
+          "type": "string"
         }
       },
-      "app_name":{
-        "type":"string"
-      },
-      "category":{
-        "type":"string"
-      },
-      "app_type":{
-        "type":"string"
-      },
-      "usage_instructions_link":{
-        "type":"string"
-      },
-      "status":{
-        "type":"string"
-      },
-      "abstraction":{
-        "type":"string"
-      },
-      "app_contract_status":{
-        "type":"string"
-      },
-      "description":{
-        "type":"string"
-      },
-      "tags":{
-        "type":"array",
-        "items":{
-          "type":"string"
+      "disabled_features": {
+        "type": "array",
+         "items": {
+          "type": "string"
         }
       },
-      "auth_level":{
-        "type":"integer"
+      "enable_nic_bandwidth": {
+        "type": "integer"
       },
-      "visibility":{
-        "type":"string"
+      "gpu_zones": {
+        "type": "array",
+         "items": {
+          "type": "string"
+        }
       },
-      "usage_instructions":{
-        "type":"string"
+      "hadoop_types": {
+        "type": "object"
       },
-      "icon":{
-        "type":"string"
+      "hbase_types": {
+        "type": "object"
       },
-      "app_instance_id":{
-        "type":"string"
+      "hc_volume_step": {
+        "type": "integer"
       },
-      "url":{
-        "type":"string"
+      "hcs_volume_step": {
+        "type": "integer"
       },
-      "contact":{
-        "type":"string"
+      "hdfs_disks_per_node": {
+        "type": "integer"
       },
-      "cover_img":{
-        "type":"string"
+      "hps_volume_step": {
+        "type": "integer"
+      },
+      "ignore_mm_vxnet_users": {
+        "type": "string"
+      },
+      "max_abuse_eip_cnt": {
+        "type": "integer"
+      },
+      "max_alarm_policy_actions": {
+        "type": "integer"
+      },
+      "max_alarm_policy_resources": {
+        "type": "integer"
+      },
+      "max_alarm_policy_rules": {
+        "type": "integer"
+      },
+      "max_change_eip_billing_mode_cnt": {
+        "type": "integer"
+      },
+      "max_eip_bandwidth": {
+        "type": "integer"
+      },
+      "max_eip_count": {
+        "type": "integer"
+      },
+      "max_gpu_count": {
+        "type": "integer"
+      },
+      "max_hc_volume_size": {
+        "type": "integer"
+      },
+      "max_hcs_volume_size": {
+        "type": "integer"
+      },
+      "max_hps_volume_size": {
+        "type": "integer"
+      },
+      "max_image_shared_users": {
+        "type": "integer"
+      },
+      "max_instance_count": {
+        "type": "integer"
+      },
+      "max_item_in_resource_group": {
+        "type": "integer"
+      },
+      "max_listener_backends": {
+        "type": "integer"
+      },
+      "max_loadbalancer_listeners": {
+        "type": "integer"
+      },
+      "max_loadbalancer_policy_rewrite_rules": {
+        "type": "integer"
+      },
+      "max_loadbalancer_policy_rules": {
+        "type": "integer"
+      },
+      "max_member_in_user_group": {
+        "type": "integer"
+      },
+      "max_nic_per_instance": {
+        "type": "integer"
+      },
+      "max_resource_shared_users": {
+        "type": "integer"
+      },
+      "max_rg_cnt_item_can_join": {
+        "type": "integer"
+      },
+      "max_router_count": {
+        "type": "integer"
+      },
+      "max_router_entries": {
+        "type": "integer"
+      },
+      "max_router_statics": {
+        "type": "integer"
+      },
+      "max_router_vxnets": {
+        "type": "integer"
+      },
+      "max_rule_in_group_role": {
+        "type": "integer"
+      },
+      "max_security_group_rules": {
+        "type": "integer"
+      },
+      "max_security_group_rulesets": {
+        "type": "integer"
+      },
+      "max_security_group_snapshots": {
+        "type": "integer"
+      },
+      "max_users_in_one_department": {
+        "type": "integer"
+      },
+      "max_volume_count": {
+        "type": "integer"
+      },
+      "max_volume_per_inst": {
+        "type": "integer"
+      },
+      "max_volume_size": {
+        "type": "integer"
+      },
+      "max_vos_replica_count": {
+        "type": "integer"
+      },
+      "max_vxnet_count": {
+        "type": "integer"
+      },
+      "min_abuse_eip_sec": {
+        "type": "integer"
+      },
+      "min_hc_volume_size": {
+        "type": "integer"
+      },
+      "min_hcs_volume_size": {
+        "type": "integer"
+      },
+      "min_hosts_per_dedicated_group": {
+        "type": "integer"
+      },
+      "min_hps_volume_size": {
+        "type": "integer"
+      },
+      "min_reserved_hosts_in_pool": {
+        "type": "integer"
+      },
+      "min_volume_size": {
+        "type": "integer"
+      },
+      "privilege_of_lxc": {
+        "type": "integer"
+      },
+      "spark_types": {
+        "type": "object"
+      },
+      "storm_types": {
+        "type": "object"
+      },
+      "valid_cache_size": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_cpu_cores": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_cpu_memory_pairs": {
+        "type": "object"
+      },
+      "valid_dedicated_host_group_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_instance_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_loadbalancer_types": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_memory_size": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_resource_classes": {
+        "type": "array",
+         "items": {
+          "type": "integer"
+        }
+      },
+      "valid_volume_types": {
+        "type": "array",
+        "items": {
+          "type": "integer"
+        }
+      },
+      "volume_step": {
+        "type": "integer"
+      },
+      "vpc_ipv6_prefixlen": {
+        "type": "integer"
+      },
+      "vxnet_ipv6_prefixlen": {
+        "type": "integer"
+      },
+      "vxnet_ks_white_list": {
+        "type": "string"
       }
     }
   },
-  "app_version":{
+  "app": {
+    "type": "object",
+    "properties": {
+      "company_url": {
+        "type": "string"
+      },
+      "terms_of_service_link": {
+        "type": "string"
+      },
+      "terms_of_service": {
+        "type": "string"
+      },
+      "app_id": {
+        "type": "string"
+      },
+      "zones": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "screenshots": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "app_name": {
+        "type": "string"
+      },
+      "category": {
+        "type": "string"
+      },
+      "app_type": {
+        "type": "string"
+      },
+      "usage_instructions_link": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "abstraction": {
+        "type": "string"
+      },
+      "app_contract_status": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "auth_level": {
+        "type": "integer"
+      },
+      "visibility": {
+        "type": "string"
+      },
+      "usage_instructions": {
+        "type": "string"
+      },
+      "icon": {
+        "type": "string"
+      },
+      "app_instance_id": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      },
+      "contact": {
+        "type": "string"
+      },
+      "cover_img": {
+        "type": "string"
+      }
+    }
+  },
+  "app_version": {
     "type": "object",
     "properties": {
       "status": {
@@ -3127,20 +3531,20 @@
       "app_id": {
         "type": "string"
       },
-      "create_time":{
+      "create_time": {
         "type": "string",
         "format": "date-time"
       },
-      "status_time":{
+      "status_time": {
         "type": "string",
         "format": "date-time"
       },
-      "name":{
-         "type": "string"
+      "name": {
+        "type": "string"
       }
     }
   },
-  "app_version_attachment":{
+  "app_version_attachment": {
     "type": "object",
     "properties": {
       "category": {
@@ -3170,16 +3574,115 @@
       "resource_type": {
         "type": "string"
       },
-      "create_time":{
+      "create_time": {
         "type": "string",
         "format": "date-time"
       },
-      "status_time":{
+      "status_time": {
         "type": "string",
         "format": "date-time"
       },
-      "name":{
-         "type": "string"
+      "name": {
+        "type": "string"
+      }
+    }
+  },
+  "notification_data": {
+    "type": "object",
+    "properties": {
+      "prev_status": {
+        "type": "string"
+      },
+      "trigger_status": {
+        "type": "string"
+      },
+      "alarm_policy": {
+        "type": "string"
+      },
+      "user_id": {
+        "type": "string"
+      },
+      "rules": {
+        "type": "string"
+      }
+    }
+  },
+  "notification_list_item": {
+    "type": "object",
+    "properties": {
+      "verification_code": {
+        "type": "string"
+      },
+      "verified": {
+        "type": "integer"
+      },
+      "verify_time": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "valid_status": {
+        "type": "integer"
+      },
+      "remarks": {
+        "type": "string"
+      },
+      "notification_item_id": {
+        "type": "string"
+      },
+      "notification_item_type": {
+        "type": "string"
+      }
+    }
+  },
+  "notification_list": {
+    "type": "object",
+    "properties": {
+      "items": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/notification_list_item"
+        }
+      },
+      "visibility": {
+        "type": "string"
+      },
+      "console_id": {
+        "type": "string"
+      },
+      "root_user_id": {
+        "type": "string"
+      },
+      "create_time": {
+        "type": "string"
+      },
+      "notification_list_name": {
+        "type": "string"
+      },
+      "is_mine": {
+        "type": "string"
+      },
+      "owner": {
+        "type": "string"
+      },
+      "shared": {
+        "type": "string"
+      },
+      "notification_list_id": {
+        "type": "string"
       }
     }
   }

@@ -21,6 +21,18 @@
   "host": "api.qingcloud.com",
   "basePath": "/iaas",
   "paths": {
+    "/DescribeProjects": {
+      "$ref": "./project.json#/DescribeProjects"
+    },
+    "/DescribeProjectResourceItems": {
+      "$ref": "./project.json#/DescribeProjectResourceItems"
+    },
+    "/AddProjectResourceItems": {
+      "$ref": "./project.json#/AddProjectResourceItems"
+    },
+    "/DeleteProjectResourceItems": {
+      "$ref": "./project.json#/DeleteProjectResourceItems"
+    },
     "/DescribeInstances": {
       "$ref": "./instance.json#/DescribeInstances"
     },
@@ -310,6 +322,9 @@
     "/ModifyVolumeAttributes": {
       "$ref": "./volume.json#/ModifyVolumeAttributes"
     },
+    "/CloneVolumes": {
+      "$ref": "./volume.json#/CloneVolumes"
+    },
     "/CreateS2Server": {
       "$ref": "./shared_storage.json#/CreateS2Server"
     },
@@ -435,6 +450,15 @@
     },
     "/ModifySecurityGroupIPSetAttributes": {
       "$ref": "./security_group.json#/ModifySecurityGroupIPSetAttributes"
+    },
+    "/DescribeAccessKeys": {
+      "$ref": "./access_key.json#/DescribeAccessKeys"
+    },
+    "/DeleteAccessKeys": {
+      "$ref": "./access_key.json#/DeleteAccessKeys"
+    },
+    "/ApplySecurityGroupIPSets": {
+      "$ref": "./security_group.json#/ApplySecurityGroupIPSets"
     },
     "/DescribeKeyPairs": {
       "$ref": "./key_pair.json#/DescribeKeyPairs"
@@ -751,6 +775,9 @@
     "/GetQuotaLeft": {
       "$ref": "./misc.json#/GetQuotaLeft"
     },
+    "/GetResourceLimit": {
+      "$ref": "./misc.json#/GetResourceLimit"
+    },
     "/DescribeApps": {
       "$ref": "./app.json#/DescribeApps"
     },
@@ -765,6 +792,12 @@
     },
     "/DeployAppVersion": {
       "$ref": "./app.json#/DeployAppVersion"
+    },
+    "/SendAlarmNotification": {
+      "$ref": "./notification.json#/SendAlarmNotification"
+    },
+    "/DescribeNotificationLists": {
+      "$ref": "./notification.json#/DescribeNotificationLists"
     }
   },
   "parameters": {
@@ -773,8 +806,17 @@
     }
   },
   "definitions": {
+    "project": {
+      "$ref": "./definitions.json#/project"
+    },
+    "project_resource_item": {
+      "$ref": "./definitions.json#/project_resource_item"
+    },
     "instance": {
       "$ref": "./definitions.json#/instance"
+    },
+    "access_key": {
+      "$ref": "./definitions.json#/access_key"
     },
     "instance_type": {
       "$ref": "./definitions.json#/instance_type"
@@ -971,6 +1013,9 @@
     "quota_left":{
       "$ref": "./definitions.json#/quota_left"
     },
+    "resource_limits":{
+      "$ref": "./definitions.json#/resource_limits"
+    },
     "app":{
       "$ref": "./definitions.json#/app"
     },
@@ -979,6 +1024,15 @@
     },
     "app_version_attachment":{
       "$ref": "./definitions.json#/app_version_attachment"
+    },
+    "notification_data":{
+      "$ref": "./definitions.json#/notification_data"
+    },
+    "notification_list":{
+      "$ref": "./definitions.json#/notification_list"
+    },
+    "notification_list_item":{
+      "$ref": "./definitions.json#/notification_list_item"
     }
   }
 }

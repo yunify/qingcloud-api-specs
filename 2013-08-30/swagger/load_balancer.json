@@ -21,6 +21,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "eips": {
                 "type": "array",
                 "items": {
@@ -46,6 +49,22 @@
                   3,
                   4,
                   5
+                ]
+              },
+              "mode": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
+                ]
+              },
+              "cluster_mode": {
+                "type": "integer",
+                "default": 0,
+                "enum": [
+                  0,
+                  1
                 ]
               },
               "node_count": {

@@ -1,13 +1,18 @@
 {
-  "GetQuotaLeft": {
+  "DescribeAccessKeys": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
-        "Misc"
+        "Accesskey"
       ],
-      "operationId": "GetQuotaLeft",
-      "summary": "GetQuotaLeft",
+      "operationId": "DescribeAccessKeys",
+      "summary": "DescribeAccessKeys",
       "externalDocs": {
-        "url": "https://docs.qingcloud.com/product/api/action/misc/get_quota_left.html"
+        "url": ""
       },
       "parameters": [
         {
@@ -16,22 +21,37 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "resource_types": {
+              "access_keys": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
+              },
+              "search_word": {
+                "type": "string"
+              },
+              "status": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verbose": {
+                "type": "integer",
+                "default": 0
+              },
+              "owner": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "default": 0
+              },
+              "limit": {
+                "type": "integer",
+                "default": 20
               }
-            },
-            "required": [
-              "zone"
-            ]
+            }
           }
         }
       ],
@@ -47,10 +67,13 @@
               "ret_code": {
                 "type": "integer"
               },
-              "quota_left_set": {
+              "total_count": {
+                "type": "integer"
+              },
+              "access_key_set": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/quota_left"
+                  "$ref": "#/definitions/access_key"
                 }
               }
             }
@@ -59,15 +82,20 @@
       }
     }
   },
-  "GetResourceLimit": {
+  "DeleteAccessKeys": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
     "get": {
       "tags": [
-        "Misc"
+        "Accesskey"
       ],
-      "operationId": "GetResourceLimit",
-      "summary": "GetResourceLimit",
+      "operationId": "DeleteAccessKeys",
+      "summary": "DeleteAccessKeys",
       "externalDocs": {
-        "url": "https://docs.qingcloud.com/product/api/action/misc"
+        "url": ""
       },
       "parameters": [
         {
@@ -76,15 +104,15 @@
           "schema": {
             "type": "object",
             "properties": {
-              "zone": {
-                "type": "string"
-              },
-              "volume_type": {
-                "type": "integer"
+              "access_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": [
-              "zone"
+              "access_keys"
             ]
           }
         }
@@ -101,26 +129,14 @@
               "ret_code": {
                 "type": "integer"
               },
-              "resource_limits": {
-                "$ref": "#/definitions/resource_limits"
+              "job_id": {
+                "type": "string"
               },
-              "vxnet_subnets": {
+              "access_keys": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "vxnet_version": {
-                "type": "integer"
-              },
-              "min-size": {
-                "type": "integer"
-              },
-              "max-size": {
-                "type": "integer"
-              },
-              "step": {
-                "type": "integer"
               }
             }
           }

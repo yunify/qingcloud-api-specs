@@ -21,6 +21,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_groups": {
                 "type": "array",
                 "items": {
@@ -680,6 +683,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_group": {
                 "type": "string"
               },
@@ -876,6 +882,9 @@
           "schema": {
             "type": "object",
             "properties": {
+              "project_id": {
+                "type": "string"
+              },
               "security_group_ipsets": {
                 "type": "array",
                 "items": {
@@ -1121,6 +1130,62 @@
                 "type": "integer"
               },
               "security_group_ipset_id": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "ApplySecurityGroupIPSets": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Security Group"
+      ],
+      "operationId": "ApplySecurityGroupIPSets",
+      "summary": "ApplySecurityGroupIPSets",
+      "externalDocs": {
+        "url": "https://docs.qingcloud.com/api/sg/apply_security_group_ipsets.html"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "security_group_ipsets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "security_group_ipsets"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "job_id": {
                 "type": "string"
               }
             }
