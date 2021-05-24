@@ -38,6 +38,9 @@
                   2
                 ]
               },
+              "zone": {
+                "type": "string"
+              },
               "search_word": {
                 "type": "string"
               },
