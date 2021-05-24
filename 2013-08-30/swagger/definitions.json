@@ -760,6 +760,9 @@
       "vxnet_id": {
         "type": "string"
       },
+      "zone_id": {
+        "type": "string"
+      },
       "vxnet_name": {
         "type": "string"
       },
