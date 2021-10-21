@@ -928,6 +928,14 @@
               },
               "timeout": {
                 "type": "integer"
+              },
+              "scene": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1,
+                  11
+                ]
               }
             },
             "required": [
