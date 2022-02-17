@@ -1,0 +1,66 @@
+# This is a basic workflow to help you get started with Actions
+
+name: sync2sdk
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: ls
+        run: cd $GITHUB_WORKSPACE
+        
+      - name: download snips
+        run: wget https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-linux_amd64.tar.gz
+    #  run: wget https://github.com/qingstor/snips/releases/download/v0.3.6/snips-v0.3.6-darwin_amd64.tar.gz
+      - name: Unarchive the downloaded snips file
+        run: tar -xvf snips-v0.3.6-linux_amd64.tar.gz
+      - name: put the executable file snips into a directory that in the $PATH environment variable
+        run: cp snips /usr/local/bin/snips
+      
+      - name: git account identity
+        run:   git config --global user.email "cps-robot@yunify.com" && git config --global user.name "qingcloud-cps-robot"
+     
+      - name: clone java sdk    
+        run:  git clone https://github.com/yunify/qingcloud-sdk-java.git
+      - name: snips java sdk api specs  
+        run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-java/tmpl -o ./qingcloud-sdk-java/src/main/java/com/qingcloud/sdk/service/
+      - name: push java sdk api specs
+        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        run: echo push java sdk api specs 
+     
+      - name:  clone go sdk
+        run: git clone https://github.com/yunify/qingcloud-sdk-go.git
+      - name: snips go sdk api specs
+        run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-go/template -o ./qingcloud-sdk-go/service/
+      - name: push go sdk api specs
+        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        run: echo push go sdk api specs 
+
+     
+      - name: clone ruby sdk
+        run:  git clone https://github.com/yunify/qingcloud-sdk-ruby.git
+      - name: snips ruby sdk api specs
+        run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-ruby/template -o ./qingcloud-sdk-ruby/lib/qingcloud/sdk/service/
+      - name: push ruby sdk api specs
+        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        run: echo push ruby sdk api specs 
+   
