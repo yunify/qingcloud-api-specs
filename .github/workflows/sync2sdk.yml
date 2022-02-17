@@ -44,16 +44,16 @@ jobs:
       - name: snips java sdk api specs  
         run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-java/tmpl -o ./qingcloud-sdk-java/src/main/java/com/qingcloud/sdk/service/
       - name: push java sdk api specs
-        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
-        run: echo push java sdk api specs 
+        run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        #run: echo push java sdk api specs 
      
       - name:  clone go sdk
         run: git clone https://github.com/yunify/qingcloud-sdk-go.git
       - name: snips go sdk api specs
         run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-go/template -o ./qingcloud-sdk-go/service/
       - name: push go sdk api specs
-        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
-        run: echo push go sdk api specs 
+        run: cd ./qingcloud-sdk-go && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        #run: echo push go sdk api specs 
 
      
       - name: clone ruby sdk
@@ -61,6 +61,6 @@ jobs:
       - name: snips ruby sdk api specs
         run: snips -f /home/runner/work/qingcloud-api-specs/qingcloud-api-specs/2013-08-30/swagger/api_v2.0.json -t ./qingcloud-sdk-ruby/template -o ./qingcloud-sdk-ruby/lib/qingcloud/sdk/service/
       - name: push ruby sdk api specs
-        #run: cd ./qingcloud-sdk-java && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
-        run: echo push ruby sdk api specs 
+        run: cd ./qingcloud-sdk-ruby && git branch api-specs-sync &&  git commit -m "from project qingcloud-api-specs ci" && git push --set-upstream origin api-specs-sync
+        #run: echo push ruby sdk api specs 
    
