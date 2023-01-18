@@ -3156,6 +3156,9 @@
           "faulty",
           "defunct"
         ]
+      },
+      "region_id": {
+        "type": "string"
       }
     }
   },
