@@ -929,5 +929,79 @@
         }
       }
     }
+  },
+  "CreateBrokers": {
+    "parameters": [
+      {
+        "$ref": "#/parameters/zone"
+      }
+    ],
+    "get": {
+      "tags": [
+        "Instance"
+      ],
+      "operationId": "CreateBrokers",
+      "summary": "CreateBrokers",
+      "externalDocs": {
+        "url": "https://docsv3.qingcloud.com/development_docs/api/command_list/instance/create_brokers/"
+      },
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "instances": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zone": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "instances",
+              "zone"
+            ]
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "ret_code": {
+                "type": "integer"
+              },
+              "brokers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "instance_id": {
+                      "type": "string"
+                    },
+                    "broker_port": {
+                      "type": "integer"
+                    },
+                    "broker_host": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

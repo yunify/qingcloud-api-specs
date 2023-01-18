@@ -66,6 +66,9 @@
     "/DescribeInstanceTypes": {
       "$ref": "./instance.json#/DescribeInstanceTypes"
     },
+    "/CreateBrokers": {
+      "$ref": "./instance.json#/CreateBrokers"
+    },
     "/DescribeImages": {
       "$ref": "./image.json#/DescribeImages"
     },
