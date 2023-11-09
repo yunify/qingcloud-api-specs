@@ -49,6 +49,13 @@
                   1
                 ]
               },
+              "without_contract": {
+                "type": "integer",
+                "enum": [
+                  0,
+                  1
+                ]
+              },
               "status": {
                 "type": "array",
                 "items": {
