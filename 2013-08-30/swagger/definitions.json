@@ -1241,6 +1241,9 @@
       },
       "timeout": {
         "type": "integer"
+      },
+      "scene": {
+        "type": "integer"
       }
     }
   },
